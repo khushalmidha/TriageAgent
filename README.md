@@ -9,7 +9,7 @@
 
 ### Prerequisites
 - Python 3.10+ installed
-- An API key from [AgentRouter](https://agentrouter.org) (or any OpenAI-compatible API)
+- An API key from [Google Gemini](https://aistudio.google.com/app/apikey)
 
 ### Step 1: Clone & Install
 
@@ -31,7 +31,7 @@ data/
 
 ```bash
 cp .env.example .env
-# Edit .env and set your AGENTROUTER_API_KEY
+# Edit .env and set your GEMINI_API_KEY
 ```
 
 ### Step 4: Run the Pipeline
@@ -58,7 +58,7 @@ Results are saved to:
 | `eval/baseline_results.json` | Trivial & keyword baseline metrics |
 | `eval/judge_results.json` | LLM judge scores per reply |
 | `eval/agreement_report.json` | Judge-human agreement (Cohen's κ) |
-| `report/report.md` | Full evaluation report |
+| `Hiver_Assignment_Report.docx` | Full evaluation report (submitted separately) |
 | `decision_log.md` | 15 non-obvious decisions with reasoning |
 
 ---
@@ -137,9 +137,6 @@ Assignment/
 │   ├── llm_judge.py           ← 4-dimension quality rubric
 │   ├── judge_agreement.py     ← Cohen's κ agreement analysis
 │   └── baselines.py           ← Trivial + simple baseline runners
-│
-└── report/
-    └── report.md              ← ≤6 page evaluation report
 ```
 
 ---
@@ -197,7 +194,7 @@ Derived from LLM-assisted clustering of ~200 sample messages (see `src/intent_ta
 ## 📖 Key Documentation
 
 - **[Decision Log](decision_log.md)**: 15 non-obvious decisions with reasoning
-- **[Report](report/report.md)**: Full evaluation report (≤6 pages) with failure analysis and honest self-critique
+- **Report**: Full evaluation report (≤6 pages) with failure analysis and honest self-critique (submitted separately as a Word Document)
 - **[Golden Set Notes](eval/golden_set_notes.md)**: Sampling strategy, labeling process, and limitations
 - **[Config](src/config.py)**: All tunable parameters in one place
 
@@ -206,7 +203,7 @@ Derived from LLM-assisted clustering of ~200 sample messages (see `src/intent_ta
 ## 🙏 Citations & Acknowledgments
 
 - **Dataset**: [Customer Support on Twitter](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter) by thoughtvector on Kaggle
-- **LLM API**: [AgentRouter](https://agentrouter.org) — OpenAI-compatible API aggregation
+- **LLM API**: [Google Gemini](https://ai.google.dev/) — Native google-genai SDK integration
 - **Embeddings**: [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) by Reimers & Gurevych
 - **Vector Search**: [FAISS](https://github.com/facebookresearch/faiss) by Meta Research
 - **BM25**: [rank-bm25](https://github.com/dorianbrown/rank_bm25) Python implementation
