@@ -14,7 +14,7 @@
 ### Step 1: Clone & Install
 
 ```bash
-cd Assignment
+cd TriageAgent
 pip install -r requirements.txt
 ```
 
@@ -105,7 +105,7 @@ Customer Message
 ## 📁 Repository Structure
 
 ```
-Assignment/
+TriageAgent/
 ├── README.md                  ← You are here
 ├── decision_log.md            ← 15 non-obvious decisions with reasoning
 ├── requirements.txt           ← Python dependencies
