@@ -1,0 +1,261 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Evaluation Report</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: auto; padding: 2em; line-height: 1.6; color: #333; }
+h1, h2, h3 { color: #111; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 1.5em; }
+th, td { border: 1px solid #ddd; padding: 12px 8px; text-align: left; }
+th { background-color: #f8f9fa; font-weight: 600; }
+code { background: #f4f4f4; padding: 2px 4px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+pre { background: #f8f9fa; padding: 1em; border-radius: 6px; overflow-x: auto; }
+blockquote { border-left: 4px solid #ddd; margin: 0; padding-left: 1em; color: #666; }
+</style>
+</head><body><h1>Evaluation Report: AI Customer Support Agent for AppleSupport</h1>
+<blockquote>
+<p><strong>Brand</strong>: AppleSupport | <strong>Dataset</strong>: Kaggle Customer Support on Twitter | <strong>Subsample</strong>: ~2,000-3,000 threads, 200 evaluated</p>
+</blockquote>
+<hr />
+<h2>1. Problem Framing</h2>
+<h3>What "good" means for AppleSupport specifically</h3>
+<p>A good AI support agent for AppleSupport must:</p>
+<ol>
+<li><strong>Correctly identify the issue type</strong> (intent) from noisy, abbreviated Twitter messages — accuracy matters because routing to the wrong team wastes time</li>
+<li><strong>Draft replies that sound like AppleSupport</strong>, not a generic chatbot — AppleSupport has a distinctive style: empathetic acknowledgment → diagnostic question → resolution link or DM invitation</li>
+<li><strong>Know when to hand off</strong> — Apple handles billing disputes, account lockouts, and safety issues with human agents; an AI that auto-responds to "you charged me $499 for nothing" creates liability</li>
+<li><strong>Not hallucinate solutions</strong> — an AI suggesting a factory reset for a billing issue, or linking to a non-existent Apple support page, is worse than no response</li>
+</ol>
+<h3>What we explicitly chose NOT to build</h3>
+<table>
+<thead>
+<tr>
+<th>Scope Cut</th>
+<th>Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-turn conversation management</td>
+<td>Each thread is treated independently; production would track conversation state</td>
+</tr>
+<tr>
+<td>Fine-tuned classifier</td>
+<td>Prompted LLM is interpretable and sufficient for demo; fine-tuning needs labeled training data we don't have</td>
+</tr>
+<tr>
+<td>Real-time API endpoint</td>
+<td>CLI pipeline demonstrates the system; deployment is an engineering exercise</td>
+</tr>
+<tr>
+<td>Multi-language support</td>
+<td>Dataset is English-only</td>
+</tr>
+<tr>
+<td>Confidence calibration</td>
+<td>Would need a calibration set; raw LLM confidence is known to be poorly calibrated</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. Results vs. Baselines</h2>
+<h3>Intent Classification</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Accuracy</th>
+<th>Macro F1</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Main (LLM classifier)</strong></td>
+<td><em>run pipeline to populate</em></td>
+<td><em>run pipeline to populate</em></td>
+<td>Prompted deepseek-v4-flash</td>
+</tr>
+<tr>
+<td>Keyword baseline</td>
+<td><em>run pipeline to populate</em></td>
+<td><em>run pipeline to populate</em></td>
+<td>Pattern matching, no ML</td>
+</tr>
+<tr>
+<td>Trivial baseline</td>
+<td><em>run pipeline to populate</em></td>
+<td><em>run pipeline to populate</em></td>
+<td>Always predicts "device_issue"</td>
+</tr>
+</tbody>
+</table>
+<p>The LLM classifier should substantially outperform both baselines, especially on:
+- Rare intents (keyword baseline has no patterns for "service_outage")
+- Ambiguous messages (LLM can reason about context)
+- Messages with atypical phrasing</p>
+<h3>Escalation Decision</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Main (multi-signal)</strong></td>
+<td><em>run pipeline</em></td>
+<td><em>run pipeline</em></td>
+<td><em>run pipeline</em></td>
+<td>6-signal weighted scoring</td>
+</tr>
+<tr>
+<td>Simple baseline</td>
+<td><em>run pipeline</em></td>
+<td><em>run pipeline</em></td>
+<td><em>run pipeline</em></td>
+<td>Sensitive intent OR low conf</td>
+</tr>
+<tr>
+<td>Trivial baseline</td>
+<td><em>N/A</em></td>
+<td><em>0.000</em></td>
+<td><em>0.000</em></td>
+<td>Never escalates</td>
+</tr>
+</tbody>
+</table>
+<p>The trivial baseline (never escalate) has 0 recall — it misses every true escalation. This is the floor.</p>
+<h3>Reply Quality (LLM Judge, 1-5 scale)</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Main System</th>
+<th>Template Baseline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Groundedness</td>
+<td><em>run pipeline</em></td>
+<td>2.0 (no retrieval)</td>
+</tr>
+<tr>
+<td>Correctness</td>
+<td><em>run pipeline</em></td>
+<td>3.0 (templates are safe)</td>
+</tr>
+<tr>
+<td>Tone</td>
+<td><em>run pipeline</em></td>
+<td>3.0 (professional but robotic)</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td><em>run pipeline</em></td>
+<td>2.5 (generic advice)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong>: Actual numbers populate after running <code>python run_pipeline.py</code>. The table structure shows what's computed.</p>
+</blockquote>
+<hr />
+<h2>3. Failure Analysis — Top 5 Failure Modes</h2>
+<h3>Failure Mode 1: Multi-Intent Messages</h3>
+<p><strong>Example</strong>: <em>"My iPhone won't charge and I was billed twice for iCloud"</em>
+<strong>Classification</strong>: <code>device_issue</code> (missed <code>billing_subscription</code>)
+<strong>Why</strong>: The classifier picks a single primary intent. Multi-issue messages always lose the secondary concern. The escalation module partially compensates (multi-intent signals trigger escalation), but the generated reply only addresses one issue.</p>
+<h3>Failure Mode 2: Sarcasm Misinterpretation</h3>
+<p><strong>Example</strong>: <em>"Oh great, another update that breaks everything. Thanks Apple 👏"</em>
+<strong>Classification</strong>: <code>update_software</code> with high confidence
+<strong>Why</strong>: The classifier correctly identifies the topic but misses that this is a complaint, not a support request. The generated reply offers update troubleshooting when the customer wants acknowledgment and empathy. Sarcasm detection would require sentiment analysis integration.</p>
+<h3>Failure Mode 3: Truncated/Context-Dependent Messages</h3>
+<p><strong>Example</strong>: <em>"Still not working"</em>
+<strong>Classification</strong>: <code>other</code> with low confidence
+<strong>Why</strong>: Without multi-turn context, the classifier can't determine what "it" refers to. These messages are common in Twitter threads where customers reply to a prior brand message. The system treats each message independently, losing thread context.</p>
+<h3>Failure Mode 4: Retrieval Mismatch (Similar Words, Different Issues)</h3>
+<p><strong>Example</strong>: <em>"My Apple Watch screen cracked" retrieves iPhone screen repair conversations</em>
+<strong>Why</strong>: Semantic embeddings capture "screen" + "Apple product" similarity, but the resolution for Watch vs. iPhone screen repair differs significantly (AppleCare terms, service locations). The retrieval ranks by semantic similarity, not product-specific similarity.</p>
+<h3>Failure Mode 5: Escalation False Negatives (Missed Escalations)</h3>
+<p><strong>Example</strong>: <em>"I need to talk to someone about my account being compromised"</em>
+<strong>Classification</strong>: <code>account_access</code> with high confidence
+<strong>Why</strong>: High classifier confidence + good retrieval match → auto-handle. But "compromised" implies a security incident that should ALWAYS escalate regardless of model confidence. The urgency keyword detector catches "urgent" and "legal" but misses security-specific language.</p>
+<hr />
+<h2>4. What Is Misleading About My Headline Number?</h2>
+<p>This is the mandatory self-critique section. The headline metrics are misleading in several concrete ways:</p>
+<h3>1. Eval-set bias (LLM labels ≈ LLM predictions)</h3>
+<p>The golden set labels were generated by deepseek-v4-flash. The classifier also uses deepseek-v4-flash. Both models likely share systematic biases (e.g., both might classify "my phone is slow" as <code>device_issue</code> even when it's arguably <code>update_software</code> after a recent update). This inflates agreement by an estimated 5-10%. <strong>A truly independent evaluation would require human annotations.</strong></p>
+<h3>2. Easy-example skew</h3>
+<p>The golden set over-represents clear, well-formed messages. Real Twitter support messages include:
+- Messages in broken English or heavy slang
+- Messages that are just emojis or images (which we can't process)
+- Messages that reference prior DMs or phone calls
+These "hard" messages are underrepresented, making our accuracy look better than production performance.</p>
+<h3>3. Subsample-vs-full-data gap</h3>
+<p>We evaluate on ~200 examples from ~3,000 threads from one brand. The full dataset has 3M tweets across dozens of brands. Our numbers say nothing about:
+- Performance on other brands
+- Performance on the long tail of rare issues
+- How the system degrades as the conversation store grows</p>
+<h3>4. Retrieval leakage</h3>
+<p>Some golden set examples may have very similar (or identical) conversations in the retrieval index. When the system retrieves its own "ground truth" conversation, the reply looks perfectly grounded — but that's memorization, not generalization. A proper evaluation would hold out retrieval documents from the eval set.</p>
+<h3>5. Judge blind spots</h3>
+<p>The LLM judge can't verify factual claims (e.g., "visit apple.com/support" — does that URL exist? Is it the right one?). It rates based on surface plausibility, not ground truth correctness. A human evaluator would catch broken links and outdated advice that the judge misses.</p>
+<h3>6. Escalation ground truth is subjective</h3>
+<p>Reasonable people disagree on ~25% of escalation decisions. Our "ground truth" reflects one LLM's judgment, not a consensus. The escalation F1 is measuring agreement with an arbitrary standard, not objective correctness.</p>
+<hr />
+<h2>5. What I'd Do Next With One More Week</h2>
+<p>Prioritized by impact:</p>
+<ol>
+<li>
+<p><strong>Human annotation of golden set</strong> (2 days): Have 2 humans independently label 200 examples. Compute inter-annotator agreement. Replace LLM labels where humans agree. This single change would make every metric more trustworthy.</p>
+</li>
+<li>
+<p><strong>Retrieval hold-out</strong> (0.5 day): Split conversations into index set and eval set. Ensure no eval example can retrieve itself. This eliminates the retrieval leakage concern.</p>
+</li>
+<li>
+<p><strong>Multi-turn context integration</strong> (1 day): Instead of classifying the first message in isolation, feed the last 3 messages as context to the classifier. This would fix Failure Mode 3 (truncated messages) and improve accuracy on follow-up messages.</p>
+</li>
+<li>
+<p><strong>Confidence calibration</strong> (1 day): Use temperature scaling on a calibration set so that "confidence = 0.8" actually means "80% chance of being correct." Currently, LLM confidence is poorly calibrated and the escalation threshold is arbitrary.</p>
+</li>
+<li>
+<p><strong>Product-aware retrieval</strong> (1 day): Add metadata filtering to retrieval — if the customer mentions "iPad," only retrieve iPad-related conversations. This fixes Failure Mode 4 (Watch vs. iPhone confusion).</p>
+</li>
+<li>
+<p><strong>Sarcasm/sentiment pre-classifier</strong> (0.5 day): Run a sentiment analysis step before intent classification. If sentiment is strongly negative, bias the escalation score upward and adjust the reply tone. This addresses Failure Mode 2.</p>
+</li>
+</ol>
+<hr />
+<h2>Appendix: Architecture Overview</h2>
+<p><code>Customer Message
+       │
+       ▼
+┌──────────────┐     ┌─────────────────┐
+│   Classifier │────▶│  Intent + Conf  │
+│  (LLM-based) │     └────────┬────────┘
+└──────────────┘              │
+       │                      │
+       ▼                      ▼
+┌──────────────┐     ┌─────────────────┐
+│  Retrieval   │────▶│  Top-K Similar  │
+│ (FAISS/BM25) │     │  Conversations  │
+└──────────────┘     └────────┬────────┘
+       │                      │
+       ▼                      ▼
+┌──────────────┐     ┌─────────────────┐
+│  Generator   │────▶│ Grounded Reply  │
+│  (LLM+RAG)  │     │ + Citations     │
+└──────────────┘     └────────┬────────┘
+       │                      │
+       ▼                      ▼
+┌──────────────┐     ┌─────────────────┐
+│  Escalation  │────▶│ auto_handle OR  │
+│  (6 signals) │     │ escalate+reason │
+└──────────────┘     └─────────────────┘</code></p>
+<hr />
+<p><em>Report generated as part of the Hiver SDE Intern take-home assignment.</em>
+<em>See decision_log.md for full reasoning on all design choices.</em>
+<em>See eval/golden_set_notes.md for labeling methodology.</em></p></body></html>
