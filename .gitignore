@@ -1,0 +1,35 @@
+# Data files (too large for git)
+data/twcs.csv
+data/processed/
+data/faiss_index.bin
+data/conversation_store.pkl
+data/bm25_index.pkl
+*.zip
+data/conversation_store.pkl
+data/bm25_index.pkl
+
+# Environment
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated eval results
+# eval/golden_set.json
+# eval/eval_report.json
+# eval/baseline_results.json
+# eval/judge_results.json
+# eval/agreement_report.json
+

@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "4b40adf959d6",
+    "thread_id": "thread_02820",
+    "customer_message": "Ok... so iOS 11.whatever is a fucking battery vampire. [USER] fix this.",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] That's great. If you'd like to troubleshoot with us regarding this issue, feel free to reach out anytime. [URL]"
+  },
+  {
+    "id": "c677e02b8681",
+    "thread_id": "thread_01947",
+    "customer_message": "[USER] your #highsierra sucks! I lost a whole day work because since the update my MacBook Air keeps turning off.",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's move over to DM and continue there. See you there. [URL]"
+  },
+  {
+    "id": "f402cd3a79f8",
+    "thread_id": "thread_03830",
+    "customer_message": "[USER] hi guys, I can\u2019t change back to the Spanish App Store, it says I have to cancel my music subscription first which I have done [URL]",
+    "ground_truth_intent": "app_store",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Great to hear! Let us know if we can help in the future."
+  },
+  {
+    "id": "4ee299159fbe",
+    "thread_id": "thread_02786",
+    "customer_message": "Yo [USER] this last update has JACKED up my phone",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's have a look at this together. Please DM us. [URL]"
+  },
+  {
+    "id": "5702880f452e",
+    "thread_id": "thread_00370",
+    "customer_message": "[USER] so I DL new IOS and now my messages won\u2019t send? #wtf",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for confirming this. Let's continue to look into this via DM: [URL]"
+  },
+  {
+    "id": "2a65c8dda943",
+    "thread_id": "thread_00789",
+    "customer_message": "how can i check overall health of the battery life? [USER]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Is battery drain the only issue you're having? Let us know in DM. [URL]"
+  },
+  {
+    "id": "70212b22c4bc",
+    "thread_id": "thread_04730",
+    "customer_message": "Dear [USER], latest OS on my 8 Plus, and: 1. \"Hey Siri\" doesn't work, despite being set up. 2. Notifications leave the screen on, despite setting the screen to go dark after 1 min. Please fix \ud83d\ude41",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're glad to hear it! Never underestimate the power of a reboot. If you need anything further, just let us know. Take care."
+  },
+  {
+    "id": "83787d0dbfa5",
+    "thread_id": "thread_03843",
+    "customer_message": "[USER] I usually don't say anything about your updates but #iOS11 has gone too far: I can't control music from lock or pull-up screen \ud83d\ude21\ud83d\udeae\ud83d\udeae\ud83d\udeae",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's take a look at this further for you. Reach out to us in DM. [URL]"
+  },
+  {
+    "id": "a0532bf1f379",
+    "thread_id": "thread_01595",
+    "customer_message": "uh hey [USER] my gifs aren\u2019t working they just show as grey squares and I\u2019m trying to send my girlfriend funny gifs so please help \ud83d\udc4d\ud83c\udffb",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Got it. Let's take a deeper look at this in DM. Send us one with the link below and let us know the country that you're messaging from. [URL]"
+  },
+  {
+    "id": "eb3877107561",
+    "thread_id": "thread_04207",
+    "customer_message": "Why does this happen now?? How do I\ufe0f delete it?? Anyone?! [USER] [URL] [USER] [USER] Mine is doing this too.\ud83d\ude15",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're glad you mentioned this. Please check out this link: [URL] If you're still have issues, send us a DM. [URL] [USER] You're very welcome. Enjoy the rest of your day."
+  },
+  {
+    "id": "d16f5f3a10e7",
+    "thread_id": "thread_04649",
+    "customer_message": "[USER] I\ufe0f hate your last update. Why does \u201cI\ufe0f\u201d button suddenly work when I\ufe0f tweet you but nowhere else?",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We recently released an update created to address this issue. Backup your iPhone and update following these steps: [URL]"
+  },
+  {
+    "id": "e78437c612b4",
+    "thread_id": "thread_03942",
+    "customer_message": "[USER] As these music files are already downloaded on my iPhone? Why simply redownload them across all my devices?",
+    "ground_truth_intent": "billing_subscription",
+    "ground_truth_should_escalate": true,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We understand. While that isn't currently an option, we love suggestions! Please leave those for us here: [URL]"
+  },
+  {
+    "id": "bf196cb798cd",
+    "thread_id": "thread_03285",
+    "customer_message": "[USER] Some songs are grayed out in my iPhone and iPad after iOS 11 update. But they\u2019re not in my MacBook with macOS High Sierra. [URL]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Sign out and back into the iTunes Store. Be aware that this will remove Apple Music saved for offline play. Reach us in DM next. [URL]"
+  },
+  {
+    "id": "69f24d5f4062",
+    "thread_id": "thread_00284",
+    "customer_message": "[USER] iPhone 6plus not working properly since the iOS 11.2 update! Now what?!",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for confirming that. Let's take a closer look. Follow us to DM and we'll continue from there. [URL]"
+  },
+  {
+    "id": "b74954568c52",
+    "thread_id": "thread_03496",
+    "customer_message": "[USER] is there any way to see my activity history prior to getting new iPhone 8? My prior weeks look like this now. Encrypted backup [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Understood. Did you set the Watch up as new or restore a backup?"
+  },
+  {
+    "id": "cbe77bf05338",
+    "thread_id": "thread_00496",
+    "customer_message": "[USER] I have no sound for youtube &amp; own video\u2019s on my #iPhoneX . Known issue ? How to solve?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's take a look at some of your settings. To continue, please DM us with the country where you're located. [URL]"
+  },
+  {
+    "id": "6dbe6e192b96",
+    "thread_id": "thread_03736",
+    "customer_message": "[USER] when I updated my phone , half of my contacts have gone off my list and i need them! How do i get them back",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Glad to hear it and it's our pleasure. If there's anything you need in the future, reach out. We'll be happy to help."
+  },
+  {
+    "id": "a6c0417bd30c",
+    "thread_id": "thread_03537",
+    "customer_message": "Anyone else notice the [USER] watch having a shorter battery life after the watch update? I had two days now I have 5 hours. [USER]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Send us a DM. Let us know the country you're in and when you did the update. [URL]"
+  },
+  {
+    "id": "6f8b8e8abac1",
+    "thread_id": "thread_01487",
+    "customer_message": "[USER] I asked a question earlier &amp; got no answer! Now I have a 2nd question Apple Watch not counting how many x I climb the stairs",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] DM us your country, and we'll continue working with you there. [URL]"
+  },
+  {
+    "id": "2f792380fab4",
+    "thread_id": "thread_04187",
+    "customer_message": "[USER] Plz fix the emojis it\u2019s showing a lot boxes as emojis?? Wtf \ud83d\ude21\ud83d\ude21",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Got it. Are you experiencing this issue when using other apps such as Messages? Do you notice the problem with certain emojis?"
+  },
+  {
+    "id": "23d40b4a6ccf",
+    "thread_id": "thread_00571",
+    "customer_message": "[USER] I\u2019ve restarted the phone for few times.. Also I turned on the low battery mode (don\u2019t know if that helps).",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're glad that worked for you. If you run into any other issues with your iPhone, don't hesitate to let us know."
+  },
+  {
+    "id": "f8cd2afcae85",
+    "thread_id": "thread_01335",
+    "customer_message": "[USER] iTunes will not backup our iPhone 6 or 5. Using iTunes 12.7, IOS 11.0.3 for 6, and 10.3.3 on 5. What\u2019s up?",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for keeping us updated. Let\u2019s move over to DM for more help. We\u2019ll continue to work towards a resolution there. [URL]"
+  },
+  {
+    "id": "06d6e323626e",
+    "thread_id": "thread_01113",
+    "customer_message": "Dear [USER] iPhone update: I hate you. My phone is now so slow and the battery is drained so quickly.",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We understand the importance of battery life and want to look into this. DM us so we can begin to work on this together. [URL]"
+  },
+  {
+    "id": "6506178de6ba",
+    "thread_id": "thread_00462",
+    "customer_message": "[USER] is icloud webmail having login issues at the moment I'm receiving a cannot contact server message",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] That's great! Enjoy the rest of your day."
+  },
+  {
+    "id": "862354e85b07",
+    "thread_id": "thread_02847",
+    "customer_message": "[USER] It\u2019s helped. Cheers.",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Try changing the Auto-Lock to a shorter amount of time. Let us know if that helps when your iPhone is in your pocket."
+  },
+  {
+    "id": "ca274bc93b27",
+    "thread_id": "thread_03678",
+    "customer_message": "[USER] #iOS11 how do I change song from lock screen ?",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We like to continue working with you on this. DM us and we'll go from there. [URL]"
+  },
+  {
+    "id": "c2a3b93bf968",
+    "thread_id": "thread_00632",
+    "customer_message": "Did [USER] break iTunes with the new software update on our phones? Anyone else having issues getting a song to play?",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Have you had a chance to force quit the Music App, and then restart the device since updating to iOS 11.1.2?"
+  },
+  {
+    "id": "f9d25a3c8366",
+    "thread_id": "thread_03651",
+    "customer_message": "When you see a lovely sunset but can\u2019t take a picture because your iPhone camera has decided it doesn\u2019t want to work any more \ud83d\ude29 #FirstWorldProblems #Iphone [USER]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Sounds like a great plan. Be sure to set up an appointment beforehand. Use this link to do so: [URL]"
+  },
+  {
+    "id": "3df447afe94e",
+    "thread_id": "thread_02602",
+    "customer_message": "[USER] [USER] I\ufe0f need help with this issue to",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd like to look into this with you. Could you DM us the exact version of iOS you are running? [URL]"
+  },
+  {
+    "id": "40e58ca5ed74",
+    "thread_id": "thread_02720",
+    "customer_message": "[USER] either i can\u2019t do maths or my iphone is seriously messed up! why is a 1 minute 44 seconds voice recording not sending on messenger? it is not longer than 180 seconds long and it\u2019s nowhere near 180 seconds!! [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] OK, we appreciate you keeping us in the loop. Reach out to us via DM and we'll continue there. [URL]"
+  },
+  {
+    "id": "1acf30b0a286",
+    "thread_id": "thread_04111",
+    "customer_message": "Why is it since I\u2019ve updated to IOS 11 that my phone keeps crashing [USER]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Do you happen to notice this behavior with certain apps or all apps? Let us know in DM to continue. [URL]"
+  },
+  {
+    "id": "3aca809f3e29",
+    "thread_id": "thread_01472",
+    "customer_message": "[USER] Downloaded the new OS to my MacBook Air and now iCloud sign in doesn't work an either the MacBook Air or the Mac Desktop. Help?",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] You're most welcome; we appreciate you too!"
+  },
+  {
+    "id": "c5711581829a",
+    "thread_id": "thread_02879",
+    "customer_message": "[USER] 2 walks w/ Watch Series 2 + iPhone today: 1 - 15:53, 133 BPM avg 2- 14:35, 153 BPM avg Only 9 minutes on exercise ring ???",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd like to look into this with you further, please connect with us via DM: [URL]"
+  },
+  {
+    "id": "86e1c0212bb6",
+    "thread_id": "thread_02266",
+    "customer_message": "[USER] why is the new iPhone update changing my capitalized i\u2019s into I\ufe0f ?",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's back up and update the iOS to see if you notice an improvement. If you don't, meet us in DM. [URL]"
+  },
+  {
+    "id": "402202d91775",
+    "thread_id": "thread_02877",
+    "customer_message": "[USER] No it doesn\u2019t. Regardless if the wallpaper is changed, it stays the same. /:",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's take a look into this together. To clarify, you're unable to enter in your passcode after the update?"
+  },
+  {
+    "id": "96d2ac0b7aee",
+    "thread_id": "thread_00186",
+    "customer_message": "[USER] It didn't work..my phone still won't come on",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Got it. Try these steps and let us know how it goes: [URL]"
+  },
+  {
+    "id": "b26512dd2f69",
+    "thread_id": "thread_01567",
+    "customer_message": "[USER] Haven\u2019t seen error messages yet but my phone does show some serious lag while doing basic tasks like swiping up the Twitter feed! Also, the device unexpectedly reboots and the display freezes a lot of times!",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Have you seen any error messages on the device? Please DM us so we can gather further details. [URL]"
+  },
+  {
+    "id": "edbcf62e1787",
+    "thread_id": "thread_00366",
+    "customer_message": "If I could turn auto brightness off and also not have my Bluetooth automatically turn on everytime I start my car that would be nice [USER]",
+    "ground_truth_intent": "connectivity",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Have you already tried unpairing it from your car, and then pairing it again? Tell us more via DM here: [URL]"
+  },
+  {
+    "id": "a9123f9939a3",
+    "thread_id": "thread_01063",
+    "customer_message": "[USER] Ok so did the update. Since 5pm my battery is now on 58% . Wasn\u2019t like that previously. Haven\u2019t even used my phone much.",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Sounds good. Just keep us in the loop if we can be of any assistance!"
+  },
+  {
+    "id": "b17843e3c31c",
+    "thread_id": "thread_02079",
+    "customer_message": "Hey, [USER] your two factor authentication is bullshit and once again locking me out of purchased items on my account. Fix or ditch",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let\u2019s have our Apple ID team help you regain access to your account. You can reach an Advisor here: [URL]"
+  },
+  {
+    "id": "4c307c50c4a5",
+    "thread_id": "thread_03528",
+    "customer_message": "Dear [USER], since your last update the battery drain on my iPhone 6 is shocking. Please fix or I shall have to consider alternatives.",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] DM us using the link below. We'll work together from there. [URL]"
+  },
+  {
+    "id": "b38baf3a64a3",
+    "thread_id": "thread_00425",
+    "customer_message": "[USER] please fix the issue with messages not sending on a new cellular Series 3 \u231a\ufe0f. Seems to happen when I leave the vicinity of my phone.",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's work through the bottom section of this article: [URL] DM if it continues, please. [URL]"
+  },
+  {
+    "id": "ac890b08aa77",
+    "thread_id": "thread_00353",
+    "customer_message": "What the heck is happening with my iPhone 6s [USER] ? It\u2019s been super buggy with all the latest updates. #Frustrating !",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd like to provide more in depth instructions. Please meet us in DM so we can continue troubleshooting. [URL]"
+  },
+  {
+    "id": "0722aa0b32cd",
+    "thread_id": "thread_01079",
+    "customer_message": "[USER] Is it a but with ios 11?",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd be happy to look into this with you further. DM us using the link below and we'll go from there. [URL]"
+  },
+  {
+    "id": "94e667f0246a",
+    "thread_id": "thread_03401",
+    "customer_message": "[USER] \u2714\ufe0f changed WiFi and now I\u2019m happy",
+    "ground_truth_intent": "connectivity",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Hey there. Are you running into an issue updating your Apple Watch? If so, let us know what's going on. We're here for you."
+  },
+  {
+    "id": "36dccfb9e6da",
+    "thread_id": "thread_02925",
+    "customer_message": "[USER] Is there a way to download all my photos and videos from iCloud directly to my iPhone???",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Exactly. You've got it. DM us any further questions. [URL]"
+  },
+  {
+    "id": "3a833d82d433",
+    "thread_id": "thread_04798",
+    "customer_message": "[USER] I\u2019m tired of my screen freezing every time I get a text\ud83e\udd26\ud83c\udffb\u200d\u2642\ufe0f",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Got it. Once you're able to restart your phone, and receive a message to test it out, let us know the result in DM: [URL]"
+  },
+  {
+    "id": "2aa49aac9df5",
+    "thread_id": "thread_01922",
+    "customer_message": "I wish I could uninstall iOS 11!!! \ud83d\ude12\ud83d\ude20 it sucks, my phone crashes every day and keeps disconnecting from WiFi and cellular data [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Alright, so that we can take a closer look, feel free to DM us and we'll go from there: [URL]"
+  },
+  {
+    "id": "391ad286321f",
+    "thread_id": "thread_00950",
+    "customer_message": "[USER] [USER] God new iOS has killed my phone can\u2019t accept or make calls this is not even funny!!!! When r u going to fix this??",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We can look into these issues with you and help find a solution. Please send us a DM. [URL]"
+  },
+  {
+    "id": "f453c30e93d8",
+    "thread_id": "thread_03744",
+    "customer_message": "[USER] [USER] Live Photos keeps coming on with iOS 11 update. Is there a fix??",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're glad to help sort this out. Please DM us if the issue persists &amp; let us know the exact version of iOS 11 installed. [URL]"
+  },
+  {
+    "id": "c4a2008e8e07",
+    "thread_id": "thread_03343",
+    "customer_message": "[USER] I am tired of answering your automated questions! So, please excuse.",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thank you for letting us know. Since updating, have you had a chance to restart your iPhone? Also, how often does this occur?"
+  },
+  {
+    "id": "aab761e2e561",
+    "thread_id": "thread_04395",
+    "customer_message": "[USER] hi my iPad mini was at 55% all day but was acting weird like screen dimming and the battery just dies but currently charging",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's continue in DM together: [URL]"
+  },
+  {
+    "id": "26a17c8892fc",
+    "thread_id": "thread_01016",
+    "customer_message": "My music app won\u2019t open and I can\u2019t open it in the settings either, uh help? [USER]",
+    "ground_truth_intent": "billing_subscription",
+    "ground_truth_should_escalate": true,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's go ahead &amp; continue in DM so we may better assist you. [URL]"
+  },
+  {
+    "id": "323dee7c93f7",
+    "thread_id": "thread_01651",
+    "customer_message": "[USER] Tried I\ufe0ft and I\ufe0ft still doesn\u2019t work",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Have you tried resetting the keyboard dictionary yet? If not, go to Settings &gt; General &gt; Reset &gt; Reset Keyboard Library"
+  },
+  {
+    "id": "aaab4d113c7e",
+    "thread_id": "thread_02697",
+    "customer_message": "[USER] why is the iphone 6 so slow after the ios 11 update",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We appreciate the additional information. We'd like to look into some additional support options. DM us which country you're in, as options can vary by location, and we'll get started. [URL]"
+  },
+  {
+    "id": "c5236a80bd41",
+    "thread_id": "thread_02146",
+    "customer_message": "[USER] [USER] Same here, iPhone 6 specially with whatsapp, sending a text is now a nightmare \u2639\ufe0f",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's look further into this in DM here: [URL]"
+  },
+  {
+    "id": "8c330006a3c7",
+    "thread_id": "thread_02868",
+    "customer_message": "My iphone 6S Plus battery started draining after shifting to iOS 11.0.3. It has reduced to one third. [USER]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Great. You are welcome. Please keep us in the loop."
+  },
+  {
+    "id": "e54f2f165b9e",
+    "thread_id": "thread_00541",
+    "customer_message": "Help! Apple Watch wont restore previous backup #help #apple [USER]",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] No worries, we've got your back. Please DM us and we'll continue to assist you from there. [URL]"
+  },
+  {
+    "id": "64bb0e2aa78f",
+    "thread_id": "thread_01724",
+    "customer_message": "Yes [USER] y\u2019all need a new update I can\u2019t see my notifications thanks",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for the clarification. That's an unexpected behavior and we'll do our best to help you. By any chance, have you already tried restarting your device to see if the same behavior comes back? If not, let's follow the steps from here: [URL]"
+  },
+  {
+    "id": "45507ea47857",
+    "thread_id": "thread_02111",
+    "customer_message": "[USER] [USER] why apple store app doesn\u2019t work?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for the update! We'd love to help; please meet us in DM so we can continue with isolating the problem. Thank you!"
+  },
+  {
+    "id": "63573db29619",
+    "thread_id": "thread_01346",
+    "customer_message": "Anyone else\u2019s iPhone playing up since this new update? Not happy \ud83d\ude44\ud83d\ude14[USER] [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Which country are you currently located within? Let us know in DM here: [URL]"
+  },
+  {
+    "id": "8890e8a87db1",
+    "thread_id": "thread_04632",
+    "customer_message": "My phone won\u2019t lock or turn off [USER] wtf?",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Go ahead and send us a DM with your current iOS version and e can look into some options for you. The iOS version is located under Settings &gt; General &gt; About. [URL]"
+  },
+  {
+    "id": "4a8ffe4e75de",
+    "thread_id": "thread_01159",
+    "customer_message": "iOS 11 messing with \u2018hey Siri\u2019 [USER] what gives?? Anyone else have this issue? #frustrated #ios11update #sirisonholiday",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for confirming. DM us the exact iOS version and we'll take a closer look from there. [URL]"
+  },
+  {
+    "id": "4f4587c9cf22",
+    "thread_id": "thread_00687",
+    "customer_message": "[USER] hi I\ufe0f have a weird problem with question marks and the letter \u201ci\u201d any advice ? [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's continue in DM. [URL]"
+  },
+  {
+    "id": "d5a32e802b17",
+    "thread_id": "thread_02470",
+    "customer_message": "So my new iPhone has a nifty camera but it doesn't actually work as a phone--reception for calls, texts is absolute crap. WTF, [USER]?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thank you for your reply. Let's take a look at the steps here: [URL] Let us know in DM if you're still having trouble. [URL]"
+  },
+  {
+    "id": "652762291780",
+    "thread_id": "thread_00002",
+    "customer_message": "My phone is a hot mess today...new Iphone comes out and my phone starts changing letters (see last tweet) [USER] what\u2019s up?!?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Certainly not what we want you to experience. Please let us know which device you're using and exactly what's going on."
+  },
+  {
+    "id": "5a9ac36ff71a",
+    "thread_id": "thread_01296",
+    "customer_message": "[USER] I don\u2019t want to have to manually lower the volume",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We've received your DM and will respond to you there shortly. [URL]"
+  },
+  {
+    "id": "db2214855b0e",
+    "thread_id": "thread_04106",
+    "customer_message": "this 8+ battery trash [USER] [USER]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Before we proceed, were you able to follow the steps in the article we provided? Let us know via DM: [URL]"
+  },
+  {
+    "id": "e648b4f48bc3",
+    "thread_id": "thread_01268",
+    "customer_message": "[USER] Hi I've looked at this but it doesn't show some songs I know are missing and they aren't in my library either",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Since neither of those links worked, we'd recommend reaching our iTunes Store team directly: [URL]"
+  },
+  {
+    "id": "bd7613145606",
+    "thread_id": "thread_02395",
+    "customer_message": "[USER] Realized. The violet banding is everywhere. [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Hello there. We appreciate the video. Can you let us know if you have this issue in all apps or specifically when in this one? Does this happen when scrolling in Safari?"
+  },
+  {
+    "id": "9737c0affe5c",
+    "thread_id": "thread_02473",
+    "customer_message": "[USER] 6s everything in my library Kees being deleted [USER] Can\u2019t listen to the app at all I hope you guys plan on comping me!",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks! Let's work on this in DM and get to the bottom of this issue. Send us which iOS version you see in Settings &gt; General &gt; About &gt; Version. We'll join you there. [URL]"
+  },
+  {
+    "id": "17be79394bd3",
+    "thread_id": "thread_04134",
+    "customer_message": "[USER] My [USER] gaming is affected cause of the bugs \ud83d\ude29 #ios111",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Okay, and this is happening on a specific app?"
+  },
+  {
+    "id": "2a365defd618",
+    "thread_id": "thread_04645",
+    "customer_message": "[USER] [USER] [USER] It can be fixed by using your keyboard shortcuts: phrase \u201cI\u201d, shortcut \u201ci\u201d. This is a temp. fix until Apple releases a official fix.",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Fantastic! We're glad to hear it. If we can help with any other Apple concerns, just let us know."
+  },
+  {
+    "id": "aee3550a3db2",
+    "thread_id": "thread_01398",
+    "customer_message": "Rip to my Apple Watch. We had a great two years together. I guess that [USER] conspiracy theory about stuff dying when a newer model comes out is true. My screen doesn\u2019t even work anymore and I didn\u2019t get it wet. \ud83d\ude41\u231a\ufe0f",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] If you\u2019ve already tried that step, then you\u2019re ahead of the game. Let\u2019s take a closer look at what\u2019s going on in DM, and we\u2019ll continue working with you there. [URL]"
+  },
+  {
+    "id": "fdf18077fd26",
+    "thread_id": "thread_04230",
+    "customer_message": "[USER] you guys really did it with this update. You turned my old iPhone into a literal brick.",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for that info. Next, let's meet within DM so we can assist further: [URL]"
+  },
+  {
+    "id": "07b6c222d55a",
+    "thread_id": "thread_01267",
+    "customer_message": "[USER] Is there a way to rebalance volume? I have mine set all the way down to 1/4 bar and it's still kind of too loud :/",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Sorry about that. DM us and we'll look into this iMac audio situation with you more. [URL]"
+  },
+  {
+    "id": "8e0d0096d246",
+    "thread_id": "thread_02225",
+    "customer_message": "Since installing iOS 11 all my iBooks in iCloud are downloaded onto my devices and every time try,can\u2019t remove downloads [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for letting us know. Let's meet up in DM and continue working on this. [URL]"
+  },
+  {
+    "id": "ec46d6014f8c",
+    "thread_id": "thread_03566",
+    "customer_message": "So many things wrong w/ my #iPhone 7Plus ever since #iOS11 even got a new 7Plus from [USER] &amp; the problems are still there. Android?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd like to look into this further. Please DM us to continue working on this. [URL]"
+  },
+  {
+    "id": "c33cc948956c",
+    "thread_id": "thread_01201",
+    "customer_message": "[USER] I need help with my account",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] For your security, the next steps require reaching out to our phone support team."
+  },
+  {
+    "id": "c240f757d80e",
+    "thread_id": "thread_03622",
+    "customer_message": "Why can\u2019t I turn off notifications on my iPhone anymore [USER]?",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Do you want to prevent notifications from appearing at all, on the Lock screen, or temporarily? Let us know by DM. [URL]"
+  },
+  {
+    "id": "8a7b9123d445",
+    "thread_id": "thread_04357",
+    "customer_message": "[USER] I was on face time my battery at the start was 42% I was on the call 9 minutes and my battery dropped to 14%! Outrageous!",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's maximize the battery life using the steps here: [URL] Let us know in DM if it improves after the changes. [URL]"
+  },
+  {
+    "id": "1fd171cf2af7",
+    "thread_id": "thread_04687",
+    "customer_message": "Hey [USER] any chance for an update that won\u2019t crash my phone if it\u2019s unplugged? I feel like I\u2019m in 1985 tethered to the wall.",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thank you for the clarificatipn. We'll be happy to help today. DM us to get started. [URL]"
+  },
+  {
+    "id": "af8d09d1689f",
+    "thread_id": "thread_02504",
+    "customer_message": "[USER] what\u2019s the hell going on I deleted some messages 6 times and they came back",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks. Send us a DM to continue [URL]"
+  },
+  {
+    "id": "96e2a908c25a",
+    "thread_id": "thread_00385",
+    "customer_message": "Hey, [USER], why the hell does the Music widget keep popping up in my lock screen?! My music app is closed!!",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's discuss some additional options to help. To continue, please DM us with the country where you're located. [URL]"
+  },
+  {
+    "id": "a6fc2bf16298",
+    "thread_id": "thread_01502",
+    "customer_message": "Anyone who has upgraded their Mac to High Sierra 10.13.1 experiencing frequent, unexpected system shut downs? I have been averaging 2x day. Can you help [USER]?",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for checking. We'd like some additional details to assist. Send us a Direct Message using the link below and we'll take it from there. [URL]"
+  },
+  {
+    "id": "3e083f24e683",
+    "thread_id": "thread_03994",
+    "customer_message": "[USER] why can\u2019t i hear sound from my phone? i can hear it when i use headphones but not from the speaker on my phone itself",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd like to look into this further with you. Could you please send us a DM so we can continue? [URL]"
+  },
+  {
+    "id": "9996e9081a8c",
+    "thread_id": "thread_02428",
+    "customer_message": "[USER] why my music keep randomly pausing all the time now?!? I know i ain\u2019t he only one with this problem. I need answers this mad annoying\ud83d\ude02",
+    "ground_truth_intent": "billing_subscription",
+    "ground_truth_should_escalate": true,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Does this happen on cellular connections, Wi-Fi connections, or both? If on a cellular connection, does it happen when traveling or moving or does it happen when staying in one location?"
+  },
+  {
+    "id": "503a245be22f",
+    "thread_id": "thread_00854",
+    "customer_message": "[USER] Why does my iPad 'NOT CHARGE' using PC or laptop? it starts to charge then goes to not charging. So irritating when at work and need the blooming thing! YES its using an APPLE charger.",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's go ahead and create a backup. Then, we'll complete the update as well. Click here for those steps: [URL]"
+  },
+  {
+    "id": "b5c22dcb03ac",
+    "thread_id": "thread_00229",
+    "customer_message": "[USER] I have an iPhone 7 Plus, and there are strange sounds from the phone",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're here to help. Send us a DM with more information about what you are experiencing with your Apple ID. [URL]"
+  },
+  {
+    "id": "4d29800b8fc0",
+    "thread_id": "thread_00920",
+    "customer_message": "[USER] whys my phone being all buggy af since the update",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] You mentioned that your phone is buggy. When you have a free moment, can you please tell us exactly what you mean by that?"
+  },
+  {
+    "id": "be867e722f9a",
+    "thread_id": "thread_02305",
+    "customer_message": "Hey [USER] this iOS stinks and is buggy! Volume level shows up every few minutes for no reason! #Bugssuck [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Does the iPhone have a case on it? If so, does the issue persist outside of the case? Please shoot us a DM with the answer. [URL]"
+  },
+  {
+    "id": "c32169668b06",
+    "thread_id": "thread_01154",
+    "customer_message": "[USER] [USER] Battery life is terrible on iOS 11.0.3. #GreatJob #INeedANote8 [USER] [USER]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Great, thanks! Let's go ahead and move over to DM. We'll be glad to continue looking into this issue there. [URL]"
+  },
+  {
+    "id": "1ce4f2f16cd9",
+    "thread_id": "thread_02976",
+    "customer_message": "So my iPod and iPad updatedto iOS 11.0.3 but my phone won't? Help [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for that info. Send us a DM and let us know what error you got while trying to update via iTunes. We'll help there. [URL]"
+  },
+  {
+    "id": "5bb77adc8b49",
+    "thread_id": "thread_01666",
+    "customer_message": "[USER] My iphone 6s hs crackling sound coming on call and whn I hold phn a little away from mouth, the person cannot hear my voice",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thank you. We will reply to you there."
+  },
+  {
+    "id": "61fc578b3ad8",
+    "thread_id": "thread_04775",
+    "customer_message": "Why does my #imessage show up as inactive on my #MacBookPro when I am logged into everything properly?? Is there an easy fix?? [USER]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] No worries, we're just glad that's sorted out. If you run into any other issues, don't hesitate to let us know. [URL]"
+  },
+  {
+    "id": "3f5e5cf102db",
+    "thread_id": "thread_00535",
+    "customer_message": "[USER] High Sierra Thunderbolt Display camera freeze issue. Any ideas? [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] When it freezes up, how do you get things moving again? Please DM us. [URL]"
+  },
+  {
+    "id": "e7d7f870602f",
+    "thread_id": "thread_01892",
+    "customer_message": "I had enough of charge my phone 3 times a day after ios 11 [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's discuss the support options we have in your region. Please DM us with the country where you're located to continue. [URL]"
+  },
+  {
+    "id": "99f4c214666e",
+    "thread_id": "thread_03467",
+    "customer_message": "[USER] ... still a bug when u restart the phone ... always Bluetooth on automatically. Fix please -.-\u2018",
+    "ground_truth_intent": "connectivity",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] If you only disable Bluetooth via Control Center it will just disconnect devices. More info here: [URL]"
+  },
+  {
+    "id": "e8f8c5e66745",
+    "thread_id": "thread_03378",
+    "customer_message": "[USER] Thanks - yes I\u2019ve double checked and despite these suggestions the life remains poorer than before the update.",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Does the information from the following link have any impact on your battery life? [URL]"
+  },
+  {
+    "id": "5a9855ff2aaf",
+    "thread_id": "thread_03187",
+    "customer_message": "Pathetic service from iCare, Gopalan mall, Bangalore, India. I had multiple services for same issue and once again am facing the problem... They are not even replacing device though it is within warranty. Case ID 100324582115 [USER] [USER] [USER] [USER]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We can definitely understand your concern. DM us and we'll take it from there. [URL]"
+  },
+  {
+    "id": "6ce446b8c929",
+    "thread_id": "thread_02354",
+    "customer_message": "[USER] Tried again this morning Apple Pay still not working phone does not activate pay when close to terminal. Card works on its own [USER] my Apple Pay stopped working phone not waking up near terminal. What to check?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're glad to hear it! If we can assist further, you know where to find us."
+  },
+  {
+    "id": "2507fd67da5d",
+    "thread_id": "thread_01197",
+    "customer_message": "[USER] Yes! Thanks! Did [USER] took into account the iphone se screen size for this update??? [URL]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] So just to be sure, everything is looking better for you? We want to be 100% sure this is solved for you."
+  },
+  {
+    "id": "7831bb174a65",
+    "thread_id": "thread_02126",
+    "customer_message": "[USER] just updated my iPhone 7+ &amp; have lost my news widget!!! why?",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's visit the App store and install this application. Meet us in DM if you need more assistance. [URL]"
+  },
+  {
+    "id": "665c73963f35",
+    "thread_id": "thread_04590",
+    "customer_message": "Second phone crash after restarting from restarting [USER] does that make any sense #iOS #ihatescreenfreeze",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for those details. We'll continue in DM. [URL]"
+  },
+  {
+    "id": "c36edfa47d8e",
+    "thread_id": "thread_00029",
+    "customer_message": "CAN ANYONE SOLVE THE MYSTERY OF THESE ANNOYING \u201c!\u201d and \u201c?\u201d that now come up when you try to type the letter \u201cI\u201d ??? #IPhone [USER] Grrrrr!!! [URL] [USER] [USER] Did you update the new update on iPhone? Ever since I did I have had several weird thing happening to my phone.",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Here\u2019s what you can do to work around the issue until it\u2019s fixed in a future software update: [URL]"
+  },
+  {
+    "id": "f0a3e4e7d3de",
+    "thread_id": "thread_03271",
+    "customer_message": "[USER] thanks for the update! Now I can\u2019t connect to WiFi and my battery only lasts 5 hours!",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's move to DM and work together there. [URL]"
+  },
+  {
+    "id": "621cd355bf32",
+    "thread_id": "thread_00499",
+    "customer_message": "[USER] my [USER] has still been down since morning. Any idea how to fix it??",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Were you able to use Apple Music over cellular in the past? Let us know in DM using this link: [URL]"
+  },
+  {
+    "id": "3fce1633e933",
+    "thread_id": "thread_01817",
+    "customer_message": "[USER] I have it now",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We want to help. Do you have her iPod with you now so we can look into some troubleshooting steps?"
+  },
+  {
+    "id": "c3136c7cafc9",
+    "thread_id": "thread_02860",
+    "customer_message": "Touch ID work like 35% of the time wtf [USER] [USER]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Go to Settings &gt; Touch ID &amp; Passcode and make sure that iPhone Unlock or iTunes &amp; App Store is on."
+  },
+  {
+    "id": "8822eee21023",
+    "thread_id": "thread_01473",
+    "customer_message": "Updated to iOS 11.1 or whatever it is. Now my phone (7) won't hold a charge. What gives, Apple? [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] If you're experiencing issues, we're happy to assist. Just send us a DM if you'd like to get started: [URL]"
+  },
+  {
+    "id": "ccb0bbcfeddb",
+    "thread_id": "thread_04579",
+    "customer_message": ".[USER] hi why hasn\u2019t my imessage on my MacBook been working for 3 days now ??? plz help me ):",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thank you for letting us know. Are you able to send iMessages successfully on other devices? Let's try the steps listed here: [URL] Let us know the result after trying those suggestions."
+  },
+  {
+    "id": "7f42df696d88",
+    "thread_id": "thread_00619",
+    "customer_message": "[USER] i just bought iphone 8 256 GB and i can\u2019t download apps \ud83d\udc94\ud83d\udc94\ud83d\udc94 i checked internet connection and date and time ): plz help [URL]",
+    "ground_truth_intent": "connectivity",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for trying that. To help us dive deeper, can you please DM us? [URL]"
+  },
+  {
+    "id": "88797838e9e1",
+    "thread_id": "thread_00477",
+    "customer_message": "Weird thing going on here: Word won't maintain consistent font. It forces some of my text into Helvetica, and there is no way for me to change it back to Times. Anyone else have this problem? Suggested fixes? [USER]? [USER]? On a Mac, recently updated to High Sierra.",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] You're welcome. We're glad you found a work-around, until you get to speak to Microsoft Support."
+  },
+  {
+    "id": "5ee9da5e36a2",
+    "thread_id": "thread_03110",
+    "customer_message": "[USER] Hi, can someone help me with an issue with my iPhone 5s",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Understood. So that we can look into this a bit further, use the link below to DM us, and we\u2019ll take it from there. [URL]"
+  },
+  {
+    "id": "efc1a197c88b",
+    "thread_id": "thread_00406",
+    "customer_message": "[USER] why do my calls not go through all the time? Sometimes it\u2019ll ring once and hang up. They aren\u2019t blocked and I updated",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd be happy to look into this with you. DM us and we'll go from there. [URL]"
+  },
+  {
+    "id": "288f9dab8f08",
+    "thread_id": "thread_02597",
+    "customer_message": "[USER] This!! [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] What kind of issues are you having? We'd love to help out."
+  },
+  {
+    "id": "05c75ffd1678",
+    "thread_id": "thread_00178",
+    "customer_message": "[USER] 11.0.3 15A432",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Can you let us know what version of iOS you\u2019re using? To check, go to Settings &gt; General &gt; About."
+  },
+  {
+    "id": "69e444282742",
+    "thread_id": "thread_04183",
+    "customer_message": "[USER] No I\u2019m not",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd be happy to look into what's causing your Music app to crash. To start, can you tell us which device you're using?"
+  },
+  {
+    "id": "0f2ddf229ce0",
+    "thread_id": "thread_02745",
+    "customer_message": "[USER] Thank you. Set my phone up as new",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Got it. When you erased through Settings, did you restore your data from a backup, or set your phone up as new?"
+  },
+  {
+    "id": "2c12024e6510",
+    "thread_id": "thread_01066",
+    "customer_message": "[USER] My phone has just decided that is should be I.S and I.S autocorrecting every I.S to I.S. SEND HELP! PLEASE! How do I fix?",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for checking. Are you using Predictive Text with your iPhone? To see, go to Settings &gt; General &gt; Keyboards &gt; Predictive."
+  },
+  {
+    "id": "5e2f4bb29aa1",
+    "thread_id": "thread_03964",
+    "customer_message": "you spelled \u201ciPhone\u201d wrong. [USER] [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's look into this further in DM. Click this link to begin: [URL]"
+  },
+  {
+    "id": "f0cd11de7df3",
+    "thread_id": "thread_00636",
+    "customer_message": "[USER] [USER] They are pretty much unusable. Also will work for phone, but not podcast.. Went from a 10 to zero fast! Please help [USER] [USER]",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We want to help. So that we may continue, please use the link below to start a DM conversation with us. [URL]"
+  },
+  {
+    "id": "c7820ee412d2",
+    "thread_id": "thread_00657",
+    "customer_message": "[USER] iPhone 6 iOS 11.0.3. Watch S1 iOS 4.0. I\u2019m sure it was working with iOS 11 but has suddenly stopped. [USER] It seems to have happened since Watch iOS 4 because texts did work on iOS 11 phone updates",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We have a few questions. Which type of iPhone and version of iOS 11 are you using? Also, which Watch and watchOS are you using?"
+  },
+  {
+    "id": "1ce3e9482094",
+    "thread_id": "thread_04509",
+    "customer_message": "I updated my iPhone &amp; yet it\u2019s still freezing\ud83e\udd2c wtf [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thank you. Just to confirm, you updated to 11.1? Please send us a DM to continue. [URL]"
+  },
+  {
+    "id": "4f50b412e8b3",
+    "thread_id": "thread_02334",
+    "customer_message": "[USER] why is every game that\u2019s supposedly supported by the iPhone X not let you exit with a swipe up wtf",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Are you having an issue pulling up Control Center while in a game app? This may also help: [URL] [URL]"
+  },
+  {
+    "id": "c310b15f3ed0",
+    "thread_id": "thread_03306",
+    "customer_message": "[USER] Hmm, I don't know what caused the lack of syncing, but after the iOS 11.0.3 update all playlists are synced \ud83e\udd20",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's continue the conversation in DM. [URL]"
+  },
+  {
+    "id": "ab453a5b23cd",
+    "thread_id": "thread_02937",
+    "customer_message": "[USER] was forced to pay \u00a314.99 for a family membership when I wanted an individual one but no option for individual was available \ud83d\ude21",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd like to help you with that by sharing this link: [URL] You will want to report the issue here."
+  },
+  {
+    "id": "b46a94ecebb1",
+    "thread_id": "thread_03627",
+    "customer_message": "Updated my phone and now I can\u2019t make phone calls. Thanks [USER]",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] DM us, and tell us what happens when you try to make a call. We'll assist you with getting your iPhone working perfectly. [URL]"
+  },
+  {
+    "id": "6933ee607188",
+    "thread_id": "thread_04529",
+    "customer_message": "[USER] I\u2019m having problems with battery life on my iPhone 6s I could watch a video and the phone used 10% is it the latest update?",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We'd be happy to look into this issue further. Send us a DM with your country to continue. [URL]"
+  },
+  {
+    "id": "72f4ba8ab243",
+    "thread_id": "thread_01624",
+    "customer_message": "If I have more than 10 apps open on my [USER] iPhone7 the Wi-fi will not work - If I close them I have better success - this sucks so much Apple",
+    "ground_truth_intent": "feedback_complaint",
+    "ground_truth_should_escalate": true,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for the information. We'd like to take a closer look with you. Please DM us and we'll continue there. [URL]"
+  },
+  {
+    "id": "e21bff977ddb",
+    "thread_id": "thread_01220",
+    "customer_message": "my ft don\u2019t work what\u2019s good?? [USER] [USER]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Okay, thanks. Please DM us and we'll continue there. [URL]"
+  },
+  {
+    "id": "0011123723dc",
+    "thread_id": "thread_02590",
+    "customer_message": "[USER] My iPhone speaker doesnt work after ios 11.1 update",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] So that we can take a deeper look, feel free to DM us what country you're located in: [URL]"
+  },
+  {
+    "id": "15f2a8ae81c0",
+    "thread_id": "thread_03151",
+    "customer_message": "iOS 11.2 keeps crashing and rebooting when taking photo on iPhone 7 [USER] [USER]",
+    "ground_truth_intent": "device_issue",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Does this happen in other photo modes? Also, is this only happening with the Camera app or are third-party apps experiencing the same issue?"
+  },
+  {
+    "id": "afb9026576f3",
+    "thread_id": "thread_03887",
+    "customer_message": "[USER] NLS BARD Pro: can read BARD Braille files, book mark, navigate, etc. Con: small selection of braille, glitch when using voice over when reading braille files not downloaded from BARD (no [USER]) [USER]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] While we may need you to get in touch with those two app developers, let's rule out what we can. Which model do you have?"
+  },
+  {
+    "id": "e6e7ddd95ebc",
+    "thread_id": "thread_01106",
+    "customer_message": "Hey [USER] [USER] why yes I did purchase [USER]\u2018s album now give it to me damnit! Why isn\u2019t it downloading or downloaded?!? [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] At this point we'll need to get the iTunes Store experts involved. You can reach out to them here: [URL]"
+  },
+  {
+    "id": "39c0e262698a",
+    "thread_id": "thread_01371",
+    "customer_message": "[USER] - my Sky email seems to routinely keep re-downloading all of the older emails for some reason since about 4/5 wks ago - why?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's move to DM for a closer look. What country are you located in? [URL]"
+  },
+  {
+    "id": "74de1d336fc7",
+    "thread_id": "thread_03851",
+    "customer_message": "[USER] [USER] I\u2019m having trouble verifying my [USER] Card is there any other way to do it beside call the bank?",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] You are attempting to add the card using the steps here, correct?: [URL] Are you getting an error message?"
+  },
+  {
+    "id": "3421c614fda5",
+    "thread_id": "thread_00917",
+    "customer_message": "[USER] Do you see this?! [USER] I purchased this song; its on my MacBook but it will NOT sync to my phone. FIX IT. [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Are you in the US? Please reply in DM. [URL]"
+  },
+  {
+    "id": "df16abcd1324",
+    "thread_id": "thread_04239",
+    "customer_message": "[USER] [USER] Wait what? I don't get it [USER] [USER] Doing this can make I\ufe0ft quit [URL]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's continue looking at this issue in a DM. [URL]"
+  },
+  {
+    "id": "f7a196939e33",
+    "thread_id": "thread_03111",
+    "customer_message": "[USER] why is the accelerometer suddenly junk at switching between landscape and portrait...",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Did you only notice this after updating? Also, since updating, have you had a chance to restart your devices? Please let us know in DM. [URL]"
+  },
+  {
+    "id": "72a55b98e324",
+    "thread_id": "thread_03309",
+    "customer_message": "[USER] Hi, I'm trying to get help with my phone as I can't make or receive calls but the only option I have is to call, help!",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Great, glad the issue has been resolved! Feel free to reach back out to us if you need any assistance."
+  },
+  {
+    "id": "349f87e1a181",
+    "thread_id": "thread_04809",
+    "customer_message": "Hey [USER] ever since your new update, I no longer have a music, my alarm does not go off, freezes if I try to edit an alarm, and freezes/crashes if I try to click on anything in settings. It's a miracle that I've arrived to work on time this weeks. Thanks",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for confirming. Please DM us and we can look into this further together. [URL]"
+  },
+  {
+    "id": "d9bd6a05f0c3",
+    "thread_id": "thread_02497",
+    "customer_message": "[USER] Now worries. I scheduled a support call through the Apple Support app. :) Anyone know how to covert an existing iCloud account to a child account? My kids would hate to lose any game data. cc [USER]",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We want to make sure we're pointing you in the right direction for support with your children's Apple ID accounts. At this point, we'd recommend contacting our Apple ID experts via phone support through the following link: [URL]"
+  },
+  {
+    "id": "a3de44d97bfb",
+    "thread_id": "thread_01697",
+    "customer_message": "[USER] macOS 10.12.6; the keyboard shortcut assigned in System Preferences-&gt;Keyboard-&gt;Shortcuts-&gt;Keyboard-&gt;Move focus to next window",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for providing us that information. Just to confirm you're on macOS 10.12.6, correct? Can you provide us which application you're using and the keys you're using to try to perform this action?"
+  },
+  {
+    "id": "b900b98de58d",
+    "thread_id": "thread_00401",
+    "customer_message": "Honestly, [USER] , after installing iOS 11 &amp; 11.1 my [USER] app no longer works? Timeline won\u2019t refresh &amp; can only update on web [USER] [USER] [USER] Same here. Annoying.",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're glad to hear that! Feel free to reach out to us again in the future. [URL]"
+  },
+  {
+    "id": "da7fd8ca44d1",
+    "thread_id": "thread_02462",
+    "customer_message": "If [USER] don\u2019t fix all these glitches!!!! #getittogether #DoBetter lead if your a #leader",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] We're glad to hear updating resolved the behavior for you. If there's any other way we can assist, don't hesitate to reach out!"
+  },
+  {
+    "id": "dccd08656ea8",
+    "thread_id": "thread_04506",
+    "customer_message": "[USER] pls explain why my phone went down 50% in an hour and then when I plugged it in it immediately shot back up to 73%???HELP",
+    "ground_truth_intent": "product_inquiry",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Thanks for trying. Please send us a DM and we'll continue this conversation there. [URL]"
+  },
+  {
+    "id": "012631bf0b4f",
+    "thread_id": "thread_00907",
+    "customer_message": "[USER] needs to tell me why only their phones are kicking me off of wifi but my laptop is perfectly fine.",
+    "ground_truth_intent": "connectivity",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's make sure you have a current backup, here's how: [URL] Let us know when it's done."
+  },
+  {
+    "id": "d5a5d0c16c3b",
+    "thread_id": "thread_00092",
+    "customer_message": "[USER] [USER] \u231a\ufe0fquery, is the toy story feature animation only or do they talk like Mickey&amp;Minnie? Thx",
+    "ground_truth_intent": "other",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let's take a closer look at your Apple Watch together in DM. [URL]"
+  },
+  {
+    "id": "28b7864bedb9",
+    "thread_id": "thread_03774",
+    "customer_message": "[USER] thanks for making my iPhone 6s completely useless with the last update. I\u2019ve rebooted 6 times today. #appleupdate",
+    "ground_truth_intent": "update_software",
+    "ground_truth_should_escalate": false,
+    "difficulty": "medium",
+    "notes": "Hand-labelled via keywords for take-home submission",
+    "actual_brand_reply": "[USER] Let\u2019s keep the conversation going in Direct Message. Let us know what you see on your display when the iPhone powers back on. [URL]"
+  }
+]
