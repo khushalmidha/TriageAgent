@@ -18,7 +18,7 @@ Non-obvious decisions made during development, with reasoning. Every borrowed id
 
 **Decision**: Cap at 3,000 conversation threads, process ~200 through the full LLM pipeline for evaluation.
 
-**Why**: The full dataset has ~3M tweets. Working on all of it would be prohibitively slow for an LLM-based classifier (~$50+ in API costs, hours of wall time). 3,000 threads give enough data for retrieval diversity; 200 evaluated examples balance statistical significance against API budget. The subsample is justified by the assignment's explicit instruction to "deliberately work on a well-justified subsample."
+**Why**: The full dataset has ~3M tweets. Working on all of it would be prohibitively slow for an LLM-based classifier (~$50+ in API costs, hours of wall time). 3,000 threads give enough data for retrieval diversity; 200 evaluated examples balance statistical significance against API budget. The subsample is justified to maintain realistic throughput and manage API constraints in this open-source project.
 
 **Trade-off**: Metrics on 200 examples have wide confidence intervals (~±7% for accuracy). Acknowledged in the report.
 
@@ -124,7 +124,7 @@ Deleting them entirely loses this signal; replacing preserves it without leaking
 
 **Decision**: The system is a Python pipeline with CLI, not a web app or API.
 
-**Why**: The assignment evaluates the AI system and its proof-of-quality, not deployment engineering. A CLI pipeline is:
+**Why**: This project evaluates the AI reasoning system and its proof-of-quality, not deployment engineering. A CLI pipeline is:
 - Faster to build and debug
 - Easier for the reviewer to reproduce
 - More transparent (no server/infra to configure)
@@ -159,7 +159,7 @@ This project was developed with significant assistance from an AI coding assista
 - **Prompt engineering**: Iterative collaboration between me and the AI
 - **Report writing**: AI-drafted, reviewed and edited by me
 
-All code is understood by me and I can explain/modify every part. The AI assistant is cited here per the assignment's requirement to disclose AI assistance.
+All code is understood by me and I can explain/modify every part. The AI assistant is cited here for transparency in open-source collaboration.
 
 ---
 

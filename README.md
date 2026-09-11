@@ -1,6 +1,6 @@
 # AI Customer Support Agent for AppleSupport
 
-> **Hiver SDE Intern Take-Home Assignment**
+> **An Open-Source Autonomous AI Agent**
 > An AI agent that classifies customer intents, drafts grounded replies, and decides auto-handle vs escalate — built on real Twitter support data.
 
 ---
@@ -58,7 +58,7 @@ Results are saved to:
 | `eval/baseline_results.json` | Trivial & keyword baseline metrics |
 | `eval/judge_results.json` | LLM judge scores per reply |
 | `eval/agreement_report.json` | Judge-human agreement (Cohen's κ) |
-| `Hiver_Assignment_Report.docx` | Full evaluation report (submitted separately) |
+| (Local File) | Full evaluation report (Generated separately via docs) |
 | `decision_log.md` | 15 non-obvious decisions with reasoning |
 
 ---
