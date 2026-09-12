@@ -58,7 +58,7 @@ Results are saved to:
 | `eval/baseline_results.json` | Trivial & keyword baseline metrics |
 | `eval/judge_results.json` | LLM judge scores per reply |
 | `eval/agreement_report.json` | Judge-human agreement (Cohen's κ) |
-| (Local File) | Full evaluation report (Generated separately via docs) |
+| `Hiver_Evaluation_Report.pdf` | Full evaluation report (PDF) |
 | `decision_log.md` | 15 non-obvious decisions with reasoning |
 
 ---
@@ -194,7 +194,7 @@ Derived from LLM-assisted clustering of ~200 sample messages (see `src/intent_ta
 ## 📖 Key Documentation
 
 - **[Decision Log](decision_log.md)**: 15 non-obvious decisions with reasoning
-- **Report**: Full evaluation report (≤6 pages) with failure analysis and honest self-critique (submitted separately as a Word Document)
+- **[Evaluation Report](Hiver_Evaluation_Report.pdf)**: Full evaluation report with failure analysis and honest self-critique
 - **[Golden Set Notes](eval/golden_set_notes.md)**: Sampling strategy, labeling process, and limitations
 - **[Config](src/config.py)**: All tunable parameters in one place
 
