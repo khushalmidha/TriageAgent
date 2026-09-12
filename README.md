@@ -8,7 +8,7 @@
 
 ## 🌟 Overview
 
-TriageAgent is an end-to-end AI pipeline designed to automate first-line customer support. Instead of simple keyword matching, it leverages **DeepSeek (OpenAI SDK)** and semantic search (**FAISS**) to understand context, dig up historical resolutions, and draft accurate replies, while maintaining a strict escalation protocol for sensitive cases.
+TriageAgent is an end-to-end AI pipeline designed to automate first-line customer support. Instead of simple keyword matching, it leverages **Universal LLM Routing (via LiteLLM)** and semantic search (**FAISS**) to understand context, dig up historical resolutions, and draft accurate replies, while maintaining a strict escalation protocol for sensitive cases.
 
 ---
 
@@ -36,7 +36,7 @@ graph TD
 ```
 
 ### 1. Intent Classification (Prompted LLM)
-Uses DeepSeek with few-shot exemplars and strict disambiguation rules to classify the message into one of 10 categories (e.g., `device_issue`, `account_access`, `billing_subscription`).
+Uses the configured LLM with few-shot exemplars and strict disambiguation rules to classify the message into one of 10 categories (e.g., `device_issue`, `account_access`, `billing_subscription`).
 
 ### 2. Semantic Retrieval (RAG)
 Uses `all-MiniLM-L6-v2` embeddings stored in a FAISS index to find the 3 most semantically similar historical conversations to ground the response in actual company precedent.
@@ -53,7 +53,7 @@ A robust safety net that scores 6 independent signals (classifier confidence, re
 
 ### Prerequisites
 - Python 3.10+
-- A [DeepSeek API Key](https://platform.deepseek.com/) (OpenAI compatible)
+- An API Key from **any** supported provider (e.g., OpenAI, Google Gemini, Anthropic, or DeepSeek)
 
 ### Setup
 
@@ -68,7 +68,8 @@ pip install -r requirements.txt
 
 # 3. Configure API
 cp .env.example .env
-# Edit .env and set your DEEPSEEK_API_KEY
+# Edit .env and set your preferred provider's key (e.g., OPENAI_API_KEY, GEMINI_API_KEY, or DEEPSEEK_API_KEY)
+# Then update src/config.py to prefix the LLM_MODEL with the provider (e.g., "gemini/gemini-2.5-flash")
 ```
 
 ### Run the Pipeline
@@ -125,6 +126,6 @@ TriageAgent/
 ## 🙏 Acknowledgments
 
 - **Dataset**: [Customer Support on Twitter](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter)
-- **LLM**: DeepSeek (OpenAI SDK)
+- **LLM**: LiteLLM (Supporting OpenAI, Google Gemini, Anthropic, DeepSeek, etc.)
 - **Embeddings**: `sentence-transformers/all-MiniLM-L6-v2`
 - **Vector Search**: Meta's FAISS
