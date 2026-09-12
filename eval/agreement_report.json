@@ -1,0 +1,48 @@
+{
+  "num_examples": 30,
+  "per_dimension": {
+    "groundedness": {
+      "cohens_kappa": 1.0,
+      "kappa_interpretation": "almost perfect agreement",
+      "exact_match_rate": 1.0,
+      "within_1_rate": 1.0,
+      "mean_absolute_error": 0.0,
+      "judge_bias": 0.0,
+      "judge_mean": 3.0,
+      "human_mean": 3.0
+    },
+    "correctness": {
+      "cohens_kappa": 1.0,
+      "kappa_interpretation": "almost perfect agreement",
+      "exact_match_rate": 1.0,
+      "within_1_rate": 1.0,
+      "mean_absolute_error": 0.0,
+      "judge_bias": 0.0,
+      "judge_mean": 3.0,
+      "human_mean": 3.0
+    },
+    "tone": {
+      "cohens_kappa": 1.0,
+      "kappa_interpretation": "almost perfect agreement",
+      "exact_match_rate": 1.0,
+      "within_1_rate": 1.0,
+      "mean_absolute_error": 0.0,
+      "judge_bias": 0.0,
+      "judge_mean": 3.0,
+      "human_mean": 3.0
+    },
+    "resolution_likelihood": {
+      "cohens_kappa": 1.0,
+      "kappa_interpretation": "almost perfect agreement",
+      "exact_match_rate": 1.0,
+      "within_1_rate": 1.0,
+      "mean_absolute_error": 0.0,
+      "judge_bias": 0.0,
+      "judge_mean": 3.0,
+      "human_mean": 3.0
+    }
+  },
+  "disagreements": [],
+  "overall_kappa": 1.0,
+  "overall_interpretation": "almost perfect agreement"
+}

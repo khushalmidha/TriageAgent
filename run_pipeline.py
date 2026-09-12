@@ -123,20 +123,45 @@ def main():
         print("\n[pipeline] Taxonomy exploration already done, skipping...")
     
     # ════════════════════════════════════════════════════════════════════════
-    # PHASE 4: Run Pipeline on Subsample
+    # PHASE 4: Create Golden Evaluation Set
+    # ════════════════════════════════════════════════════════════════════════
+    golden_path = EVAL_DIR / "golden_set.json"
+    
+    if not golden_path.exists():
+        print("\n" + "█" * 60)
+        print(f"  PHASE 4: CREATING GOLDEN SET ({args.golden_set_size} examples)")
+        print("█" * 60)
+        
+        from eval.golden_set_builder import create_golden_set
+        golden_set = create_golden_set(conversations, target_size=args.golden_set_size)
+    else:
+        with open(golden_path, "r", encoding="utf-8") as f:
+            golden_set = json.load(f)
+        print(f"[pipeline] Loaded {len(golden_set)} golden set examples")
+
+    # Filter conversations to only those in the golden set
+    golden_msgs = {g["customer_message"].strip().lower() for g in golden_set}
+    eval_conversations = [c for c in conversations if c["first_customer_message"].strip().lower() in golden_msgs]
+    
+    if not eval_conversations:
+        eval_conversations = conversations
+
+    # ════════════════════════════════════════════════════════════════════════
+    # PHASE 5: Run Pipeline on Subsample
     # ════════════════════════════════════════════════════════════════════════
     results_path = PROCESSED_DIR / "pipeline_results.json"
     
     if not args.eval_only:
         print("\n" + "█" * 60)
-        print(f"  PHASE 4: PROCESSING {args.subsample} MESSAGES")
+        print(f"  PHASE 5: PROCESSING {len(eval_conversations)} MESSAGES")
         print("█" * 60)
         
         from src.pipeline import run_pipeline_batch, save_results
         
+        # We pass sample_size=None because we already filtered eval_conversations
         results = run_pipeline_batch(
-            conversations, 
-            sample_size=args.subsample,
+            eval_conversations, 
+            sample_size=None,
             use_baselines=True,
         )
         save_results(results)
@@ -147,23 +172,6 @@ def main():
         with open(results_path, "r", encoding="utf-8") as f:
             results = json.load(f)
         print(f"[pipeline] Loaded {len(results)} cached pipeline results")
-    
-    # ════════════════════════════════════════════════════════════════════════
-    # PHASE 5: Create Golden Evaluation Set
-    # ════════════════════════════════════════════════════════════════════════
-    golden_path = EVAL_DIR / "golden_set.json"
-    
-    if not golden_path.exists():
-        print("\n" + "█" * 60)
-        print(f"  PHASE 5: CREATING GOLDEN SET ({args.golden_set_size} examples)")
-        print("█" * 60)
-        
-        from eval.golden_set_builder import create_golden_set
-        golden_set = create_golden_set(conversations, target_size=args.golden_set_size)
-    else:
-        with open(golden_path, "r", encoding="utf-8") as f:
-            golden_set = json.load(f)
-        print(f"[pipeline] Loaded {len(golden_set)} golden set examples")
     
     # ════════════════════════════════════════════════════════════════════════
     # PHASE 6: Evaluation

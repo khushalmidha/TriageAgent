@@ -1,18 +1,18 @@
 {
   "classification": {
-    "accuracy": 0.0,
-    "macro_f1": 0.0,
-    "weighted_f1": 0.0,
-    "total_samples": 0,
+    "accuracy": 0.407,
+    "macro_f1": 0.089,
+    "weighted_f1": 0.278,
+    "total_samples": 150,
     "per_class": {
       "device_issue": {
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0,
-        "support": 0,
+        "support": 26,
         "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "fp": 3,
+        "fn": 26
       },
       "account_access": {
         "precision": 0.0,
@@ -27,46 +27,46 @@
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0,
-        "support": 0,
+        "support": 3,
         "tp": 0,
         "fp": 0,
-        "fn": 0
+        "fn": 3
       },
       "app_store": {
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0,
-        "support": 0,
+        "support": 1,
         "tp": 0,
         "fp": 0,
-        "fn": 0
+        "fn": 1
       },
       "connectivity": {
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0,
-        "support": 0,
+        "support": 5,
         "tp": 0,
         "fp": 0,
-        "fn": 0
+        "fn": 5
       },
       "update_software": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 0,
-        "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "precision": 0.6,
+        "recall": 0.081,
+        "f1": 0.143,
+        "support": 37,
+        "tp": 3,
+        "fp": 2,
+        "fn": 34
       },
       "product_inquiry": {
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0,
-        "support": 0,
+        "support": 13,
         "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "fp": 1,
+        "fn": 13
       },
       "service_outage": {
         "precision": 0.0,
@@ -81,40 +81,91 @@
         "precision": 0.0,
         "recall": 0.0,
         "f1": 0.0,
-        "support": 0,
+        "support": 1,
         "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "fp": 1,
+        "fn": 1
       },
       "other": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 0,
-        "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "precision": 0.414,
+        "recall": 0.906,
+        "f1": 0.569,
+        "support": 64,
+        "tp": 58,
+        "fp": 82,
+        "fn": 6
       }
     },
-    "confusion_patterns": []
+    "confusion_patterns": [
+      {
+        "true": "update_software",
+        "predicted": "other",
+        "count": 34
+      },
+      {
+        "true": "device_issue",
+        "predicted": "other",
+        "count": 26
+      },
+      {
+        "true": "product_inquiry",
+        "predicted": "other",
+        "count": 13
+      },
+      {
+        "true": "connectivity",
+        "predicted": "other",
+        "count": 4
+      },
+      {
+        "true": "other",
+        "predicted": "device_issue",
+        "count": 3
+      },
+      {
+        "true": "billing_subscription",
+        "predicted": "other",
+        "count": 3
+      },
+      {
+        "true": "other",
+        "predicted": "update_software",
+        "count": 2
+      },
+      {
+        "true": "other",
+        "predicted": "product_inquiry",
+        "count": 1
+      },
+      {
+        "true": "connectivity",
+        "predicted": "feedback_complaint",
+        "count": 1
+      },
+      {
+        "true": "feedback_complaint",
+        "predicted": "other",
+        "count": 1
+      }
+    ]
   },
   "escalation": {
-    "accuracy": 0.0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1": 0.0,
-    "tp": 0,
-    "fp": 0,
+    "accuracy": 0.093,
+    "precision": 0.029,
+    "recall": 1.0,
+    "f1": 0.056,
+    "tp": 4,
+    "fp": 136,
     "fn": 0,
-    "tn": 0,
-    "total_samples": 0,
-    "escalation_rate_predicted": 0.0,
-    "escalation_rate_ground_truth": 0.0
+    "tn": 10,
+    "total_samples": 150,
+    "escalation_rate_predicted": 0.933,
+    "escalation_rate_ground_truth": 0.027
   },
   "metadata": {
-    "golden_set_size": 200,
-    "pipeline_results_size": 10,
-    "matched_count": 0,
-    "unmatched_count": 10
+    "golden_set_size": 150,
+    "pipeline_results_size": 150,
+    "matched_count": 150,
+    "unmatched_count": 0
   }
 }
