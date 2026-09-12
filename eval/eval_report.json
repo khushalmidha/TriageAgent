@@ -1,8 +1,8 @@
 {
   "classification": {
-    "accuracy": 0.407,
-    "macro_f1": 0.089,
-    "weighted_f1": 0.278,
+    "accuracy": 0.427,
+    "macro_f1": 0.075,
+    "weighted_f1": 0.255,
     "total_samples": 150,
     "per_class": {
       "device_issue": {
@@ -11,7 +11,7 @@
         "f1": 0.0,
         "support": 26,
         "tp": 0,
-        "fp": 3,
+        "fp": 0,
         "fn": 26
       },
       "account_access": {
@@ -51,13 +51,13 @@
         "fn": 5
       },
       "update_software": {
-        "precision": 0.6,
-        "recall": 0.081,
-        "f1": 0.143,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
         "support": 37,
-        "tp": 3,
-        "fp": 2,
-        "fn": 34
+        "tp": 0,
+        "fp": 0,
+        "fn": 37
       },
       "product_inquiry": {
         "precision": 0.0,
@@ -65,7 +65,7 @@
         "f1": 0.0,
         "support": 13,
         "tp": 0,
-        "fp": 1,
+        "fp": 0,
         "fn": 13
       },
       "service_outage": {
@@ -83,24 +83,24 @@
         "f1": 0.0,
         "support": 1,
         "tp": 0,
-        "fp": 1,
+        "fp": 0,
         "fn": 1
       },
       "other": {
-        "precision": 0.414,
-        "recall": 0.906,
-        "f1": 0.569,
+        "precision": 0.427,
+        "recall": 1.0,
+        "f1": 0.598,
         "support": 64,
-        "tp": 58,
-        "fp": 82,
-        "fn": 6
+        "tp": 64,
+        "fp": 86,
+        "fn": 0
       }
     },
     "confusion_patterns": [
       {
         "true": "update_software",
         "predicted": "other",
-        "count": 34
+        "count": 37
       },
       {
         "true": "device_issue",
@@ -115,12 +115,7 @@
       {
         "true": "connectivity",
         "predicted": "other",
-        "count": 4
-      },
-      {
-        "true": "other",
-        "predicted": "device_issue",
-        "count": 3
+        "count": 5
       },
       {
         "true": "billing_subscription",
@@ -128,38 +123,28 @@
         "count": 3
       },
       {
-        "true": "other",
-        "predicted": "update_software",
-        "count": 2
-      },
-      {
-        "true": "other",
-        "predicted": "product_inquiry",
-        "count": 1
-      },
-      {
-        "true": "connectivity",
-        "predicted": "feedback_complaint",
-        "count": 1
-      },
-      {
         "true": "feedback_complaint",
+        "predicted": "other",
+        "count": 1
+      },
+      {
+        "true": "app_store",
         "predicted": "other",
         "count": 1
       }
     ]
   },
   "escalation": {
-    "accuracy": 0.093,
-    "precision": 0.029,
-    "recall": 1.0,
-    "f1": 0.056,
-    "tp": 4,
-    "fp": 136,
-    "fn": 0,
-    "tn": 10,
+    "accuracy": 0.973,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 4,
+    "tn": 146,
     "total_samples": 150,
-    "escalation_rate_predicted": 0.933,
+    "escalation_rate_predicted": 0.0,
     "escalation_rate_ground_truth": 0.027
   },
   "metadata": {

@@ -14,15 +14,14 @@ Rubric dimensions:
 
 import json
 from typing import Dict, List, Optional
-from google import genai
-from google.genai import types
+from openai import OpenAI
 from src.config import (
-    GEMINI_API_KEY, JUDGE_MODEL, SELECTED_BRAND
+    DEEPSEEK_API_KEY, JUDGE_MODEL, SELECTED_BRAND
 )
 
 
-def get_client() -> genai.Client:
-    return genai.Client(api_key=GEMINI_API_KEY)
+def get_client() -> OpenAI:
+    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
 
 
 # ─── Detailed Rubric ────────────────────────────────────────────────────────
@@ -134,16 +133,15 @@ Respond with ONLY a valid JSON object:
   "critical_issues": ["any dealbreaker problems, or empty list"]
 }}"""
 
+    
     try:
-        response = client.models.generate_content(
+        response = client.chat.completions.create(
             model=JUDGE_MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.2
-            )
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2
         )
         
-        response_text = response.text.strip()
+        response_text = response.choices[0].message.content.strip()
         if "```json" in response_text:
             response_text = response_text.split("```json")[1].split("```")[0]
         elif "```" in response_text:

@@ -1,0 +1,278 @@
+{
+  "total_audited": 40,
+  "agreement": 13,
+  "disagreement": 27,
+  "agreement_rate": 0.325,
+  "disagree_examples": [
+    {
+      "id": "f7a196939e33",
+      "customer_message": "[USER] why is the accelerometer suddenly junk at switching between landscape and portrait...",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting a malfunction with a hardware component (accelerometer) of their device.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "2f792380fab4",
+      "customer_message": "[USER] Plz fix the emojis it’s showing a lot boxes as emojis?? Wtf 😡😡",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting a software bug affecting the device's display of emojis, which impacts core device functionality.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "3aca809f3e29",
+      "customer_message": "[USER] Downloaded the new OS to my MacBook Air and now iCloud sign in doesn't work an either the MacBook Air or the Mac Desktop. Help?",
+      "original_label": "product_inquiry",
+      "independent_label": "update_software",
+      "independent_reason": "The problem with iCloud sign-in occurred directly after a software update (downloading the new OS).",
+      "keyword_prediction": "account_access",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "e54f2f165b9e",
+      "customer_message": "Help! Apple Watch wont restore previous backup #help #apple [USER]",
+      "original_label": "product_inquiry",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting a problem with their Apple Watch's ability to restore a backup, indicating a device malfunction.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "e6e7ddd95ebc",
+      "customer_message": "Hey [USER] [USER] why yes I did purchase [USER]‘s album now give it to me damnit! Why isn’t it downloading or downloaded?!? [URL]",
+      "original_label": "other",
+      "independent_label": "app_store",
+      "independent_reason": "The user is experiencing an issue with a purchased digital album not downloading, which is a common problem related to app store content delivery.",
+      "keyword_prediction": "billing_subscription",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "f402cd3a79f8",
+      "customer_message": "[USER] hi guys, I can’t change back to the Spanish App Store, it says I have to cancel my music subscription first which I have done [URL]",
+      "original_label": "app_store",
+      "independent_label": "billing_subscription",
+      "independent_reason": "The user is unable to change their App Store region due to a conflict with a music subscription that they believe they have already canceled, indicating a subscription management issue.",
+      "keyword_prediction": "billing_subscription",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": true
+    },
+    {
+      "id": "5702880f452e",
+      "customer_message": "[USER] so I DL new IOS and now my messages won’t send? #wtf",
+      "original_label": "other",
+      "independent_label": "update_software",
+      "independent_reason": "The problem with messages not sending arose directly after downloading and installing a new iOS update.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": true
+    },
+    {
+      "id": "72f4ba8ab243",
+      "customer_message": "If I have more than 10 apps open on my [USER] iPhone7 the Wi-fi will not work - If I close them I have better success - this sucks so much Apple",
+      "original_label": "feedback_complaint",
+      "independent_label": "connectivity",
+      "independent_reason": "The user is reporting an issue with their Wi-fi connection on their device.",
+      "keyword_prediction": "connectivity",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": true
+    },
+    {
+      "id": "8822eee21023",
+      "customer_message": "Updated to iOS 11.1 or whatever it is. Now my phone (7) won't hold a charge. What gives, Apple? [USER]",
+      "original_label": "update_software",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting that their phone's battery is not holding a charge, which is a hardware or device performance problem.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "07b6c222d55a",
+      "customer_message": "[USER] Is there a way to rebalance volume? I have mine set all the way down to 1/4 bar and it's still kind of too loud :/",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting an issue with the device's volume control, where the lowest setting is still too loud.",
+      "keyword_prediction": "service_outage",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "ca274bc93b27",
+      "customer_message": "[USER] #iOS11 how do I change song from lock screen ?",
+      "original_label": "device_issue",
+      "independent_label": "product_inquiry",
+      "independent_reason": "The user is asking for instructions on how to use a specific feature (changing songs from the lock screen) within the product's software.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "5e2f4bb29aa1",
+      "customer_message": "you spelled “iPhone” wrong. [USER] [URL]",
+      "original_label": "other",
+      "independent_label": "feedback_complaint",
+      "independent_reason": "The user is providing feedback by pointing out a spelling error.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "621cd355bf32",
+      "customer_message": "[USER] my [USER] has still been down since morning. Any idea how to fix it??",
+      "original_label": "other",
+      "independent_label": "service_outage",
+      "independent_reason": "The user is reporting that a service or system has been 'down' since morning, indicating an outage.",
+      "keyword_prediction": "product_inquiry",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "2a65c8dda943",
+      "customer_message": "how can i check overall health of the battery life? [USER]",
+      "original_label": "device_issue",
+      "independent_label": "product_inquiry",
+      "independent_reason": "The user is asking for information on how to check the battery health of their device.",
+      "keyword_prediction": "device_issue",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "efc1a197c88b",
+      "customer_message": "[USER] why do my calls not go through all the time? Sometimes it’ll ring once and hang up. They aren’t blocked and I updated",
+      "original_label": "update_software",
+      "independent_label": "connectivity",
+      "independent_reason": "The user is reporting an issue with their phone calls not connecting reliably, which is a connectivity problem.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "c3136c7cafc9",
+      "customer_message": "Touch ID work like 35% of the time wtf [USER] [USER]",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The message describes a malfunction of a hardware component (Touch ID) on a device.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "c4a2008e8e07",
+      "customer_message": "[USER] I am tired of answering your automated questions! So, please excuse.",
+      "original_label": "other",
+      "independent_label": "feedback_complaint",
+      "independent_reason": "The message expresses frustration and a complaint about the automated support process.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "9737c0affe5c",
+      "customer_message": "[USER] 6s everything in my library Kees being deleted [USER] Can’t listen to the app at all I hope you guys plan on comping me!",
+      "original_label": "other",
+      "independent_label": "app_store",
+      "independent_reason": "The user is reporting a critical data loss and functionality issue within an application and is seeking compensation.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "88797838e9e1",
+      "customer_message": "Weird thing going on here: Word won't maintain consistent font. It forces some of my text into Helvetica, and there is no way for me to change it back to Times. Anyone else have this problem? Suggested fixes? [USER]? [USER]? On a Mac, recently updated to High Sierra.",
+      "original_label": "update_software",
+      "independent_label": "app_store",
+      "independent_reason": "The user is reporting a persistent font formatting issue within a specific application (Microsoft Word) on their computer.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "b5c22dcb03ac",
+      "customer_message": "[USER] I have an iPhone 7 Plus, and there are strange sounds from the phone",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting unusual sounds emanating from their iPhone, indicating a potential hardware problem.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "15f2a8ae81c0",
+      "customer_message": "iOS 11.2 keeps crashing and rebooting when taking photo on iPhone 7 [USER] [USER]",
+      "original_label": "device_issue",
+      "independent_label": "update_software",
+      "independent_reason": "The user is reporting system crashes and reboots directly linked to a specific iOS software version when performing an action.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": true
+    },
+    {
+      "id": "b38baf3a64a3",
+      "customer_message": "[USER] please fix the issue with messages not sending on a new cellular Series 3 ⌚️. Seems to happen when I leave the vicinity of my phone.",
+      "original_label": "other",
+      "independent_label": "connectivity",
+      "independent_reason": "The user is experiencing issues with messages not sending on a cellular device, particularly when away from their phone, indicating a connectivity problem.",
+      "keyword_prediction": "connectivity",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": true
+    },
+    {
+      "id": "4f4587c9cf22",
+      "customer_message": "[USER] hi I️ have a weird problem with question marks and the letter “i” any advice ? [URL]",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting a specific and unusual software bug affecting text input for certain characters.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "17be79394bd3",
+      "customer_message": "[USER] My [USER] gaming is affected cause of the bugs 😩 #ios111",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting general software bugs that are negatively impacting their gaming experience.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "a6fc2bf16298",
+      "customer_message": "Anyone who has upgraded their Mac to High Sierra 10.13.1 experiencing frequent, unexpected system shut downs? I have been averaging 2x day. Can you help [USER]?",
+      "original_label": "product_inquiry",
+      "independent_label": "update_software",
+      "independent_reason": "The user is reporting frequent system shutdowns directly after upgrading their Mac to a new software version.",
+      "keyword_prediction": "update_software",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": true
+    },
+    {
+      "id": "9996e9081a8c",
+      "customer_message": "[USER] why my music keep randomly pausing all the time now?!? I know i ain’t he only one with this problem. I need answers this mad annoying😂",
+      "original_label": "billing_subscription",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting a persistent problem with their music randomly pausing.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": false,
+      "keyword_agrees_with_independent": false
+    },
+    {
+      "id": "402202d91775",
+      "customer_message": "[USER] No it doesn’t. Regardless if the wallpaper is changed, it stays the same. /:",
+      "original_label": "other",
+      "independent_label": "device_issue",
+      "independent_reason": "The user is reporting a software bug where changing the wallpaper does not apply.",
+      "keyword_prediction": "other",
+      "keyword_agrees_with_original": true,
+      "keyword_agrees_with_independent": false
+    }
+  ]
+}

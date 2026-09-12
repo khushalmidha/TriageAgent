@@ -18,6 +18,7 @@ from typing import Dict, List
 from src.config import (
     ESCALATION_CONFIDENCE_THRESHOLD,
     ESCALATION_RETRIEVAL_THRESHOLD,
+    ESCALATION_THRESHOLD,
     SENSITIVE_INTENTS,
 )
 
@@ -124,7 +125,7 @@ def decide_escalation(
     
     # ─── Final Decision ──────────────────────────────────────────────────────
     escalation_score = min(escalation_score, 1.0)
-    decision = "escalate" if escalation_score >= 0.35 else "auto_handle"
+    decision = "escalate" if escalation_score >= ESCALATION_THRESHOLD else "auto_handle"
     
     if not escalation_reasons:
         escalation_reasons.append(
@@ -137,7 +138,7 @@ def decide_escalation(
         "escalation_score": round(escalation_score, 3),
         "reasons": escalation_reasons,
         "signal_breakdown": signals,
-        "threshold_used": 0.35,
+        "threshold_used": ESCALATION_THRESHOLD,
     }
 
 

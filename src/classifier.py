@@ -14,48 +14,87 @@ See decision_log.md for full reasoning.
 
 import json
 from typing import Dict, List, Optional, Tuple
-from google import genai
-from google.genai import types
+from openai import OpenAI
 from src.config import (
-    GEMINI_API_KEY, LLM_MODEL, INTENT_TAXONOMY
+    DEEPSEEK_API_KEY, LLM_MODEL, INTENT_TAXONOMY
 )
 
 
-def get_client() -> genai.Client:
-    return genai.Client(api_key=GEMINI_API_KEY)
+def get_client() -> OpenAI:
+    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
 
 
 # Intent descriptions for the classifier prompt — these are crucial for accuracy
 INTENT_DESCRIPTIONS = {
-    "device_issue": "Hardware or software problems: phone crashing, freezing, screen issues, battery drain, speaker/mic not working, device not turning on",
-    "account_access": "Login problems, Apple ID issues, password reset, two-factor authentication, locked accounts, iCloud access issues",
+    "device_issue": "Hardware or software problems: phone crashing, freezing, screen issues, battery drain, speaker/mic not working, device not turning on, phone overheating, touchscreen unresponsive",
+    "account_access": "Login problems, Apple ID issues, password reset, two-factor authentication, locked accounts, iCloud access issues, security questions",
     "billing_subscription": "Charges, refunds, unauthorized purchases, subscription management (Apple Music, iCloud+, Apple TV+), payment method issues",
-    "app_store": "App downloads failing, app updates, app compatibility, app not working after update, App Store not loading",
-    "connectivity": "WiFi not connecting, Bluetooth pairing issues, cellular/mobile data problems, AirDrop not working, hotspot issues",
-    "update_software": "iOS/macOS update failures, software installation problems, update stuck, downgrade requests, beta issues",
-    "product_inquiry": "Questions about product features, specifications, compatibility, availability, comparisons, how-to questions",
-    "service_outage": "Service down reports, iCloud outage, App Store outage, system status inquiries, widespread issues",
-    "feedback_complaint": "General dissatisfaction, feature requests, complaints about experience, wanting to escalate, threats to switch brands",
-    "other": "Anything that doesn't clearly fit the above categories, including thank-you messages, follow-ups without clear topic, or multi-topic messages",
+    "app_store": "App downloads failing, app updates stuck, app compatibility, App Store not loading, apps crashing ONLY when the App Store itself is the problem",
+    "connectivity": "WiFi not connecting, Bluetooth pairing issues, cellular/mobile data problems, AirDrop not working, hotspot issues, no signal/service, carrier issues",
+    "update_software": "iOS/macOS update problems: update failures, issues CAUSED BY a recent update, update stuck, bugs introduced by updating, downgrade requests, post-update regressions",
+    "product_inquiry": "Questions about product features, how-to questions, specifications, compatibility, availability, comparisons, asking for instructions on how to use something",
+    "service_outage": "Service down reports, iCloud outage, App Store outage, system status inquiries, widespread issues affecting many users",
+    "feedback_complaint": "General dissatisfaction with NO specific technical issue, feature requests, complaints about company direction, wanting to escalate, threats to switch brands",
+    "other": "ONLY for genuinely off-topic messages: thank-you/acknowledgment messages, 'ok', 'yes', spam, non-English without technical content, or messages with zero support topic",
 }
 
+# Few-shot exemplars from NON-golden-set data — these teach boundary cases
+FEW_SHOT_EXEMPLARS = [
+    # update_software — the biggest confusion category
+    {"message": "My phone is a mess because of the IOS11 like my battery died in less than one hour. WHY @AppleSupport", "intent": "update_software", "reason": "Battery drain CAUSED BY iOS 11 update → the update is the root cause"},
+    {"message": "does anyone else's phone freeze up after the recent update from @AppleSupport ?", "intent": "update_software", "reason": "Freezing started AFTER the update → update-caused regression"},
+    {"message": "Why I can't update my phone to IOS 11 @AppleSupport", "intent": "update_software", "reason": "Cannot install the update → update failure"},
+    # device_issue — distinguish from update_software
+    {"message": "Get a brand new iPhone 7 and can't make phone calls and it doesn't ring. @AppleSupport", "intent": "device_issue", "reason": "Phone calling doesn't work — no mention of any update, pure hardware/software malfunction"},
+    {"message": "My alarm never went off this morning and I have no idea why @AppleSupport help", "intent": "device_issue", "reason": "Alarm malfunction — no update context, device feature not working"},
+    # connectivity
+    {"message": "@AppleSupport iPhone 7 after upgrade wifi is getting auto started on its own", "intent": "connectivity", "reason": "WiFi-specific behavior issue, even though an upgrade is mentioned the complaint is about WiFi behavior"},
+    {"message": "@AppleSupport updated to ios 11 but now get only 1 bar or NO SERVICE. Can't text/talk! WIFI is fine", "intent": "connectivity", "reason": "Primary issue is cellular signal/service loss — connectivity is the core complaint"},
+    # app_store
+    {"message": "@AppleSupport YALL NEED TO FIX MY APP STORE. EVERY SINCE I INSTALLED IOS 11, NONE OF MY APPS WONT UPDATE.", "intent": "app_store", "reason": "The App Store itself is broken — apps won't update through the store"},
+    # product_inquiry
+    {"message": "@AppleSupport Hey Apple, iPhone 7 customer here. What's the most efficient means to report iOS 11.0.2 bugs?", "intent": "product_inquiry", "reason": "Asking a how-to question — not reporting a bug, asking how to report one"},
+    {"message": "@AppleSupport iPhone 7, iOS 11.1, the maps don't give directions", "intent": "device_issue", "reason": "Maps app not functioning — a specific malfunction, not a question about features"},
+    # account_access
+    {"message": "@AppleSupport I tried to disable 2FA from the Apple ID website, but it gave me security questions that I have never answered before.", "intent": "account_access", "reason": "Apple ID security/2FA issue — account access problem"},
+    # feedback_complaint — must be PURE complaint, no specific tech issue
+    {"message": "@AppleSupport iOS 11 is buggy AF! Cumbersome home screen swipe menus. Can I go back? Is this my life now?!", "intent": "feedback_complaint", "reason": "General dissatisfaction with iOS direction — no single specific fixable issue, more of a rant"},
+    # other — very narrow
+    {"message": "@AppleSupport No, just a copy and other option which is really a share option", "intent": "other", "reason": "Follow-up reply without clear context — no identifiable support topic on its own"},
+]
 
-def classify_single(message: str, context: str = "") -> Dict:
+
+def classify_single(message: str, context: str = "", use_self_consistency: bool = False) -> Dict:
     """
     Classify a single customer message into an intent.
     
     Args:
         message: The customer's message text (cleaned)
         context: Optional conversation context (previous messages)
+        use_self_consistency: If True, runs 3 calls and majority-votes
     
     Returns:
         dict with keys: intent, confidence, reasoning, secondary_intent (if any)
     """
+    if use_self_consistency:
+        return _classify_with_self_consistency(message, context)
+    
+    return _classify_once(message, context, temperature=0.3)
+
+
+def _classify_once(message: str, context: str = "", temperature: float = 0.3) -> Dict:
+    """Single classification call."""
     client = get_client()
     
     intent_descriptions = "\n".join([
         f"- **{intent}**: {desc}" 
         for intent, desc in INTENT_DESCRIPTIONS.items()
+    ])
+    
+    # Format few-shot exemplars
+    few_shot_text = "\n".join([
+        f'  Message: "{ex["message"][:150]}"\n  → Intent: {ex["intent"]} | Reason: {ex["reason"]}'
+        for ex in FEW_SHOT_EXEMPLARS
     ])
     
     context_section = ""
@@ -68,6 +107,17 @@ Classify the following customer message into exactly ONE primary intent.
 
 INTENT CATEGORIES:
 {intent_descriptions}
+
+DISAMBIGUATION RULES (apply these BEFORE choosing):
+1. If the message mentions an OS/iOS/macOS update AND a malfunction, classify as "update_software" if the update CAUSED the problem. Only use "device_issue" if no update is mentioned or the update is clearly incidental.
+2. "not working" or "broken" after mentioning an update = "update_software", not "device_issue".
+3. A message asking "how to do X" or "how do I" = "product_inquiry", not "other".
+4. Apps not updating/downloading through the App Store = "app_store". But an app crashing with no App Store mention = "device_issue".
+5. WiFi/Bluetooth/cellular/signal issues = "connectivity", even if triggered by an update.
+6. BEFORE choosing "other", you MUST verify the message does NOT fit ANY specific category even partially. "other" is ONLY for genuinely off-topic content (e.g., "thanks", "ok", "lol", follow-ups with no context). Most customer support messages WILL fit a specific category.
+
+EXAMPLES (learn the boundary cases):
+{few_shot_text}
 
 {context_section}
 CUSTOMER MESSAGE: "{message}"
@@ -84,18 +134,17 @@ Rules:
 - confidence should reflect genuine uncertainty, not just default to high
 - If the message clearly fits one intent, confidence should be 0.8-1.0
 - If it could be multiple intents, confidence should be 0.4-0.7 and set secondary_intent
-- If it's truly unclear, use "other" with low confidence"""
+- NEVER use "other" just because you're unsure — pick the best-fitting specific category"""
+
 
     try:
-        response = client.models.generate_content(
+        response = client.chat.completions.create(
             model=LLM_MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.1
-            )
+            messages=[{"role": "user", "content": prompt}],
+            temperature=temperature
         )
         
-        response_text = response.text.strip()
+        response_text = response.choices[0].message.content.strip()
         
         # Parse JSON response
         if "```json" in response_text:
@@ -129,6 +178,44 @@ Rules:
             "secondary_intent": None,
             "error": str(e),
         }
+
+
+def _classify_with_self_consistency(message: str, context: str = "", n_calls: int = 3) -> Dict:
+    """
+    Self-consistency classification: make n_calls at higher temperature,
+    majority-vote on intent, average the confidence.
+    """
+    from collections import Counter
+    
+    results = []
+    for _ in range(n_calls):
+        r = _classify_once(message, context, temperature=0.5)
+        results.append(r)
+    
+    # Majority vote on intent
+    intents = [r.get("intent", "other") for r in results]
+    intent_counts = Counter(intents)
+    best_intent = intent_counts.most_common(1)[0][0]
+    vote_fraction = intent_counts[best_intent] / len(results)
+    
+    # Average confidence across calls that voted for the winner
+    winner_confs = [r.get("confidence", 0.5) for r in results if r.get("intent") == best_intent]
+    avg_confidence = sum(winner_confs) / len(winner_confs) if winner_confs else 0.5
+    
+    # Use reasoning from the first winner
+    winner_result = next(r for r in results if r.get("intent") == best_intent)
+    
+    return {
+        "intent": best_intent,
+        "confidence": round(avg_confidence, 3),
+        "reasoning": winner_result.get("reasoning", ""),
+        "secondary_intent": winner_result.get("secondary_intent"),
+        "self_consistency": {
+            "n_calls": n_calls,
+            "vote_distribution": dict(intent_counts),
+            "vote_fraction": round(vote_fraction, 2),
+        },
+    }
 
 
 def classify_batch(messages: List[str], batch_size: int = 10) -> List[Dict]:

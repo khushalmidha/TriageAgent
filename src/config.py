@@ -26,31 +26,31 @@ INTENT_TAXONOMY = [
     "app_store", "connectivity", "update_software",
     "product_inquiry", "service_outage", "feedback_complaint", "other"
 ]
-SENSITIVE_INTENTS = ["billing_subscription", "account_access", "feedback_complaint"]
+SENSITIVE_INTENTS = ["billing_subscription", "account_access"]
 
 # API Keys
 from dotenv import load_dotenv
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 
 # Models
-LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
-JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini-2.5-pro")
+LLM_MODEL = os.getenv("LLM_MODEL", "deepseek-chat")
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "deepseek-chat")
 
 # Pipeline settings
 RETRIEVAL_TOP_K = 3
 TOP_K_RETRIEVAL = 3
-ESCALATION_THRESHOLD = 0.35
-ESCALATION_CONFIDENCE_THRESHOLD = 0.6
+ESCALATION_THRESHOLD = 0.65
+ESCALATION_CONFIDENCE_THRESHOLD = 0.4
 ESCALATION_RETRIEVAL_THRESHOLD = 0.3
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 FAISS_INDEX_PATH = DATA_DIR / "faiss_index.bin"
 
-def validate_config() -> List[str]:
+def validate_config() -> list[str]:
     issues = []
-    if not GEMINI_API_KEY:
-        issues.append("GEMINI_API_KEY not set in .env")
+    if not DEEPSEEK_API_KEY:
+        issues.append("DEEPSEEK_API_KEY environment variable is not set")
     
     if not RAW_CSV_PATH.exists():
         issues.append(f"Dataset not found at {RAW_CSV_PATH}. Download from Kaggle.")

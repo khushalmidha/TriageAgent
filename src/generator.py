@@ -11,16 +11,15 @@ drew from, making the grounding inspectable rather than just claimed.
 
 import json
 from typing import Dict, List, Optional
-from google import genai
-from google.genai import types
+from openai import OpenAI
 from src.config import (
-    GEMINI_API_KEY, LLM_MODEL, SELECTED_BRAND
+    DEEPSEEK_API_KEY, LLM_MODEL, SELECTED_BRAND
 )
 from src.retrieval import retrieve_similar, format_retrieved_context
 
 
-def get_client() -> genai.Client:
-    return genai.Client(api_key=GEMINI_API_KEY)
+def get_client() -> OpenAI:
+    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
 
 
 def draft_reply(
@@ -83,16 +82,15 @@ Respond with ONLY a valid JSON object:
   "tone_notes": "Brief note on the tone adopted and why"
 }}"""
 
+    
     try:
-        response = client.models.generate_content(
+        response = client.chat.completions.create(
             model=LLM_MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.4
-            )
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.4
         )
         
-        response_text = response.text.strip()
+        response_text = response.choices[0].message.content.strip()
         
         # Parse JSON
         if "```json" in response_text:

@@ -15,15 +15,14 @@ The resulting taxonomy lives in config.py and is used by the classifier.
 import json
 import random
 from typing import List, Dict
-from google import genai
-from google.genai import types
+from openai import OpenAI
 from src.config import (
-    GEMINI_API_KEY, LLM_MODEL, INTENT_TAXONOMY
+    DEEPSEEK_API_KEY, LLM_MODEL, INTENT_TAXONOMY
 )
 
 
-def get_client() -> genai.Client:
-    return genai.Client(api_key=GEMINI_API_KEY)
+def get_client() -> OpenAI:
+    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
 
 
 def explore_intents(conversations: List[dict], sample_size: int = 200) -> dict:
@@ -85,15 +84,13 @@ Respond with a JSON object:
     print("[intent_taxonomy] Asking LLM to cluster sample messages...")
     
     try:
-        response = client.models.generate_content(
+        response = client.chat.completions.create(
             model=LLM_MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.3
-            )
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3
         )
         
-        response_text = response.text.strip()
+        response_text = response.choices[0].message.content.strip()
         
         # Try to parse JSON from response
         # Handle cases where LLM wraps JSON in markdown code blocks
@@ -164,15 +161,13 @@ For each message, respond with a JSON array of objects:
 Be honest about confidence — low confidence is fine and expected for ambiguous messages."""
 
     try:
-        response = client.models.generate_content(
+        response = client.chat.completions.create(
             model=LLM_MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.1
-            )
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.1
         )
         
-        response_text = response.text.strip()
+        response_text = response.choices[0].message.content.strip()
         if "```json" in response_text:
             response_text = response_text.split("```json")[1].split("```")[0]
         elif "```" in response_text:

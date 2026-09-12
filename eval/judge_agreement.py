@@ -22,7 +22,8 @@ import json
 import numpy as np
 from typing import List, Dict, Tuple
 from pathlib import Path
-from src.config import EVAL_DIR, GEMINI_API_KEY, LLM_MODEL
+from src.config import EVAL_DIR, DEEPSEEK_API_KEY, LLM_MODEL
+from google.genai import types
 
 
 def cohens_kappa(labels1: List[int], labels2: List[int], num_classes: int = 5) -> float:
@@ -78,7 +79,7 @@ def generate_human_labels(
     """
     from google import genai
     from google.genai import types
-    client = genai.Client(api_key=GEMINI_API_KEY)
+    client = genai.Client(api_key=DEEPSEEK_API_KEY)
     
     human_labels = []
     
@@ -112,15 +113,17 @@ Respond with ONLY a JSON object:
   "overall_notes": "Brief reasoning"
 }}"""
 
+        import time
+        time.sleep(4.2)
+
         try:
             response = client.chat.completions.create(
-                model=LLM_MODEL,  # Use a different model than the judge for independence
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.3,
-                max_tokens=300,
-            )
+            model=LLM_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3
+        )
             
-            response_text = response.text.strip()
+            response_text = response.choices[0].message.content.strip()
             if "```json" in response_text:
                 response_text = response_text.split("```json")[1].split("```")[0]
             elif "```" in response_text:
