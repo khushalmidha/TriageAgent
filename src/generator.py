@@ -11,15 +11,14 @@ drew from, making the grounding inspectable rather than just claimed.
 
 import json
 from typing import Dict, List, Optional
-from openai import OpenAI
+import litellm
 from src.config import (
-    DEEPSEEK_API_KEY, LLM_MODEL, SELECTED_BRAND
+    LLM_MODEL, SELECTED_BRAND
 )
 from src.retrieval import retrieve_similar, format_retrieved_context
 
 
-def get_client() -> OpenAI:
-    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
+
 
 
 def draft_reply(
@@ -40,7 +39,7 @@ def draft_reply(
     Returns:
         dict with keys: reply, grounding_citations, confidence, tone_notes
     """
-    client = get_client()
+    
     
     # Format retrieved precedents for the prompt
     precedent_text = format_retrieved_context(retrieved_precedents, max_results=3)
@@ -84,7 +83,7 @@ Respond with ONLY a valid JSON object:
 
     
     try:
-        response = client.chat.completions.create(
+        response = litellm.completion(
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.4

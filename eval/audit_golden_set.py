@@ -14,8 +14,8 @@ import sys
 sys.path.insert(0, str(__import__('pathlib').Path(__file__).parent.parent))
 
 from collections import Counter, defaultdict
-from openai import OpenAI
-from src.config import DEEPSEEK_API_KEY, LLM_MODEL, EVAL_DIR, INTENT_TAXONOMY
+import litellm
+from src.config import LLM_MODEL, EVAL_DIR, INTENT_TAXONOMY
 from src.classifier import keyword_baseline
 
 
@@ -70,7 +70,7 @@ Reply with ONLY a JSON array:
 [{{"num": 1, "intent": "category_name", "reason": "one sentence"}}]"""
 
         try:
-            response = client.chat.completions.create(
+            response = litellm.completion(
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.0

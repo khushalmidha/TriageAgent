@@ -15,14 +15,13 @@ The resulting taxonomy lives in config.py and is used by the classifier.
 import json
 import random
 from typing import List, Dict
-from openai import OpenAI
+import litellm
 from src.config import (
-    DEEPSEEK_API_KEY, LLM_MODEL, INTENT_TAXONOMY
+    LLM_MODEL, INTENT_TAXONOMY
 )
 
 
-def get_client() -> OpenAI:
-    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
+
 
 
 def explore_intents(conversations: List[dict], sample_size: int = 200) -> dict:
@@ -42,7 +41,7 @@ def explore_intents(conversations: List[dict], sample_size: int = 200) -> dict:
     # Format messages for the LLM
     messages_text = "\n".join([f"{i+1}. {msg}" for i, msg in enumerate(sample[:100])])
     
-    client = get_client()
+    
     
     prompt = f"""You are analyzing customer support messages sent to a brand on Twitter.
 Below are 100 real customer messages. Your task:
@@ -84,7 +83,7 @@ Respond with a JSON object:
     print("[intent_taxonomy] Asking LLM to cluster sample messages...")
     
     try:
-        response = client.chat.completions.create(
+        response = litellm.completion(
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3
@@ -144,7 +143,7 @@ def validate_taxonomy_coverage(conversations: List[dict],
     sample = random.sample(conversations, min(sample_size, len(conversations)))
     messages = [c["first_customer_message"] for c in sample]
     
-    client = get_client()
+    
     
     intent_list = "\n".join([f"- {intent}" for intent in INTENT_TAXONOMY])
     messages_text = "\n".join([f"{i+1}. {msg}" for i, msg in enumerate(messages)])
@@ -161,7 +160,7 @@ For each message, respond with a JSON array of objects:
 Be honest about confidence — low confidence is fine and expected for ambiguous messages."""
 
     try:
-        response = client.chat.completions.create(
+        response = litellm.completion(
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.1

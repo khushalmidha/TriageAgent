@@ -14,14 +14,13 @@ See decision_log.md for full reasoning.
 
 import json
 from typing import Dict, List, Optional, Tuple
-from openai import OpenAI
+import litellm
 from src.config import (
-    DEEPSEEK_API_KEY, LLM_MODEL, INTENT_TAXONOMY
+    LLM_MODEL, INTENT_TAXONOMY
 )
 
 
-def get_client() -> OpenAI:
-    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
+
 
 
 # Intent descriptions for the classifier prompt — these are crucial for accuracy
@@ -84,7 +83,7 @@ def classify_single(message: str, context: str = "", use_self_consistency: bool 
 
 def _classify_once(message: str, context: str = "", temperature: float = 0.3) -> Dict:
     """Single classification call."""
-    client = get_client()
+    
     
     intent_descriptions = "\n".join([
         f"- **{intent}**: {desc}" 
@@ -138,7 +137,7 @@ Rules:
 
 
     try:
-        response = client.chat.completions.create(
+        response = litellm.completion(
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=temperature

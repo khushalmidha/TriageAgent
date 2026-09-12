@@ -28,15 +28,16 @@ INTENT_TAXONOMY = [
 ]
 SENSITIVE_INTENTS = ["billing_subscription", "account_access"]
 
-# API Keys
+# API Keys (LiteLLM auto-detects these from environment)
 from dotenv import load_dotenv
 load_dotenv()
 
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+# We don't enforce a specific API key here because LiteLLM uses whichever matches the model
+# (e.g. GEMINI_API_KEY for 'gemini/...', OPENAI_API_KEY for 'gpt-4', DEEPSEEK_API_KEY for 'deepseek/...')
 
-# Models
-LLM_MODEL = os.getenv("LLM_MODEL", "deepseek-chat")
-JUDGE_MODEL = os.getenv("JUDGE_MODEL", "deepseek-chat")
+# Models - Prefix with provider for LiteLLM (e.g., 'gemini/gemini-2.5-flash', 'deepseek/deepseek-chat')
+LLM_MODEL = os.getenv("LLM_MODEL", "deepseek/deepseek-chat")
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "deepseek/deepseek-chat")
 
 # Pipeline settings
 RETRIEVAL_TOP_K = 3
@@ -49,8 +50,6 @@ FAISS_INDEX_PATH = DATA_DIR / "faiss_index.bin"
 
 def validate_config() -> list[str]:
     issues = []
-    if not DEEPSEEK_API_KEY:
-        issues.append("DEEPSEEK_API_KEY environment variable is not set")
     
     if not RAW_CSV_PATH.exists():
         issues.append(f"Dataset not found at {RAW_CSV_PATH}. Download from Kaggle.")

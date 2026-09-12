@@ -14,14 +14,13 @@ Rubric dimensions:
 
 import json
 from typing import Dict, List, Optional
-from openai import OpenAI
+import litellm
 from src.config import (
-    DEEPSEEK_API_KEY, JUDGE_MODEL, SELECTED_BRAND
+    JUDGE_MODEL, SELECTED_BRAND
 )
 
 
-def get_client() -> OpenAI:
-    return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
+
 
 
 # ─── Detailed Rubric ────────────────────────────────────────────────────────
@@ -87,7 +86,7 @@ def judge_reply(
     Returns:
         dict with scores per dimension, overall score, and reasoning
     """
-    client = get_client()
+    
     
     citations_text = ""
     if grounding_citations:
@@ -135,7 +134,7 @@ Respond with ONLY a valid JSON object:
 
     
     try:
-        response = client.chat.completions.create(
+        response = litellm.completion(
             model=JUDGE_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2
