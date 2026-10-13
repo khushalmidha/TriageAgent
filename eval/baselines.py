@@ -12,6 +12,7 @@ Baselines:
 """
 
 import json
+import litellm
 from typing import List, Dict
 from pathlib import Path
 from tqdm import tqdm

@@ -1,0 +1,43 @@
+{
+  "benchmark_metadata": {
+    "name": "Deterministic Risk Escalation Evaluation",
+    "timestamp": "2026-10-13 12:27:26 UTC",
+    "total_queries": 100,
+    "engine_signals_count": 6,
+    "deterministic_latency_sla_target_ms": 10.0
+  },
+  "critical_emergency_bypass_metrics": {
+    "positive_class": "Critical",
+    "total_positive_cases": 30,
+    "prevalence_baseline": 0.3,
+    "random_classifier_pr_auc_baseline": 0.3,
+    "measured_pr_auc": 0.7433,
+    "measured_roc_auc": 0.6333,
+    "precision": 1.0,
+    "recall": 0.2667,
+    "f1_score": 0.4211,
+    "accuracy": 0.78,
+    "confusion_matrix": {
+      "true_positives": 8,
+      "false_positives": 0,
+      "true_negatives": 70,
+      "false_negatives": 22
+    }
+  },
+  "broad_escalation_metrics": {
+    "positive_class": "Critical or High",
+    "total_positive_cases": 58,
+    "prevalence_baseline": 0.58,
+    "random_classifier_pr_auc_baseline": 0.58,
+    "measured_pr_auc": 0.819,
+    "measured_roc_auc": 0.569
+  },
+  "deterministic_routing_latency_ms": {
+    "p50": 0.0429,
+    "p95": 0.1452,
+    "p99": 0.2738,
+    "max": 0.2878,
+    "mean": 0.0608,
+    "sla_guarantee_met": true
+  }
+}

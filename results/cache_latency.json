@@ -1,0 +1,66 @@
+{
+  "benchmark_metadata": {
+    "eval_samples": 40,
+    "warmup_runs": 3,
+    "hardware": {
+      "system": "Windows",
+      "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+      "machine": "AMD64",
+      "python_version": "3.12.0"
+    },
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "llm_provider_model": "gemini/gemini-2.5-flash",
+    "semantic_cache_distance_threshold": 0.05,
+    "cache_backend": "In-Memory / Redis (socket timeout 0.2s)",
+    "includes_network_latency": "Yes for external API calls, No for local retrieval/cache"
+  },
+  "component_breakdown": {
+    "retrieval_only_latency": {
+      "p50_median_ms": 82.8,
+      "p90_ms": 158.99,
+      "p95_ms": 184.75,
+      "p99_ms": 320.37,
+      "mean_ms": 99.41,
+      "std_ms": 61.88,
+      "min_ms": 38.16,
+      "max_ms": 393.95
+    },
+    "reranking_only_latency": {
+      "p50_median_ms": 2228.25,
+      "p90_ms": 3262.38,
+      "p95_ms": 3294.17,
+      "p99_ms": 3395.84,
+      "mean_ms": 2293.0,
+      "std_ms": 515.27,
+      "min_ms": 1564.55,
+      "max_ms": 3416.14
+    }
+  },
+  "cold_path_uncached": {
+    "p50_median_ms": 3379.73,
+    "p90_ms": 12260.9,
+    "p95_ms": 16495.08,
+    "p99_ms": 18989.8,
+    "mean_ms": 5811.48,
+    "std_ms": 5069.34,
+    "min_ms": 36.0,
+    "max_ms": 19497.7
+  },
+  "warm_path_semantic_cache": {
+    "p50_median_ms": 46.51,
+    "p90_ms": 86.59,
+    "p95_ms": 94.77,
+    "p99_ms": 119.07,
+    "mean_ms": 53.81,
+    "std_ms": 19.94,
+    "min_ms": 36.06,
+    "max_ms": 131.59
+  },
+  "cache_performance": {
+    "cache_hit_ratio": 1.0,
+    "p50_latency_reduction_pct": 98.62,
+    "p99_latency_reduction_pct": 99.37,
+    "empirical_latency_transition": "18989.8ms -> 119.07ms (p99)"
+  }
+}

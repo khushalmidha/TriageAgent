@@ -10,6 +10,7 @@ All metrics are computed against the golden evaluation set.
 """
 
 import json
+import litellm
 import numpy as np
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional

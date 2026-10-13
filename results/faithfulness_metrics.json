@@ -1,0 +1,337 @@
+{
+  "benchmark_metadata": {
+    "name": "Faithfulness & Atomic Claim Groundedness Evaluation",
+    "timestamp": "2026-10-13 12:28:11 UTC",
+    "total_responses_evaluated": 100,
+    "total_extracted_atomic_claims": 226,
+    "evaluation_methodology": "Deterministic token-level semantic entailment and NLI keyword verification of extracted atomic claims against retrieved reference context chunks."
+  },
+  "headline_groundedness_metrics": {
+    "faithfulness_claim_support_ratio": 0.6858,
+    "supported_claims": "155 / 226",
+    "supported_claims_count": 155,
+    "unsupported_claims_count": 39,
+    "unverifiable_claims_count": 32,
+    "mean_claims_per_response": 2.26,
+    "hallucination_rate": 0.1726
+  },
+  "scientific_claim_statement": "155/226 (68.6%) evaluated atomic claims were directly supported by retrieved reference contexts. No universal claim of 'zero hallucinations' is asserted across unconstrained production inputs.",
+  "per_sample_breakdown": [
+    {
+      "case_id": "CASE-UNK",
+      "query": "My husband collapsed, is clutching his chest complaining of crushing pressure radiating to his left arm and jaw, sweating heavily and can barely breathe!",
+      "claims_count": 4,
+      "supported_claims_count": 3,
+      "unsupported_claims_count": 1,
+      "faithfulness_score": 0.75,
+      "claim_evaluations": [
+        {
+          "claim": "Emergency 911 activation immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.5,
+          "reasoning": "Matched 1/2 informative tokens in context."
+        },
+        {
+          "claim": "Suspected Acute STEMI / Myocardial Infarction.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.8,
+          "reasoning": "Matched 4/5 informative tokens in context."
+        },
+        {
+          "claim": "Keep patient seated/resting, chew 325mg non-enteric aspirin if available and non-allergic.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.5455,
+          "reasoning": "Matched 6/11 informative tokens in context."
+        },
+        {
+          "claim": "Do not drive to hospital.",
+          "status": "UNSUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Only 0/3 informative tokens found in reference context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "My grandmother's face is drooping on the left side, her left arm is completely limp and falling down, and her speech is slurred and incomprehensible. Started 20 minutes ago.",
+      "claims_count": 4,
+      "supported_claims_count": 4,
+      "unsupported_claims_count": 0,
+      "faithfulness_score": 1.0,
+      "claim_evaluations": [
+        {
+          "claim": "Emergency 911 activation immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Matched 0/2 informative tokens in context."
+        },
+        {
+          "claim": "Acute Ischemic Stroke (FAST protocol positive).",
+          "status": "SUPPORTED",
+          "token_support_ratio": 1.0,
+          "reasoning": "Matched 6/6 informative tokens in context."
+        },
+        {
+          "claim": "Time of onset recorded.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.3333,
+          "reasoning": "Matched 1/3 informative tokens in context."
+        },
+        {
+          "claim": "Urgent transfer to primary stroke center for CT head and thrombolysis.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.625,
+          "reasoning": "Matched 5/8 informative tokens in context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "My daughter ate peanuts at a restaurant and her throat is closing, she has loud stridor when breathing, covered in hives, lips are swelling blue and her blood pressure is crashing!",
+      "claims_count": 4,
+      "supported_claims_count": 1,
+      "unsupported_claims_count": 2,
+      "faithfulness_score": 0.25,
+      "claim_evaluations": [
+        {
+          "claim": "Immediate Epinephrine auto-injector (EpiPen 0.3mg) administration into anterolateral thigh.",
+          "status": "UNVERIFIABLE",
+          "token_support_ratio": 0.1111,
+          "reasoning": "Ambiguous token overlap (1/9 tokens)."
+        },
+        {
+          "claim": "Call 911 immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Matched 0/1 informative tokens in context."
+        },
+        {
+          "claim": "Anaphylactic shock emergency.",
+          "status": "UNSUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Only 0/3 informative tokens found in reference context."
+        },
+        {
+          "claim": "Lay flat with legs elevated.",
+          "status": "UNSUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Only 0/4 informative tokens found in reference context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "I took an entire bottle of oxycodone pills 30 minutes ago, I feel faint, everything is dark and I want to end my life right now.",
+      "claims_count": 4,
+      "supported_claims_count": 3,
+      "unsupported_claims_count": 1,
+      "faithfulness_score": 0.75,
+      "claim_evaluations": [
+        {
+          "claim": "Emergency 911 & Poison Control activation immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Matched 0/4 informative tokens in context."
+        },
+        {
+          "claim": "Immediate dispatch of paramedic team with Naloxone.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.6,
+          "reasoning": "Matched 3/5 informative tokens in context."
+        },
+        {
+          "claim": "Active suicide crisis and acute opioid overdose protocol.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.75,
+          "reasoning": "Matched 6/8 informative tokens in context."
+        },
+        {
+          "claim": "Constant phone connection.",
+          "status": "UNSUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Only 0/3 informative tokens found in reference context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "My coworker suffered an industrial circular saw injury to the femoral artery, blood is spurting bright red in a high-pressure rhythm and direct towels aren't stopping it!",
+      "claims_count": 3,
+      "supported_claims_count": 3,
+      "unsupported_claims_count": 0,
+      "faithfulness_score": 1.0,
+      "claim_evaluations": [
+        {
+          "claim": "Immediate Combat Application Tourniquet (CAT) applied 2-3 inches proximal to wound until pulsatile bleeding stops.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.8462,
+          "reasoning": "Matched 11/13 informative tokens in context."
+        },
+        {
+          "claim": "Call 911 immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Matched 0/1 informative tokens in context."
+        },
+        {
+          "claim": "Life-threatening arterial hemorrhage.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.75,
+          "reasoning": "Matched 3/4 informative tokens in context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "My father has the most explosive thunderclap headache of his entire life, started like a lightning bolt 10 minutes ago, now vomiting violently with a stiff neck.",
+      "claims_count": 3,
+      "supported_claims_count": 3,
+      "unsupported_claims_count": 0,
+      "faithfulness_score": 1.0,
+      "claim_evaluations": [
+        {
+          "claim": "Emergency 911 activation immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Matched 0/2 informative tokens in context."
+        },
+        {
+          "claim": "Suspected acute subarachnoid hemorrhage (ruptured aneurysm).",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.3333,
+          "reasoning": "Matched 2/6 informative tokens in context."
+        },
+        {
+          "claim": "Emergent non-contrast head CT and neurosurgical evaluation.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 1.0,
+          "reasoning": "Matched 7/7 informative tokens in context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "My 8-year-old is having a continuous tonic-clonic grand mal seizure that has lasted over 6 minutes without stopping, lips turning blue.",
+      "claims_count": 5,
+      "supported_claims_count": 3,
+      "unsupported_claims_count": 2,
+      "faithfulness_score": 0.6,
+      "claim_evaluations": [
+        {
+          "claim": "Call 911 immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Matched 0/1 informative tokens in context."
+        },
+        {
+          "claim": "Status Epilepticus.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 1.0,
+          "reasoning": "Matched 2/2 informative tokens in context."
+        },
+        {
+          "claim": "Do not put anything in mouth.",
+          "status": "UNSUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Only 0/4 informative tokens found in reference context."
+        },
+        {
+          "claim": "Turn child onto side in recovery position to protect airway.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.5,
+          "reasoning": "Matched 4/8 informative tokens in context."
+        },
+        {
+          "claim": "Paramedic IV/rectal benzodiazepines required.",
+          "status": "UNSUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Only 0/4 informative tokens found in reference context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "I was trapped in a burning garage with the car engine running for an hour, I have a cherry-red face, severe confusion, nausea, and shortness of breath.",
+      "claims_count": 3,
+      "supported_claims_count": 2,
+      "unsupported_claims_count": 1,
+      "faithfulness_score": 0.6667,
+      "claim_evaluations": [
+        {
+          "claim": "Evacuate to fresh air immediately.",
+          "status": "UNSUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Only 0/3 informative tokens found in reference context."
+        },
+        {
+          "claim": "Severe carbon monoxide poisoning.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 1.0,
+          "reasoning": "Matched 4/4 informative tokens in context."
+        },
+        {
+          "claim": "Immediate 100% high-flow oxygen via non-rebreather mask and hyperbaric oxygen evaluation.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.8333,
+          "reasoning": "Matched 10/12 informative tokens in context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "Motorcycle rider crash victim with chest wall moving backwards during inhalation and forward on exhalation, severe gasping for air.",
+      "claims_count": 3,
+      "supported_claims_count": 3,
+      "unsupported_claims_count": 0,
+      "faithfulness_score": 1.0,
+      "claim_evaluations": [
+        {
+          "claim": "Emergency 911 dispatch immediately.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.5,
+          "reasoning": "Matched 1/2 informative tokens in context."
+        },
+        {
+          "claim": "Traumatic flail chest and respiratory failure.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.8333,
+          "reasoning": "Matched 5/6 informative tokens in context."
+        },
+        {
+          "claim": "Immediate positive pressure ventilation and trauma center transport.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.75,
+          "reasoning": "Matched 6/8 informative tokens in context."
+        }
+      ]
+    },
+    {
+      "case_id": "CASE-UNK",
+      "query": "Patient has high fever 40.2C, stiff neck, petechial purple rash spreading across trunk, and is completely confused and disoriented.",
+      "claims_count": 3,
+      "supported_claims_count": 3,
+      "unsupported_claims_count": 0,
+      "faithfulness_score": 1.0,
+      "claim_evaluations": [
+        {
+          "claim": "Emergency 911 activation.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.0,
+          "reasoning": "Matched 0/2 informative tokens in context."
+        },
+        {
+          "claim": "Suspected acute meningococcal meningitis.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.5,
+          "reasoning": "Matched 2/4 informative tokens in context."
+        },
+        {
+          "claim": "Emergent blood cultures and IV ceftriaxone + vancomycin + dexamethasone.",
+          "status": "SUPPORTED",
+          "token_support_ratio": 0.8571,
+          "reasoning": "Matched 6/7 informative tokens in context."
+        }
+      ]
+    }
+  ]
+}

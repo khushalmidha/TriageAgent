@@ -1,0 +1,45 @@
+{
+  "benchmark_metadata": {
+    "iterations": 1000,
+    "unique_test_query_profiles": 10,
+    "emergency_bypass_percentage": 50.0,
+    "hardware": {
+      "system": "Windows",
+      "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+      "machine": "AMD64"
+    },
+    "evaluation_scope": "Isolated rule evaluation (string matching, regex parsing, composite score computation). Excludes network I/O, FAISS search, and LLM calls."
+  },
+  "overall_latency_ms": {
+    "p50_median_ms": 0.028,
+    "p90_ms": 0.0408,
+    "p95_ms": 0.0488,
+    "p99_ms": 0.0897,
+    "max_ms": 0.2692,
+    "mean_ms": 0.0312,
+    "std_ms": 0.0164
+  },
+  "emergency_bypass_latency_ms": {
+    "p50_median_ms": 0.03,
+    "p90_ms": 0.0439,
+    "p95_ms": 0.0498,
+    "p99_ms": 0.0859,
+    "max_ms": 0.235,
+    "mean_ms": 0.0327,
+    "std_ms": 0.015
+  },
+  "non_emergency_evaluation_latency_ms": {
+    "p50_median_ms": 0.0263,
+    "p90_ms": 0.037,
+    "p95_ms": 0.0455,
+    "p99_ms": 0.0901,
+    "max_ms": 0.2692,
+    "mean_ms": 0.0297,
+    "std_ms": 0.0175
+  },
+  "sla_verification": {
+    "target_threshold_ms": 10.0,
+    "measured_p99_ms": 0.0897,
+    "target_achieved": true
+  }
+}

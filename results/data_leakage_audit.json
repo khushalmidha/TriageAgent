@@ -1,0 +1,32 @@
+{
+  "audit_metadata": {
+    "name": "Data Contamination & Circularity Audit",
+    "timestamp": "2026-10-13 12:26:34 UTC",
+    "total_golden_queries": 100,
+    "total_corpus_chunks": 635,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "findings_summary": {
+    "exact_text_duplicates": 0,
+    "normalized_text_duplicates": 0,
+    "verbatim_substring_containment": 0,
+    "high_similarity_matches_gt_95": 0,
+    "high_similarity_matches_90_to_95": 0,
+    "exact_answer_corpus_matches": 0,
+    "contamination_detected": false,
+    "query_chunk_max_similarity_distribution": {
+      "mean": 0.4225,
+      "median": 0.4436,
+      "p95": 0.5531,
+      "max": 0.5973,
+      "min": 0.1888
+    }
+  },
+  "details": {
+    "exact_query_matches": [],
+    "normalized_query_matches": [],
+    "substring_query_matches": [],
+    "high_similarity_matches_gt_95": []
+  },
+  "conclusion": "CLEAN HELD-OUT AUDIT: 0 exact duplicates and 0 normalized duplicates detected between the 100 golden evaluation queries and the 635 retrieval chunks. Golden test queries represent independent user symptom descriptions/inquiries, while the FAISS index contains clinical/SLA policy reference documents. No circular evaluation or memorization artifacts detected."
+}

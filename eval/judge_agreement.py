@@ -19,11 +19,11 @@ Process:
 """
 
 import json
+import litellm
 import numpy as np
 from typing import List, Dict, Tuple
 from pathlib import Path
-from src.config import EVAL_DIR, DEEPSEEK_API_KEY, LLM_MODEL
-from google.genai import types
+from src.config import EVAL_DIR, LLM_MODEL
 
 
 def cohens_kappa(labels1: List[int], labels2: List[int], num_classes: int = 5) -> float:
@@ -77,10 +77,7 @@ def generate_human_labels(
     true human annotations. The agreement analysis still demonstrates
     the methodology; the absolute numbers should be interpreted cautiously.
     """
-    from google import genai
-    from google.genai import types
-    client = genai.Client(api_key=DEEPSEEK_API_KEY)
-    
+                
     human_labels = []
     
     for i, (example, result) in enumerate(zip(examples, pipeline_results)):
@@ -117,7 +114,7 @@ Respond with ONLY a JSON object:
         time.sleep(4.2)
 
         try:
-            response = client.chat.completions.create(
+            response = litellm.completion(
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3

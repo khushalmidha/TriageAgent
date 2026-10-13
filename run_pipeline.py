@@ -112,6 +112,7 @@ def main():
         
         from src.intent_taxonomy import explore_intents, validate_taxonomy_coverage
         
+        time.sleep(4)
         exploration = explore_intents(conversations)
         validation = validate_taxonomy_coverage(conversations)
         

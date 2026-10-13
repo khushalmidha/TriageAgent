@@ -10,6 +10,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 sys.path.insert(0, str(__import__('pathlib').Path(__file__).parent.parent))
 
 import json
+import litellm
 from src.config import EVAL_DIR, PROCESSED_DIR
 
 

@@ -1,0 +1,199 @@
+{
+  "benchmark_metadata": {
+    "name": "Adversarial Semantic Cache Safety Benchmark",
+    "date": "2026-10-13 12:24:32 UTC",
+    "total_adversarial_pairs": 10,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "production_selected_threshold": 0.05,
+    "production_safety_margin": 0.0524
+  },
+  "adversarial_pair_details": [
+    {
+      "pair_id": "ADV-001",
+      "category": "Customer Account",
+      "query_a": "Cancel my subscription immediately.",
+      "query_b": "Do not cancel my subscription under any circumstances.",
+      "material_difference": "Polar opposite action intent (cancellation vs explicit retention)",
+      "cosine_similarity": 0.842,
+      "cosine_distance": 0.158
+    },
+    {
+      "pair_id": "ADV-002",
+      "category": "Billing & Dispute",
+      "query_a": "My payment failed when trying to purchase the subscription.",
+      "query_b": "My refund failed when trying to return the subscription.",
+      "material_difference": "Direction of monetary transaction (inbound charge vs outbound refund)",
+      "cosine_similarity": 0.7765,
+      "cosine_distance": 0.2235
+    },
+    {
+      "pair_id": "ADV-003",
+      "category": "Clinical Emergency",
+      "query_a": "Patient has severe crushing retrosternal chest pain and shortness of breath.",
+      "query_b": "Patient has no chest pain at all, only mild seasonal nasal congestion.",
+      "material_difference": "Critical cardiac emergency vs benign seasonal complaint",
+      "cosine_similarity": 0.514,
+      "cosine_distance": 0.486
+    },
+    {
+      "pair_id": "ADV-004",
+      "category": "Financial Security",
+      "query_a": "Authorize and release the pending $50,000 international wire transfer.",
+      "query_b": "Do not release the pending $50,000 international wire transfer, it is unauthorized.",
+      "material_difference": "Wire authorization vs urgent fraud hold",
+      "cosine_similarity": 0.8916,
+      "cosine_distance": 0.1084
+    },
+    {
+      "pair_id": "ADV-005",
+      "category": "Account Security",
+      "query_a": "I want to delete my account and erase all my personal data permanently.",
+      "query_b": "Do not delete my account, please restore my archived records.",
+      "material_difference": "GDPR erasure vs account restoration",
+      "cosine_similarity": 0.564,
+      "cosine_distance": 0.436
+    },
+    {
+      "pair_id": "ADV-006",
+      "category": "Clinical Toxicity",
+      "query_a": "I took an intentional overdose of 30 sleeping pills 15 minutes ago.",
+      "query_b": "I accidentally dropped 30 sleeping pills on the kitchen floor.",
+      "material_difference": "Acute life-threatening self-harm toxicity vs physical spill",
+      "cosine_similarity": 0.6748,
+      "cosine_distance": 0.3252
+    },
+    {
+      "pair_id": "ADV-007",
+      "category": "Clinical Neurological",
+      "query_a": "Grandmother is fully conscious, alert, and moving all four limbs normally.",
+      "query_b": "Grandmother is unconscious, unresponsive, and not breathing normally.",
+      "material_difference": "Normal baseline neurological status vs code-blue cardiac/respiratory arrest",
+      "cosine_similarity": 0.6939,
+      "cosine_distance": 0.3061
+    },
+    {
+      "pair_id": "ADV-008",
+      "category": "Identity Security",
+      "query_a": "My security password was changed by an unauthorized remote hacker.",
+      "query_b": "My security password was changed by myself yesterday on my phone.",
+      "material_difference": "Account takeover security incident vs legitimate self-service change",
+      "cosine_similarity": 0.7561,
+      "cosine_distance": 0.2439
+    },
+    {
+      "pair_id": "ADV-009",
+      "category": "Pediatric Emergency",
+      "query_a": "Infant swallowed a coin battery and is drooling with severe stridor.",
+      "query_b": "Infant is playing with a battery toy and laughing with no distress.",
+      "material_difference": "Emergency caustic esophageal perforation risk vs benign play",
+      "cosine_similarity": 0.5339,
+      "cosine_distance": 0.4661
+    },
+    {
+      "pair_id": "ADV-010",
+      "category": "Authentication",
+      "query_a": "Disable two-factor authentication on my admin account right now.",
+      "query_b": "Enable two-factor authentication on my admin account right now.",
+      "material_difference": "Security demotion vs security hardening",
+      "cosine_similarity": 0.8976,
+      "cosine_distance": 0.1024
+    }
+  ],
+  "closest_adversarial_collision_threat": {
+    "pair_id": "ADV-010",
+    "category": "Authentication",
+    "query_a": "Disable two-factor authentication on my admin account right now.",
+    "query_b": "Enable two-factor authentication on my admin account right now.",
+    "cosine_distance": 0.1024,
+    "cosine_similarity": 0.8976
+  },
+  "threshold_safety_matrix": [
+    {
+      "threshold_max_distance": 0.01,
+      "min_cosine_similarity": 0.99,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 0,
+      "safe_rejections": 10,
+      "false_hit_rate": 0.0,
+      "safety_precision": 1.0,
+      "colliding_pairs": []
+    },
+    {
+      "threshold_max_distance": 0.02,
+      "min_cosine_similarity": 0.98,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 0,
+      "safe_rejections": 10,
+      "false_hit_rate": 0.0,
+      "safety_precision": 1.0,
+      "colliding_pairs": []
+    },
+    {
+      "threshold_max_distance": 0.03,
+      "min_cosine_similarity": 0.97,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 0,
+      "safe_rejections": 10,
+      "false_hit_rate": 0.0,
+      "safety_precision": 1.0,
+      "colliding_pairs": []
+    },
+    {
+      "threshold_max_distance": 0.05,
+      "min_cosine_similarity": 0.95,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 0,
+      "safe_rejections": 10,
+      "false_hit_rate": 0.0,
+      "safety_precision": 1.0,
+      "colliding_pairs": []
+    },
+    {
+      "threshold_max_distance": 0.08,
+      "min_cosine_similarity": 0.92,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 0,
+      "safe_rejections": 10,
+      "false_hit_rate": 0.0,
+      "safety_precision": 1.0,
+      "colliding_pairs": []
+    },
+    {
+      "threshold_max_distance": 0.1,
+      "min_cosine_similarity": 0.9,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 0,
+      "safe_rejections": 10,
+      "false_hit_rate": 0.0,
+      "safety_precision": 1.0,
+      "colliding_pairs": []
+    },
+    {
+      "threshold_max_distance": 0.15,
+      "min_cosine_similarity": 0.85,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 2,
+      "safe_rejections": 8,
+      "false_hit_rate": 0.2,
+      "safety_precision": 0.8,
+      "colliding_pairs": [
+        "ADV-004",
+        "ADV-010"
+      ]
+    },
+    {
+      "threshold_max_distance": 0.2,
+      "min_cosine_similarity": 0.8,
+      "total_adversarial_pairs": 10,
+      "false_cache_hits": 3,
+      "safe_rejections": 7,
+      "false_hit_rate": 0.3,
+      "safety_precision": 0.7,
+      "colliding_pairs": [
+        "ADV-001",
+        "ADV-004",
+        "ADV-010"
+      ]
+    }
+  ]
+}

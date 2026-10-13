@@ -18,12 +18,13 @@ Labeling process:
 """
 
 import json
+import litellm
 import random
 import hashlib
 from pathlib import Path
 from typing import List, Dict, Optional
 from tqdm import tqdm
-from src.config import INTENT_TAXONOMY, EVAL_DIR, DEEPSEEK_API_KEY, LLM_MODEL
+from src.config import INTENT_TAXONOMY, EVAL_DIR, LLM_MODEL
 
 
 def create_golden_set(
@@ -61,10 +62,7 @@ def create_golden_set(
     golden_examples = []
     
     # Use LLM to classify and then create ground truth labels
-    from google import genai
-    from google.genai import types
-    client = genai.Client(api_key=DEEPSEEK_API_KEY)
-    
+                
     # Sample more than needed, then curate
     sample_pool = all_convs[:min(target_size * 2, len(all_convs))]
     
@@ -114,7 +112,7 @@ Respond with a JSON array:
 ]"""
 
         try:
-            response = client.chat.completions.create(
+            response = litellm.completion(
             model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.1

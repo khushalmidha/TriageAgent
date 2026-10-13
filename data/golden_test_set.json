@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "TEST-001",
+    "query": "My husband collapsed, is clutching his chest complaining of crushing pressure radiating to his left arm and jaw, sweating heavily and can barely breathe!",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Emergency 911 activation immediately. Suspected Acute STEMI / Myocardial Infarction. Keep patient seated/resting, chew 325mg non-enteric aspirin if available and non-allergic. Do not drive to hospital.",
+    "expected_reference_chunks": [
+      "KB-CLIN-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "STEMI Acute Myocardial Infarction"
+  },
+  {
+    "id": "TEST-002",
+    "query": "My grandmother's face is drooping on the left side, her left arm is completely limp and falling down, and her speech is slurred and incomprehensible. Started 20 minutes ago.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Emergency 911 activation immediately. Acute Ischemic Stroke (FAST protocol positive). Time of onset recorded. Urgent transfer to primary stroke center for CT head and thrombolysis.",
+    "expected_reference_chunks": [
+      "KB-CLIN-082",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Ischemic Stroke (FAST Protocol)"
+  },
+  {
+    "id": "TEST-003",
+    "query": "My daughter ate peanuts at a restaurant and her throat is closing, she has loud stridor when breathing, covered in hives, lips are swelling blue and her blood pressure is crashing!",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Immediate Epinephrine auto-injector (EpiPen 0.3mg) administration into anterolateral thigh. Call 911 immediately. Anaphylactic shock emergency. Lay flat with legs elevated.",
+    "expected_reference_chunks": [
+      "KB-CLIN-127",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Complex Migraine with Aura"
+  },
+  {
+    "id": "TEST-004",
+    "query": "I took an entire bottle of oxycodone pills 30 minutes ago, I feel faint, everything is dark and I want to end my life right now.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Emergency 911 & Poison Control activation immediately. Immediate dispatch of paramedic team with Naloxone. Active suicide crisis and acute opioid overdose protocol. Constant phone connection.",
+    "expected_reference_chunks": [
+      "KB-CLIN-208",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Opioid Overdose"
+  },
+  {
+    "id": "TEST-005",
+    "query": "My coworker suffered an industrial circular saw injury to the femoral artery, blood is spurting bright red in a high-pressure rhythm and direct towels aren't stopping it!",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Immediate Combat Application Tourniquet (CAT) applied 2-3 inches proximal to wound until pulsatile bleeding stops. Call 911 immediately. Life-threatening arterial hemorrhage.",
+    "expected_reference_chunks": [
+      "KB-CLIN-244",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Massive Arterial Hemorrhage"
+  },
+  {
+    "id": "TEST-006",
+    "query": "My father has the most explosive thunderclap headache of his entire life, started like a lightning bolt 10 minutes ago, now vomiting violently with a stiff neck.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Emergency 911 activation immediately. Suspected acute subarachnoid hemorrhage (ruptured aneurysm). Emergent non-contrast head CT and neurosurgical evaluation.",
+    "expected_reference_chunks": [
+      "KB-CLIN-091",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Spontaneous Subarachnoid Hemorrhage"
+  },
+  {
+    "id": "TEST-007",
+    "query": "My 8-year-old is having a continuous tonic-clonic grand mal seizure that has lasted over 6 minutes without stopping, lips turning blue.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Call 911 immediately. Status Epilepticus. Do not put anything in mouth. Turn child onto side in recovery position to protect airway. Paramedic IV/rectal benzodiazepines required.",
+    "expected_reference_chunks": [
+      "KB-CLIN-100",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Status Epilepticus"
+  },
+  {
+    "id": "TEST-008",
+    "query": "I was trapped in a burning garage with the car engine running for an hour, I have a cherry-red face, severe confusion, nausea, and shortness of breath.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Evacuate to fresh air immediately. Call 911. Severe carbon monoxide poisoning. Immediate 100% high-flow oxygen via non-rebreather mask and hyperbaric oxygen evaluation.",
+    "expected_reference_chunks": [
+      "KB-CLIN-217",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Severe Carbon Monoxide Poisoning"
+  },
+  {
+    "id": "TEST-009",
+    "query": "Motorcycle rider crash victim with chest wall moving backwards during inhalation and forward on exhalation, severe gasping for air.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Emergency 911 dispatch immediately. Traumatic flail chest and respiratory failure. Immediate positive pressure ventilation and trauma center transport.",
+    "expected_reference_chunks": [
+      "KB-CLIN-253",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Traumatic Open Flail Chest"
+  },
+  {
+    "id": "TEST-010",
+    "query": "Patient has high fever 40.2C, stiff neck, petechial purple rash spreading across trunk, and is completely confused and disoriented.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Emergency 911 activation. Suspected acute meningococcal meningitis. Emergent blood cultures and IV ceftriaxone + vancomycin + dexamethasone.",
+    "expected_reference_chunks": [
+      "KB-CLIN-109",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Bacterial Meningitis"
+  },
+  {
+    "id": "TEST-011",
+    "query": "I have severe asthma, my rescue albuterol inhaler took 8 puffs and didn't help, I can only speak one word at a time, ribs retracting with each breath.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent Emergency Department visit / Call 911 if worsening. Severe acute asthma exacerbation. Continuous nebulized bronchodilators and systemic corticosteroids needed.",
+    "expected_reference_chunks": [
+      "KB-CLIN-172",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Severe Acute Asthma Exacerbation"
+  },
+  {
+    "id": "TEST-012",
+    "query": "I had a sudden episode 30 minutes ago where I lost vision in my left eye completely like a shade pulled down, it lasted 10 minutes and now vision returned.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent emergency evaluation for Transient Ischemic Attack (Amaurosis fugax). High risk of imminent ischemic stroke. Immediate carotid imaging and stroke protocol.",
+    "expected_reference_chunks": [
+      "KB-CLIN-118",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Transient Ischemic Attack (TIA)"
+  },
+  {
+    "id": "TEST-013",
+    "query": "Sudden sharp stabbing chest pain on the right side that hurts when breathing in, coughing up blood-tinged sputum, and my right calf has been swollen and tender for 3 days.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent Emergency Department evaluation for suspected Acute Pulmonary Embolism secondary to DVT. Emergent CT pulmonary angiography and anticoagulation.",
+    "expected_reference_chunks": [
+      "KB-CLIN-181",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Pulmonary Embolism"
+  },
+  {
+    "id": "TEST-014",
+    "query": "My blood pressure reading is 210/125, my head is pounding severely and I have blurry spots in my vision.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent Emergency Department evaluation. Hypertensive Crisis with acute neurological symptoms. Gradual parenteral blood pressure reduction under continuous monitoring.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-015",
+    "query": "I swallowed 25 extra-strength Tylenol pills 4 hours ago after an argument, starting to feel nauseous.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent Emergency Department evaluation. Acute acetaminophen toxicity risk. Serum APAP level testing and initiation of N-acetylcysteine (NAC) hepatoprotection.",
+    "expected_reference_chunks": [
+      "KB-CLIN-226",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Acetaminophen Toxicity"
+  },
+  {
+    "id": "TEST-016",
+    "query": "Heart failure patient with 8 lb weight gain in 3 days, cannot lay flat to sleep without suffocating, coughing up frothy sputum.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent Emergency Department evaluation. Acute decompensated heart failure exacerbation with pulmonary edema. IV loop diuretics and cardiology escalation.",
+    "expected_reference_chunks": [
+      "KB-CLIN-028",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Decompensated Heart Failure"
+  },
+  {
+    "id": "TEST-017",
+    "query": "Deep kitchen knife laceration to palm of hand that went through muscle, fat visible, bleeding controlled with firm pressure but edges gaping open.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent Urgent Care or ER visit within 6-8 hours for sterile exploration, tendon/nerve evaluation, and primary layered suture closure.",
+    "expected_reference_chunks": [
+      "KB-CLIN-262",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Deep Laceration Requiring Primary Closure"
+  },
+  {
+    "id": "TEST-018",
+    "query": "Patient experiencing intense command auditory hallucinations telling them to hurt others, agitated and pacing rapidly.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Immediate Crisis Intervention Team / Psychiatric Emergency Services escalation. Secure environment, de-escalation, and psychiatric evaluation.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-019",
+    "query": "Severe sharp abdominal pain in right lower quadrant with rebound tenderness, vomiting, and low-grade fever.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent surgical evaluation for acute appendicitis. Abdominal ultrasound/CT, NPO status, and IV fluids.",
+    "expected_reference_chunks": [
+      "KB-CLIN-289",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Severe Acute Agitation / Psychosis with Imminent Violence"
+  },
+  {
+    "id": "TEST-020",
+    "query": "Diabetic patient with blood sugar meter reading 'HIGH' (>600 mg/dL), deep rapid breathing (Kussmaul), fruity breath odor, and severe lethargy.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Urgent Emergency Department transfer for Diabetic Ketoacidosis (DKA) or HHS. Emergent IV fluid resuscitation, regular insulin infusion, electrolyte management.",
+    "expected_reference_chunks": [
+      "KB-CLIN-046",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Atrial Fibrillation with Rapid Ventricular Response"
+  },
+  {
+    "id": "TEST-021",
+    "query": "Acute testicular pain on the left side that began suddenly 1 hour ago with nausea, testicle is elevated and exquisitely tender.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Emergent surgical evaluation for Testicular Torsion. Urgent testicular Doppler ultrasound and surgical detorsion within 6-hour ischemic window.",
+    "expected_reference_chunks": [
+      "KB-CLIN-082",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Ischemic Stroke (FAST Protocol)"
+  },
+  {
+    "id": "TEST-022",
+    "query": "Elderly patient with high fever, cough, heart rate 115, respiratory rate 26, confusion, and systolic BP dropping to 88 mmHg.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "High",
+    "ground_truth_answer": "Emergent sepsis evaluation (qSOFA positive). Immediate IV broad-spectrum antibiotics, IV crystalloid bolus (30 mL/kg), lactate measurement.",
+    "expected_reference_chunks": [
+      "KB-CLIN-028",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Decompensated Heart Failure"
+  },
+  {
+    "id": "TEST-023",
+    "query": "My heart feels like it's fluttering irregularly like a flopping fish in my chest for the past 2 hours, pulse is around 130 bpm, but no chest pain or fainting.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Same-day Urgent Care or ED evaluation for new-onset Atrial Fibrillation with rapid ventricular response. ECG diagnostic confirmation and rate control.",
+    "expected_reference_chunks": [
+      "KB-CLIN-046",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Atrial Fibrillation with Rapid Ventricular Response"
+  },
+  {
+    "id": "TEST-024",
+    "query": "I have had a severe throbbing headache on the right side of my head with nausea and sensitivity to light for 4 hours, preceded by visual zigzag lines.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Clinical presentation consistent with Acute Migraine with Aura. Rest in a dark quiet room, oral triptan (e.g. sumatriptan) + NSAID, evaluate if refractory.",
+    "expected_reference_chunks": [
+      "KB-CLIN-127",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Complex Migraine with Aura"
+  },
+  {
+    "id": "TEST-025",
+    "query": "Room spinning violently whenever I roll over in bed to the right, lasts about 30 seconds then stops, no hearing loss or weakness.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Clinical presentation consistent with Benign Paroxysmal Positional Vertigo (BPPV). Clinic evaluation for Dix-Hallpike test and Epley repositioning maneuver.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-026",
+    "query": "Productive cough with yellowish-green sputum, fever of 38.3C, and mild right-sided pleuritic chest discomfort for 4 days.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Outpatient medical evaluation within 24 hours for Community-Acquired Pneumonia. Chest radiograph and oral antibiotic prescription as indicated.",
+    "expected_reference_chunks": [
+      "KB-CLIN-190",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Moderate Community-Acquired Pneumonia"
+  },
+  {
+    "id": "TEST-027",
+    "query": "Sudden overwhelming wave of intense fear, heart pounding, sweating, trembling, feeling like I'm having a heart attack but ECG last week was completely normal.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Clinical presentation consistent with Acute Panic Attack. Reassurance, diaphragmatic breathing coaching (4-7-8 rhythm), primary care mental health referral.",
+    "expected_reference_chunks": [
+      "KB-CLIN-298",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Acute Panic Disorder Attack"
+  },
+  {
+    "id": "TEST-028",
+    "query": "Painful urination with increased urinary frequency and cloudy urine for 2 days, no fever, chills, or back pain.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Uncomplicated Lower Urinary Tract Infection (Cystitis). Outpatient urinalysis/urine culture and targeted oral antibiotic therapy (e.g. nitrofurantoin).",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-029",
+    "query": "Twisted my ankle playing basketball, moderate swelling on lateral malleolus, unable to bear weight for 4 steps.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Apply Ottawa Ankle Rules. Outpatient ankle radiography to rule out fracture, RICE protocol (Rest, Ice, Compression, Elevation), supportive ankle splint.",
+    "expected_reference_chunks": [
+      "KB-CLIN-190",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Moderate Community-Acquired Pneumonia"
+  },
+  {
+    "id": "TEST-030",
+    "query": "Painful vesicular blister eruption along a single dermatomal strip on my left ribcage with burning nerve pain.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Herpes Zoster (Shingles). Initiate oral antiviral therapy (valacyclovir) within 72 hours of rash onset to reduce neuralgia risk.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-031",
+    "query": "Persistent epigastric burning pain that improves temporarily after eating, accompanied by occasional dark tarry stool.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Suspected Peptic Ulcer Disease with potential low-grade upper GI bleeding. Outpatient gastroenterology referral, H. pylori testing, and oral PPI initiation.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-032",
+    "query": "Exertional chest tightness that occurs predictably after walking 3 uphill blocks and resolves within 3 minutes of sitting down.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Suspected Stable Angina Pectoris. Cardiology consultation within 7 days, elective stress testing, aspirin and sublingual nitroglycerin prescription.",
+    "expected_reference_chunks": [
+      "KB-CLIN-055",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Stable Angina Pectoris"
+  },
+  {
+    "id": "TEST-033",
+    "query": "Every spring I get sneezing fits, clear runny nose, and itchy watery eyes. What over-the-counter medication should I take?",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Seasonal Allergic Rhinitis. Recommended first-line treatment is an intranasal corticosteroid spray (fluticasone) combined with a non-sedating oral antihistamine (cetirizine/loratadine).",
+    "expected_reference_chunks": [
+      "KB-CLIN-199",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Mild Seasonal Allergic Rhinitis"
+  },
+  {
+    "id": "TEST-034",
+    "query": "I scraped my knee on asphalt while jogging, surface abrasion with light capillary bleeding that already stopped. How should I clean it?",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Superficial epidermal abrasion. Gently wash with mild soap and clean running water, apply thin layer of petroleum jelly, cover with clean sterile bandage.",
+    "expected_reference_chunks": [
+      "KB-CLIN-271",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Minor Superficial Epidermal Abrasion"
+  },
+  {
+    "id": "TEST-035",
+    "query": "I have a dull, band-like tension headache around my forehead after staring at a computer monitor for 10 hours, no nausea or aura.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Tension-Type Headache. Rest in a comfortable environment, hydration, gentle neck stretches, over-the-counter acetaminophen or ibuprofen as appropriate.",
+    "expected_reference_chunks": [
+      "KB-CLIN-145",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Tension-Type Headache"
+  },
+  {
+    "id": "TEST-036",
+    "query": "I get occasional skipped heartbeats when drinking 4 cups of espresso, lasts a second and goes away, no dizziness.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Benign Premature Ventricular Contractions (PVCs) likely caffeine-induced. Reassurance, reduction in caffeine intake, discuss with physician at routine checkup.",
+    "expected_reference_chunks": [
+      "KB-CLIN-064",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Benign Premature Ventricular Contractions"
+  },
+  {
+    "id": "TEST-037",
+    "query": "My blood pressure reading at home was 134/84 today, I feel completely fine. Do I need to rush to the doctor?",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Stage 1 Hypertension reading without symptoms. No emergency action needed. Log blood pressure daily for 2 weeks and discuss lifestyle modifications with PCP.",
+    "expected_reference_chunks": [
+      "KB-CLIN-073",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Essential Hypertension Stage 1 Workup"
+  },
+  {
+    "id": "TEST-038",
+    "query": "What is the recommended dietary calcium and vitamin D intake for a 45-year-old female for bone health?",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "General clinical health inquiry. 1000 mg of elemental calcium daily and 600-800 IU of Vitamin D3 daily recommended via balanced diet and sunlight exposure.",
+    "expected_reference_chunks": [
+      "KB-SLA-009",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "SLA-HIGH-L2: Acute Clinical / Severe Financial Exposure"
+  },
+  {
+    "id": "TEST-039",
+    "query": "Mild redness and peeling sunburn on shoulders after a day at the beach, no blistering or systemic fever.",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "First-degree superficial sunburn. Cool compresses, frequent application of aloe vera gel or moisturizer, oral hydration, avoid further sun exposure.",
+    "expected_reference_chunks": [
+      "KB-CLIN-001",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "STEMI Acute Myocardial Infarction"
+  },
+  {
+    "id": "TEST-040",
+    "query": "When is the best time to receive the seasonal influenza vaccine for maximum winter protection?",
+    "expected_category": "clinical_symptom",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Routine immunization inquiry. Annual influenza vaccination is recommended in September or October prior to the peak flu season.",
+    "expected_reference_chunks": [
+      "KB-CLIN-199",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "clinical"
+    },
+    "canonical_guideline_title": "Mild Seasonal Allergic Rhinitis"
+  },
+  {
+    "id": "TEST-041",
+    "query": "EMERGENCY: Someone has hacked into our corporate root AWS and Google Cloud accounts, deleted our backups, and locked out all system administrators!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Root cloud environment compromise. Immediately isolate compromised IAM roles, contact AWS/GCP Incident Support via out-of-band hotline, invoke Enterprise Disaster Recovery.",
+    "expected_reference_chunks": [
+      "KB-SEC-073",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Privileged Cloud IAM Role Escalation"
+  },
+  {
+    "id": "TEST-042",
+    "query": "My phone suddenly lost all cellular signal with 'No Service', and within 5 minutes I received emails that my bank account password and 2FA phone number were modified by someone else!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Active SIM Swap Attack & Account Takeover. Immediately contact carrier fraud department to lock SIM porting, freeze all linked bank accounts and wire dispatches, revoke active sessions.",
+    "expected_reference_chunks": [
+      "KB-CLIN-280",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Suicidal Ideation with Imminent Intent & Lethal Plan"
+  },
+  {
+    "id": "TEST-043",
+    "query": "A ransomware group has sent us a proof-of-hack with 50 GB of our customer database and says they will publish it in 2 hours unless we pay $500,000 in Bitcoin!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Ransomware & Data Exfiltration Threat. Immediately notify Chief Information Security Officer, Corporate Legal Counsel, and isolate affected database subnets. Do not negotiate on unauthorized channels.",
+    "expected_reference_chunks": [
+      "KB-SEC-055",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Ransomware & Corporate Extortion Threat"
+  },
+  {
+    "id": "TEST-044",
+    "query": "We are currently undergoing a massive automated credential stuffing attack with over 150,000 failed logins per minute hitting our customer authentication API!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Distributed Credential Stuffing Attack. Engage Web Application Firewall (WAF) rate limiting, enforce CAPTCHA / bot challenge, invalidate active compromised user tokens.",
+    "expected_reference_chunks": [
+      "KB-SEC-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Credential Stuffing & Automated Brute Force"
+  },
+  {
+    "id": "TEST-045",
+    "query": "An attacker obtained our company's primary OAuth secret and is generating valid admin session tokens, taking over customer accounts remotely without their passwords!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: OAuth Secret Leak & Session Hijacking. Immediately rotate OAuth client secrets across all production clusters, invalidate all existing active session tokens, trigger security audit.",
+    "expected_reference_chunks": [
+      "KB-SEC-037",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Session Hijacking via Stolen Infostealer Refresh Token"
+  },
+  {
+    "id": "TEST-046",
+    "query": "I just noticed an unauthorized hardware security key was registered to my executive account from an IP address in a hostile jurisdiction 10 minutes ago!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Unauthorized Security Key Registration. Immediate global revocation of all account credentials, terminate all active browser sessions, quarantine account pending biometric identity verification.",
+    "expected_reference_chunks": [
+      "KB-SEC-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Credential Stuffing & Automated Brute Force"
+  },
+  {
+    "id": "TEST-047",
+    "query": "Someone created 10 new privileged Administrator users in our production database using an unauthorized service account key exposed on GitHub!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Exposed Privileged Service Key. Immediately revoke GitHub-exposed API/service account key, terminate unauthorized administrator accounts, audit production database query logs.",
+    "expected_reference_chunks": [
+      "KB-SEC-073",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Privileged Cloud IAM Role Escalation"
+  },
+  {
+    "id": "TEST-048",
+    "query": "My corporate laptop has displayed a red lock screen stating all hard drives have been encrypted with BitLocker/ransomware and demands payment immediately.",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Active Endpoint Ransomware Infection. Disconnect device from Wi-Fi/Ethernet immediately, power off to halt memory encryption spread, alert Corporate Infosec Incident Team.",
+    "expected_reference_chunks": [
+      "KB-CLIN-280",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Suicidal Ideation with Imminent Intent & Lethal Plan"
+  },
+  {
+    "id": "TEST-049",
+    "query": "I got an alert that my account email was changed to a temporary mailinator address, my 2FA was disabled, and my primary security questions were altered!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Complete Account Hijacking. Freeze account transactions immediately, revert unauthorized profile changes via internal security tools, verify primary owner via government photo ID.",
+    "expected_reference_chunks": [
+      "KB-CLIN-262",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Deep Laceration Requiring Primary Closure"
+  },
+  {
+    "id": "TEST-050",
+    "query": "Our customer support agent's credentials were phished and the hacker is currently using their admin console access to view customer credit card records!",
+    "expected_category": "account_security",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Security Escalation: Insider Support Console Compromise. Immediately disable compromised employee active directory account, terminate all active admin console sessions, begin incident log retention.",
+    "expected_reference_chunks": [
+      "KB-SEC-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Credential Stuffing & Automated Brute Force"
+  },
+  {
+    "id": "TEST-051",
+    "query": "I received an unexpected push notification to approve a login from an unknown location in Russia, which I rejected, but I'm worried they know my password.",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Credential Compromise / MFA Fatigue attempt. Immediately change master password, review active authorized devices, enable biometric MFA requirements.",
+    "expected_reference_chunks": [
+      "KB-SEC-001",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Credential Stuffing & Automated Brute Force"
+  },
+  {
+    "id": "TEST-052",
+    "query": "My account has been locked out due to multiple failed password attempts that I didn't make, and I need access for an urgent deadline in 30 minutes.",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Targeted Account Lockout. Verify identity via secondary phone/email OTP, review IP logs for brute-force patterns, unlock account with mandatory password reset.",
+    "expected_reference_chunks": [
+      "KB-SEC-109",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Repeated Password Lockout on Personal Account"
+  },
+  {
+    "id": "TEST-053",
+    "query": "An email in my inbox says my account was logged into from a new Windows device in Netherlands using a VPN. I live in Texas and have never traveled there.",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Suspicious Foreign Authentication. Force terminate all active sessions, prompt user for password change, verify whether any profile data was altered during session.",
+    "expected_reference_chunks": [
+      "KB-SEC-091",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Suspicious Foreign IP Authentication Alert"
+  },
+  {
+    "id": "TEST-054",
+    "query": "I found an unauthorized forwarding rule set up in my email settings sending all billing and security verification emails to an unknown Gmail address!",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Email Account Infiltration & Auto-Forwarding Exfiltration. Immediately delete malicious forwarding rules, reset email account password, revoke active API access tokens.",
+    "expected_reference_chunks": [
+      "KB-SEC-109",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Repeated Password Lockout on Personal Account"
+  },
+  {
+    "id": "TEST-055",
+    "query": "My company's Slack bot token was posted in a public comment thread on our community Discord server.",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Credential Exposure. Immediately revoke exposed Slack Bot token in workspace administration, generate new token, review audit logs for unauthorized message read/write events.",
+    "expected_reference_chunks": [
+      "KB-SEC-001",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Credential Stuffing & Automated Brute Force"
+  },
+  {
+    "id": "TEST-056",
+    "query": "I received a notification that a new mobile device was added to my trusted authentication list, but I haven't purchased any new phones.",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Unauthorized Device Pairing. Immediately deregister unrecognized device from security dashboard, rotate master credentials, mandate re-authentication.",
+    "expected_reference_chunks": [
+      "KB-SEC-019",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Unauthorized 2FA Device Registration & SIM Swapping"
+  },
+  {
+    "id": "TEST-057",
+    "query": "Someone is impersonating our Chief Financial Officer from an external look-alike domain sending emails requesting urgent wire details.",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Business Email Compromise / Executive Impersonation attempt. Block look-alike domain on email gateway, alert all finance personnel, quarantine fraudulent messages.",
+    "expected_reference_chunks": [
+      "KB-SEC-091",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Suspicious Foreign IP Authentication Alert"
+  },
+  {
+    "id": "TEST-058",
+    "query": "Our automated monitoring detected that our database was queried from an unrecognized residential proxy IP address using an employee's VPN credentials.",
+    "expected_category": "account_security",
+    "expected_severity": "High",
+    "ground_truth_answer": "Potential Stolen VPN Credential. Disconnect active VPN session, reset employee credentials, initiate device endpoint scan for malware/keyloggers.",
+    "expected_reference_chunks": [
+      "KB-SEC-001",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Credential Stuffing & Automated Brute Force"
+  },
+  {
+    "id": "TEST-059",
+    "query": "I forgot my password and my backup email address is an old university email that has been deactivated. How can I regain access?",
+    "expected_category": "account_security",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Account Recovery Assistance. Escalate to Identity Verification Queue for manual review of account history, billing records, or government ID.",
+    "expected_reference_chunks": [
+      "KB-SEC-109",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Repeated Password Lockout on Personal Account"
+  },
+  {
+    "id": "TEST-060",
+    "query": "I want to set up a hardware security key (YubiKey) on my account to replace SMS 2FA. Where do I find the configuration menu?",
+    "expected_category": "account_security",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "FIDO2 / Hardware Security Key Setup. Provide step-by-step navigation through Security Settings > Two-Factor Authentication > Add Security Key.",
+    "expected_reference_chunks": [
+      "KB-SEC-091",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Suspicious Foreign IP Authentication Alert"
+  },
+  {
+    "id": "TEST-061",
+    "query": "I'm receiving a message saying 'Session Expired - Re-authentication Required' every 15 minutes while working on my desktop.",
+    "expected_category": "account_security",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Session Lifetime Configuration. Review browser cookie settings, check for conflicting browser extensions or dynamic IP changes causing session invalidation.",
+    "expected_reference_chunks": [
+      "KB-CLIN-163",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Tension Pneumothorax"
+  },
+  {
+    "id": "TEST-062",
+    "query": "I got an email asking me to click a link to verify my account or it will be suspended within 24 hours. The sender address looks suspicious. Is this real?",
+    "expected_category": "account_security",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Phishing Verification. Confirm that company never sends account suspension threats requiring external links, guide user to report phishing and delete email.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-063",
+    "query": "How do I view the list of all currently active logged-in sessions and terminate the ones I'm no longer using?",
+    "expected_category": "account_security",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Session Management Guidance. Direct user to Security Dashboard > Active Sessions, instruct on 'Log Out of All Other Devices' action.",
+    "expected_reference_chunks": [
+      "KB-CLIN-280",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Active Suicidal Ideation with Imminent Intent & Lethal Plan"
+  },
+  {
+    "id": "TEST-064",
+    "query": "Can I set up multiple phone numbers for SMS verification on my account as a backup?",
+    "expected_category": "account_security",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "MFA Secondary Configuration. Explain security policy regarding single primary SMS number, recommend authenticator app or backup codes as superior fallback.",
+    "expected_reference_chunks": [
+      "KB-CLIN-262",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Deep Laceration Requiring Primary Closure"
+  },
+  {
+    "id": "TEST-065",
+    "query": "I want to update my account password to meet the new security requirements. Where is the change password page?",
+    "expected_category": "account_security",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Password Management. Navigate to Profile > Settings > Security > Change Password. Must contain minimum 12 characters, uppercase, number, symbol.",
+    "expected_reference_chunks": [
+      "KB-SEC-109",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Repeated Password Lockout on Personal Account"
+  },
+  {
+    "id": "TEST-066",
+    "query": "I got a new iPhone and need to transfer my Google Authenticator 2FA codes from my old phone. How do I do that?",
+    "expected_category": "account_security",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Authenticator App Migration. Open Google Authenticator on old phone > Settings > Transfer accounts > Export accounts, scan generated QR code with new phone.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-067",
+    "query": "Does your service support login with passkeys on iOS and Android?",
+    "expected_category": "account_security",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Passkey Capability Inquiry. Provide information regarding WebAuthn / Passkey support and enrollment instructions via the security settings tab.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-068",
+    "query": "How often does your security policy require users to rotate their passwords?",
+    "expected_category": "account_security",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Password Policy Information. Explain that in alignment with modern NIST guidelines, periodic password rotation is not enforced unless compromise is detected.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-069",
+    "query": "I want to download a copy of all my account data and personal activity history under GDPR/CCPA regulations.",
+    "expected_category": "account_security",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Data Export Request. Navigate to Privacy & Security > Download Your Data, select export format (JSON/ZIP), download link generated within 48 hours.",
+    "expected_reference_chunks": [
+      "KB-SEC-109",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Repeated Password Lockout on Personal Account"
+  },
+  {
+    "id": "TEST-070",
+    "query": "Where can I review the privacy policy and terms of service for user authentication?",
+    "expected_category": "account_security",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Terms & Policy Guidance. Direct user to the official Legal & Trust Center documentation portal.",
+    "expected_reference_chunks": [
+      "KB-SEC-091",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "security"
+    },
+    "canonical_guideline_title": "Suspicious Foreign IP Authentication Alert"
+  },
+  {
+    "id": "TEST-071",
+    "query": "URGENT FRAUD ALERT: An unauthorized international wire transfer of $85,000 was just sent from my commercial account 15 minutes ago to an unknown entity in Hong Kong! Stop this wire immediately!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Emergency SWIFT Wire Recall (<24h Critical Window). Initiate urgent MT199/MT292 recall message to beneficiary bank, immediately freeze account outbound capabilities, alert Bank Fraud Command.",
+    "expected_reference_chunks": [
+      "KB-FIN-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized International Wire Transfer > $25,000"
+  },
+  {
+    "id": "TEST-072",
+    "query": "Help! A malicious crypto drainer contract just stole 30 ETH ($90,000) from my connected wallet 5 minutes ago and is currently draining my remaining tokens!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Web3 Asset Drainer Incident. Guide user to immediately revoke all active smart contract approvals via Revoke.cash, transfer uncompromised funds to cold hardware wallet, blacklist hacker address.",
+    "expected_reference_chunks": [
+      "KB-FIN-030",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Active Crypto Wallet Drainer Incident"
+  },
+  {
+    "id": "TEST-073",
+    "query": "My company's payroll checking account has been hit with $140,000 in fraudulent ACH debits overnight and we cannot make payroll this morning!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Commercial ACH Fraud. Initiate emergency NACHA Return Code R10/R29 (Corporate Unauthorized), establish urgent executive bridge with Treasury Management, place emergency ACH Debit Block.",
+    "expected_reference_chunks": [
+      "KB-FIN-088",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized Recurring ACH Debit (Reg E Dispute)"
+  },
+  {
+    "id": "TEST-074",
+    "query": "Someone created counterfeit clones of my corporate cards and has made six consecutive $5,000 cash withdrawals at an ATM in another country within the last 20 minutes!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical ATM Skimming & Card Cloned Fraud. Instantly freeze and cancel all physical and virtual cards, block card BIN range access, initiate emergency Reg E investigation for full provisional credit.",
+    "expected_reference_chunks": [
+      "KB-FIN-059",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "ATM Physical Skimming & Serial Cash Withdrawals"
+  },
+  {
+    "id": "TEST-075",
+    "query": "An unauthorized wire of $50,000 was initiated from our escrow account due to a fraudulent closing attorney email instruction received this morning!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Wire Fraud / Business Email Compromise. Execute immediate wire recall protocol, notify FBI IC3, freeze corresponding ledger accounts, preserve wire audit trails.",
+    "expected_reference_chunks": [
+      "KB-FIN-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized International Wire Transfer > $25,000"
+  },
+  {
+    "id": "TEST-076",
+    "query": "All funds in our merchant settlement account ($62,000) were redirected to an unknown offshore bank account due to unauthorized payout settings change!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Merchant Payout Divert. Freeze merchant payout gateway immediately, halt clearing of outgoing funds, lock merchant account profile, initiate forensic audit.",
+    "expected_reference_chunks": [
+      "KB-SEC-019",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized 2FA Device Registration & SIM Swapping"
+  },
+  {
+    "id": "TEST-077",
+    "query": "Fraudulent debit transactions totaling $32,000 occurred while my physical debit card was in my wallet, leaving my account overdrawn by $18,000!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Unauthorized Card-Not-Present Fraud. Block card permanently, reverse all overdraft fees immediately, issue provisional credit under Regulation E within statutory timeframe.",
+    "expected_reference_chunks": [
+      "KB-FIN-088",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized Recurring ACH Debit (Reg E Dispute)"
+  },
+  {
+    "id": "TEST-078",
+    "query": "Someone accessed my investment brokerage account and liquidated $75,000 in index funds and requested an immediate wire to a foreign account!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Brokerage Takeover & Wire Attempt. Intercept pending wire transfer before settlement cutoff, freeze brokerage trading permissions, enforce fraud lockdown.",
+    "expected_reference_chunks": [
+      "KB-FIN-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized International Wire Transfer > $25,000"
+  },
+  {
+    "id": "TEST-079",
+    "query": "Our business payment terminal was compromised with malware and processed $40,000 in unauthorized chargebacks and merchant refunds to a single prepaid card!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical Merchant Terminal Compromise. Deactivate terminal ID at merchant acquirer, halt refund processing, engage card brand security teams for forensic review.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-080",
+    "query": "My joint savings account had an unauthorized wire of $100,000 sent out this morning, and the branch manager says they cannot stop it without head office approval!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Critical",
+    "ground_truth_answer": "Critical High-Value Wire Recall Escalation. Immediate executive escalation to Central Fraud Operations, issue SWIFT recall notice, engage receiving institution security desk.",
+    "expected_reference_chunks": [
+      "KB-FIN-001",
+      "KB-SLA-001"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized International Wire Transfer > $25,000"
+  },
+  {
+    "id": "TEST-081",
+    "query": "I checked my statement and see 8 different fraudulent charges of $499 each from an online electronics store made yesterday that I never authorized.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "Card Fraud Dispute. Cancel compromised card immediately, issue replacement card, file Regulation E dispute for all 8 unauthorized transactions, grant provisional credit.",
+    "expected_reference_chunks": [
+      "KB-SEC-019",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized 2FA Device Registration & SIM Swapping"
+  },
+  {
+    "id": "TEST-082",
+    "query": "An ATM took $1,000 from my checking account balance but the machine made a grinding noise and did not dispense any cash!",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "ATM Non-Dispense Dispute. Log terminal identifier, review ATM electronic journal and cash dispenser cassette reconciliation, issue provisional credit within 48 hours.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-083",
+    "query": "A company called 'Global Tech Subscriptions' has been pulling $150 via direct debit ACH every month for 6 months without my knowledge or consent.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "Unauthorized Recurring ACH Dispute. File NACHA Written Statement of Unauthorized Debit (WSUD), return transactions, place permanent stop payment on merchant originator ID.",
+    "expected_reference_chunks": [
+      "KB-FIN-088",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Unauthorized Recurring ACH Debit (Reg E Dispute)"
+  },
+  {
+    "id": "TEST-084",
+    "query": "I ordered custom furniture for $3,500 2 months ago, the seller closed their website and disconnected their phone, and tracking shows non-delivery.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "Merchandise Not Received Chargeback (Reason Code 13.1). Submit purchase order, proof of cancellation attempt, and file formal merchant chargeback.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-085",
+    "query": "A merchant charged my credit card $1,200 for a car rental return deposit that they promised in writing would be $150, refusing to respond to emails.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "Incorrect Transaction Amount Dispute (Reason Code 12.5). Provide signed rental agreement showing $150 deposit limit, file dispute for difference of $1,050.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-086",
+    "query": "I paid $2,000 for flight tickets on an airline that declared bankruptcy the following week and canceled all flights with no refund offered.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "Services Not Provided / Merchant Insolvency Chargeback. Submit flight itinerary and cancellation notice, process chargeback under card brand network rules.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-087",
+    "query": "My card was charged $850 at a hotel in Miami on a day when I have proof I was at work in Seattle, card never left my possession.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "Counterfeit Card / Fraudulent Lodging Charge. Block card, file fraud affidavit, initiate dispute under Regulation Z / card network fraud rules.",
+    "expected_reference_chunks": [
+      "KB-SEC-037",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Session Hijacking via Stolen Infostealer Refresh Token"
+  },
+  {
+    "id": "TEST-088",
+    "query": "I was billed twice for a $1,500 laptop purchase on the same day by the online retailer, both charges posted and cleared my account.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "High",
+    "ground_truth_answer": "Duplicate Processing Dispute (Reason Code 12.6). Submit invoice demonstrating single order authorization, dispute second charge for immediate reversal.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-009"
+    ],
+    "metadata": {
+      "difficulty": "hard",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-089",
+    "query": "A gym membership that I canceled in writing 3 months ago is still charging my card $45 every month.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Canceled Recurring Transaction Dispute (Reason Code 13.5). Provide copy of written cancellation notice and date, dispute ongoing charges, block recurring token.",
+    "expected_reference_chunks": [
+      "KB-SEC-037",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Session Hijacking via Stolen Infostealer Refresh Token"
+  },
+  {
+    "id": "TEST-090",
+    "query": "I was charged a $35 foreign transaction fee on a purchase that was denominated and priced in US Dollars.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Fee Dispute Review. Clarify cross-border processing rule (merchant acquiring bank located overseas), evaluate fee waiver courtesy based on account history.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-091",
+    "query": "I returned a pair of shoes ($180) to the store 3 weeks ago with receipt and return tracking, but the refund has not posted to my account.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Credit Not Processed Dispute (Reason Code 13.6). Request return shipping confirmation and merchant return policy, initiate credit dispute with merchant acquirer.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-092",
+    "query": "A restaurant added a $25 tip to my bill when I had written $10 on the merchant copy of the receipt.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Altered Transaction Amount Dispute. Provide customer copy of itemized receipt showing $10 tip, file dispute for $15 variance.",
+    "expected_reference_chunks": [
+      "KB-CLIN-127",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Complex Migraine with Aura"
+  },
+  {
+    "id": "TEST-093",
+    "query": "My monthly streaming service renewed at $22 instead of the $12 promotional price I was guaranteed for 12 months.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Promotional Pricing Variance. Request promo confirmation email, dispute difference with merchant or issue customer service billing credit.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-094",
+    "query": "I paid $85 for express overnight shipping, but the package arrived 7 days late via standard ground.",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Medium",
+    "ground_truth_answer": "Defective Service Dispute. Request shipping carrier timestamp proof, dispute difference between express and ground rate.",
+    "expected_reference_chunks": [
+      "KB-SLA-017",
+      "KB-SLA-017"
+    ],
+    "metadata": {
+      "difficulty": "medium",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "SLA-MEDIUM-L3: Standard Triage & Operational Investigation"
+  },
+  {
+    "id": "TEST-095",
+    "query": "Can you explain how the chargeback process works and how many days I have to file a dispute?",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Dispute Education. Explain that under Regulation E and card network rules, cardholders have up to 60 days from statement date to file formal dispute.",
+    "expected_reference_chunks": [
+      "KB-FIN-117",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Double Merchant Billing & POS Duplicate Charge"
+  },
+  {
+    "id": "TEST-096",
+    "query": "I see a $1.00 pending charge from a gas station on my card, but I purchased $45 of fuel. Why?",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Pre-Authorization Hold Clarification. Explain that $1.00 is a temporary card validation hold that will settle for actual $45 pumped within 2-3 business days.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-097",
+    "query": "What documentation do I need to prepare before submitting a dispute for damaged goods received in the mail?",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Dispute Evidence Checklist. Photos of damaged item, original packaging, merchant invoice, communication attempt with merchant, return receipt.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-098",
+    "query": "How long does it typically take for a merchant refund to appear on my credit card balance after they issue it?",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Refund Timeline Guidance. Merchant refunds typically clear within 3 to 5 business days depending on merchant acquiring bank settlement schedule.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  },
+  {
+    "id": "TEST-099",
+    "query": "Where can I download my annual consolidated statement of transactions and dispute history for tax reporting?",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Statement Retrieval Guidance. Direct user to Online Banking > Statements & Documents > Annual Financial Summary.",
+    "expected_reference_chunks": [
+      "KB-SLA-009",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "SLA-HIGH-L2: Acute Clinical / Severe Financial Exposure"
+  },
+  {
+    "id": "TEST-100",
+    "query": "Can I cancel a debit card dispute that I filed yesterday after the merchant contacted me and issued a direct refund?",
+    "expected_category": "transaction_dispute",
+    "expected_severity": "Low",
+    "ground_truth_answer": "Dispute Withdrawal Guidance. Instruct user how to access Dispute Resolution Portal and select 'Withdraw Dispute - Resolved with Merchant'.",
+    "expected_reference_chunks": [
+      "KB-CLIN-037",
+      "KB-SLA-025"
+    ],
+    "metadata": {
+      "difficulty": "low",
+      "domain": "financial"
+    },
+    "canonical_guideline_title": "Hypertensive Crisis with End-Organ Damage"
+  }
+]

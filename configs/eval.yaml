@@ -1,0 +1,49 @@
+# Evaluation & Benchmark Configuration for TriageAgent
+# All paths relative to repository root
+
+environment:
+  device: "cpu"
+  seed: 42
+
+dataset:
+  knowledge_base_json: "data/knowledge_base/triage_knowledge_base.json"
+  knowledge_base_markdown: "data/knowledge_base/triage_protocols.md"
+  golden_set_path: "data/golden_test_set.json"
+  faiss_index_path: "data/triage_faiss.index"
+  chunks_metadata_path: "data/triage_chunks.json"
+  total_golden_samples: 100
+
+retrieval:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  cross_encoder_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  dimension: 384
+  metric: "InnerProduct (Cosine Similarity on L2-normalized vectors)"
+  top_k_candidates: 20
+  top_k_reranked: 10
+  eval_k_values: [5, 10]
+
+cache:
+  similarity_metric: "cosine_distance"
+  distance_threshold: 0.05
+  redis_host: "localhost"
+  redis_port: 6379
+  socket_timeout_seconds: 0.2
+
+risk_engine:
+  emergency_sla_minutes: 5
+  emergency_severity: "Critical"
+  deterministic_signals:
+    - "Self-Harm / Suicide Risk"
+    - "Clinical Red Flag (STEMI, FAST Stroke, Stridor)"
+    - "High-Value Financial Drain / Wire Theft"
+    - "SLA Target Breach Risk"
+    - "Regulatory / Legal Escalation"
+    - "Composite Multi-Signal Risk"
+
+evaluation:
+  results_dir: "results"
+  output_benchmark_json: "results/benchmark_results.json"
+  judge_model: "gemini/gemini-2.5-flash"
+  judge_temperature: 0.1
+  cohens_kappa_weights: "quadratic"
+  escalation_positive_classes: ["Critical", "High"]

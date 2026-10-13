@@ -39,8 +39,7 @@ def stratified_subsample(golden_set, n=40):
 
 def independent_relabel(examples):
     """Re-label examples with a minimal, non-keyword-biased prompt."""
-    client = genai.Client(api_key=DEEPSEEK_API_KEY)
-    
+        
     intent_names = ", ".join([f'"{i}"' for i in INTENT_TAXONOMY])
     
     results = []

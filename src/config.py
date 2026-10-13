@@ -35,9 +35,10 @@ load_dotenv()
 # We don't enforce a specific API key here because LiteLLM uses whichever matches the model
 # (e.g. GEMINI_API_KEY for 'gemini/...', OPENAI_API_KEY for 'gpt-4', DEEPSEEK_API_KEY for 'deepseek/...')
 
-# Models - Prefix with provider for LiteLLM (e.g., 'gemini/gemini-2.5-flash', 'deepseek/deepseek-chat')
-LLM_MODEL = os.getenv("LLM_MODEL", "deepseek/deepseek-chat")
-JUDGE_MODEL = os.getenv("JUDGE_MODEL", "deepseek/deepseek-chat")
+# Models - Prefix with provider for LiteLLM (e.g., 'gemini/gemini-3.6-flash', 'deepseek/deepseek-chat')
+# LiteLLM automatically detects GEMINI_API_KEY from environment / .env
+LLM_MODEL = os.getenv("LLM_MODEL", "gemini/gemini-flash-latest")
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini/gemini-flash-latest")
 
 # Pipeline settings
 RETRIEVAL_TOP_K = 3

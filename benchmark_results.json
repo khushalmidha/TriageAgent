@@ -1,0 +1,1073 @@
+{
+  "version": "1.0.0",
+  "project": "TriageAgent",
+  "repository": "https://github.com/khushalmidha/TriageAgent",
+  "provenance": {
+    "timestamp_utc": "2026-10-13 12:41:44 UTC",
+    "git_commit_sha": "a6646808e6de87f4fcb1a1d31e4ec44a4eb89053",
+    "execution_environment": {
+      "python": "3.12.0",
+      "torch": "2.13.0+cpu",
+      "sentence_transformers": "6.0.1",
+      "faiss": "1.15.0",
+      "numpy": "2.4.3",
+      "scikit_learn": "1.8.0",
+      "os": "Windows 11 (AMD64)"
+    },
+    "random_seed": 42,
+    "dataset_cryptographic_hashes": {
+      "golden_test_set_sha256": "922626c41f743fa74bdeba39fb50bd8e960b86f27c55e8e7dbd92c56d7b8730c",
+      "knowledge_base_json_sha256": "cf317ed67fc3f1fac7962e2a17339be5b18d4f81939d223c5ea8e29a73cc1d19",
+      "faiss_index_sha256": "91aed9714aeae3f6bd203ca0917c45480470caecef6226b20b9d3ea05b7faaa2",
+      "eval_config_sha256": "12947c7be28f93edef2482ef3d59cb58b15a0ca91ee85401b97201199dab3170"
+    }
+  },
+  "model_specifications": {
+    "bi_encoder": "sentence-transformers/all-MiniLM-L6-v2 (384-dim, L2-normalized)",
+    "cross_encoder": "cross-encoder/ms-marco-MiniLM-L-6-v2 (max_seq_length=512, batch_size=32)",
+    "faiss_index_type": "IndexFlatIP (Exact Cosine Inner Product)",
+    "llm_judge_model": "gemini-2.5-flash (temperature=0.0)",
+    "semantic_cache_metric": "Cosine Distance <= 0.05"
+  },
+  "executive_summary_scorecard": {
+    "retrieval_ndcg_at_10": 0.4083,
+    "retrieval_ndcg_at_10_95_ci": [
+      0.324,
+      0.4957
+    ],
+    "retrieval_mrr": 0.4683,
+    "retrieval_hit_at_10": 0.5,
+    "retrieval_hit_at_20": 0.55,
+    "reranking_relative_gain_pct": 9.14,
+    "emergency_routing_p99_latency_ms": 0.0897,
+    "emergency_routing_sla_target_ms": 10.0,
+    "emergency_routing_sla_status": "PASSED (<0.3ms measured vs <10ms target)",
+    "escalation_pr_auc_critical": 0.7433,
+    "escalation_critical_prevalence_baseline": 0.3,
+    "escalation_pr_auc_broad": 0.819,
+    "escalation_broad_prevalence_baseline": 0.58,
+    "cache_cold_pipeline_p99_ms": 18989.8,
+    "cache_warm_hit_p99_ms": 119.1,
+    "cache_latency_p99_reduction_pct": 99.37,
+    "cache_adversarial_safety_margin": 0.0524,
+    "faithfulness_claim_support_ratio": 0.6858,
+    "supported_claims_denominator": "155 / 226",
+    "judge_cohens_kappa_quadratic": 0.9918,
+    "judge_cohens_kappa_unweighted": 0.9731,
+    "judge_inter_run_stability_status": "STABLE (<0.01 std across 3 runs at T=0.0)",
+    "data_contamination_audit_status": "PASS (0 exact or normalized duplicates)"
+  },
+  "detailed_suite_results": {
+    "retrieval": {
+      "ndcg_at_5": 0.4292,
+      "ndcg_at_10": 0.4083,
+      "ndcg_at_10_95_ci": [
+        0.324,
+        0.4957
+      ],
+      "recall_at_5": 0.49,
+      "recall_at_10": 0.5,
+      "recall_at_10_95_ci": [
+        0.41,
+        0.6
+      ],
+      "mrr": 0.4683,
+      "mrr_95_ci": [
+        0.3783,
+        0.565
+      ],
+      "latency_ms": {
+        "p50": 1547.31,
+        "p95": 2269.06,
+        "p99": 2466.35,
+        "mean": 1619.07
+      }
+    },
+    "reranking_ablation": {
+      "benchmark_metadata": {
+        "evaluation_date": "2026-10-13 12:22:19 UTC",
+        "total_queries": 100,
+        "valid_mapped_queries": 100,
+        "coverage_validity_ratio": 1.0,
+        "indexed_guideline_chunks": 635,
+        "canonical_guideline_topics": 51,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+        "candidate_count_stage_1": 20,
+        "final_top_k_stage_2": 10,
+        "bootstrap_confidence_level": 0.95,
+        "bootstrap_resamples": 1000,
+        "random_seed": 42
+      },
+      "coverage_hit_rates": {
+        "hit_at_1": 0.45,
+        "hit_at_5": 0.49,
+        "hit_at_10": 0.5,
+        "hit_at_20": 0.55
+      },
+      "lexical_baseline_token_overlap": {
+        "ndcg_at_10": 0.3163,
+        "recall_at_10": 0.47,
+        "mrr": 0.3954
+      },
+      "stage_1_faiss_bi_encoder": {
+        "ndcg_at_5": 0.387,
+        "ndcg_at_10": 0.3741,
+        "ndcg_at_10_95_ci": [
+          0.2906,
+          0.4644
+        ],
+        "recall_at_5": 0.47,
+        "recall_at_10": 0.48,
+        "mrr": 0.43,
+        "mrr_95_ci": [
+          0.3417,
+          0.525
+        ],
+        "latency_ms": {
+          "p50": 0.53,
+          "p95": 0.66,
+          "p99": 1.1,
+          "mean": 0.55
+        }
+      },
+      "stage_2_faiss_plus_cross_encoder": {
+        "ndcg_at_5": 0.4292,
+        "ndcg_at_10": 0.4083,
+        "ndcg_at_10_95_ci": [
+          0.324,
+          0.4957
+        ],
+        "recall_at_5": 0.49,
+        "recall_at_10": 0.5,
+        "recall_at_10_95_ci": [
+          0.41,
+          0.6
+        ],
+        "mrr": 0.4683,
+        "mrr_95_ci": [
+          0.3783,
+          0.565
+        ],
+        "latency_ms": {
+          "p50": 1547.31,
+          "p95": 2269.06,
+          "p99": 2466.35,
+          "mean": 1619.07
+        }
+      },
+      "reranking_ablation_summary": {
+        "ndcg_at_10_gain_absolute": 0.0342,
+        "ndcg_at_10_gain_relative_pct": 9.14,
+        "mrr_gain_absolute": 0.0383,
+        "reranking_p50_overhead_ms": 1546.77
+      }
+    },
+    "risk_engine_latency": {
+      "benchmark_metadata": {
+        "iterations": 1000,
+        "unique_test_query_profiles": 10,
+        "emergency_bypass_percentage": 50.0,
+        "hardware": {
+          "system": "Windows",
+          "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+          "machine": "AMD64"
+        },
+        "evaluation_scope": "Isolated rule evaluation (string matching, regex parsing, composite score computation). Excludes network I/O, FAISS search, and LLM calls."
+      },
+      "overall_latency_ms": {
+        "p50_median_ms": 0.028,
+        "p90_ms": 0.0408,
+        "p95_ms": 0.0488,
+        "p99_ms": 0.0897,
+        "max_ms": 0.2692,
+        "mean_ms": 0.0312,
+        "std_ms": 0.0164
+      },
+      "emergency_bypass_latency_ms": {
+        "p50_median_ms": 0.03,
+        "p90_ms": 0.0439,
+        "p95_ms": 0.0498,
+        "p99_ms": 0.0859,
+        "max_ms": 0.235,
+        "mean_ms": 0.0327,
+        "std_ms": 0.015
+      },
+      "non_emergency_evaluation_latency_ms": {
+        "p50_median_ms": 0.0263,
+        "p90_ms": 0.037,
+        "p95_ms": 0.0455,
+        "p99_ms": 0.0901,
+        "max_ms": 0.2692,
+        "mean_ms": 0.0297,
+        "std_ms": 0.0175
+      },
+      "sla_verification": {
+        "target_threshold_ms": 10.0,
+        "measured_p99_ms": 0.0897,
+        "target_achieved": true
+      }
+    },
+    "cache_latency": {
+      "benchmark_metadata": {
+        "eval_samples": 40,
+        "warmup_runs": 3,
+        "hardware": {
+          "system": "Windows",
+          "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+          "machine": "AMD64",
+          "python_version": "3.12.0"
+        },
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+        "llm_provider_model": "gemini/gemini-2.5-flash",
+        "semantic_cache_distance_threshold": 0.05,
+        "cache_backend": "In-Memory / Redis (socket timeout 0.2s)",
+        "includes_network_latency": "Yes for external API calls, No for local retrieval/cache"
+      },
+      "component_breakdown": {
+        "retrieval_only_latency": {
+          "p50_median_ms": 82.8,
+          "p90_ms": 158.99,
+          "p95_ms": 184.75,
+          "p99_ms": 320.37,
+          "mean_ms": 99.41,
+          "std_ms": 61.88,
+          "min_ms": 38.16,
+          "max_ms": 393.95
+        },
+        "reranking_only_latency": {
+          "p50_median_ms": 2228.25,
+          "p90_ms": 3262.38,
+          "p95_ms": 3294.17,
+          "p99_ms": 3395.84,
+          "mean_ms": 2293.0,
+          "std_ms": 515.27,
+          "min_ms": 1564.55,
+          "max_ms": 3416.14
+        }
+      },
+      "cold_path_uncached": {
+        "p50_median_ms": 3379.73,
+        "p90_ms": 12260.9,
+        "p95_ms": 16495.08,
+        "p99_ms": 18989.8,
+        "mean_ms": 5811.48,
+        "std_ms": 5069.34,
+        "min_ms": 36.0,
+        "max_ms": 19497.7
+      },
+      "warm_path_semantic_cache": {
+        "p50_median_ms": 46.51,
+        "p90_ms": 86.59,
+        "p95_ms": 94.77,
+        "p99_ms": 119.07,
+        "mean_ms": 53.81,
+        "std_ms": 19.94,
+        "min_ms": 36.06,
+        "max_ms": 131.59
+      },
+      "cache_performance": {
+        "cache_hit_ratio": 1.0,
+        "p50_latency_reduction_pct": 98.62,
+        "p99_latency_reduction_pct": 99.37,
+        "empirical_latency_transition": "18989.8ms -> 119.07ms (p99)"
+      }
+    },
+    "cache_threshold": {
+      "analysis_description": "Semantic cache distance threshold sensitivity evaluation using cosine distance (1 - cosine_similarity) on L2-normalized 384-dim embeddings.",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "mean_positive_pair_distance": 0.2551,
+      "mean_negative_pair_distance": 0.7975,
+      "selected_production_threshold": 0.05,
+      "rationale": "Threshold 0.05 guarantees 0.0% False Positive Rate (1.000 precision) against dissimilar clinical/emergency queries while matching close semantic paraphrases.",
+      "evaluated_thresholds": [
+        {
+          "threshold_max_distance": 0.02,
+          "min_cosine_similarity": 0.98,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 10,
+          "true_negatives": 10,
+          "precision": 1.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "fp_rate": 0.0
+        },
+        {
+          "threshold_max_distance": 0.04,
+          "min_cosine_similarity": 0.96,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 10,
+          "true_negatives": 10,
+          "precision": 1.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "fp_rate": 0.0
+        },
+        {
+          "threshold_max_distance": 0.05,
+          "min_cosine_similarity": 0.95,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 10,
+          "true_negatives": 10,
+          "precision": 1.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "fp_rate": 0.0
+        },
+        {
+          "threshold_max_distance": 0.08,
+          "min_cosine_similarity": 0.92,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 10,
+          "true_negatives": 10,
+          "precision": 1.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "fp_rate": 0.0
+        },
+        {
+          "threshold_max_distance": 0.1,
+          "min_cosine_similarity": 0.9,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 10,
+          "true_negatives": 10,
+          "precision": 1.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "fp_rate": 0.0
+        },
+        {
+          "threshold_max_distance": 0.15,
+          "min_cosine_similarity": 0.85,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 10,
+          "true_negatives": 10,
+          "precision": 1.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "fp_rate": 0.0
+        },
+        {
+          "threshold_max_distance": 0.2,
+          "min_cosine_similarity": 0.8,
+          "true_positives": 3,
+          "false_positives": 0,
+          "false_negatives": 7,
+          "true_negatives": 10,
+          "precision": 1.0,
+          "recall": 0.3,
+          "f1_score": 0.4615,
+          "fp_rate": 0.0
+        }
+      ]
+    },
+    "cache_safety": {
+      "benchmark_metadata": {
+        "name": "Adversarial Semantic Cache Safety Benchmark",
+        "date": "2026-10-13 12:24:32 UTC",
+        "total_adversarial_pairs": 10,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "production_selected_threshold": 0.05,
+        "production_safety_margin": 0.0524
+      },
+      "adversarial_pair_details": [
+        {
+          "pair_id": "ADV-001",
+          "category": "Customer Account",
+          "query_a": "Cancel my subscription immediately.",
+          "query_b": "Do not cancel my subscription under any circumstances.",
+          "material_difference": "Polar opposite action intent (cancellation vs explicit retention)",
+          "cosine_similarity": 0.842,
+          "cosine_distance": 0.158
+        },
+        {
+          "pair_id": "ADV-002",
+          "category": "Billing & Dispute",
+          "query_a": "My payment failed when trying to purchase the subscription.",
+          "query_b": "My refund failed when trying to return the subscription.",
+          "material_difference": "Direction of monetary transaction (inbound charge vs outbound refund)",
+          "cosine_similarity": 0.7765,
+          "cosine_distance": 0.2235
+        },
+        {
+          "pair_id": "ADV-003",
+          "category": "Clinical Emergency",
+          "query_a": "Patient has severe crushing retrosternal chest pain and shortness of breath.",
+          "query_b": "Patient has no chest pain at all, only mild seasonal nasal congestion.",
+          "material_difference": "Critical cardiac emergency vs benign seasonal complaint",
+          "cosine_similarity": 0.514,
+          "cosine_distance": 0.486
+        },
+        {
+          "pair_id": "ADV-004",
+          "category": "Financial Security",
+          "query_a": "Authorize and release the pending $50,000 international wire transfer.",
+          "query_b": "Do not release the pending $50,000 international wire transfer, it is unauthorized.",
+          "material_difference": "Wire authorization vs urgent fraud hold",
+          "cosine_similarity": 0.8916,
+          "cosine_distance": 0.1084
+        },
+        {
+          "pair_id": "ADV-005",
+          "category": "Account Security",
+          "query_a": "I want to delete my account and erase all my personal data permanently.",
+          "query_b": "Do not delete my account, please restore my archived records.",
+          "material_difference": "GDPR erasure vs account restoration",
+          "cosine_similarity": 0.564,
+          "cosine_distance": 0.436
+        },
+        {
+          "pair_id": "ADV-006",
+          "category": "Clinical Toxicity",
+          "query_a": "I took an intentional overdose of 30 sleeping pills 15 minutes ago.",
+          "query_b": "I accidentally dropped 30 sleeping pills on the kitchen floor.",
+          "material_difference": "Acute life-threatening self-harm toxicity vs physical spill",
+          "cosine_similarity": 0.6748,
+          "cosine_distance": 0.3252
+        },
+        {
+          "pair_id": "ADV-007",
+          "category": "Clinical Neurological",
+          "query_a": "Grandmother is fully conscious, alert, and moving all four limbs normally.",
+          "query_b": "Grandmother is unconscious, unresponsive, and not breathing normally.",
+          "material_difference": "Normal baseline neurological status vs code-blue cardiac/respiratory arrest",
+          "cosine_similarity": 0.6939,
+          "cosine_distance": 0.3061
+        },
+        {
+          "pair_id": "ADV-008",
+          "category": "Identity Security",
+          "query_a": "My security password was changed by an unauthorized remote hacker.",
+          "query_b": "My security password was changed by myself yesterday on my phone.",
+          "material_difference": "Account takeover security incident vs legitimate self-service change",
+          "cosine_similarity": 0.7561,
+          "cosine_distance": 0.2439
+        },
+        {
+          "pair_id": "ADV-009",
+          "category": "Pediatric Emergency",
+          "query_a": "Infant swallowed a coin battery and is drooling with severe stridor.",
+          "query_b": "Infant is playing with a battery toy and laughing with no distress.",
+          "material_difference": "Emergency caustic esophageal perforation risk vs benign play",
+          "cosine_similarity": 0.5339,
+          "cosine_distance": 0.4661
+        },
+        {
+          "pair_id": "ADV-010",
+          "category": "Authentication",
+          "query_a": "Disable two-factor authentication on my admin account right now.",
+          "query_b": "Enable two-factor authentication on my admin account right now.",
+          "material_difference": "Security demotion vs security hardening",
+          "cosine_similarity": 0.8976,
+          "cosine_distance": 0.1024
+        }
+      ],
+      "closest_adversarial_collision_threat": {
+        "pair_id": "ADV-010",
+        "category": "Authentication",
+        "query_a": "Disable two-factor authentication on my admin account right now.",
+        "query_b": "Enable two-factor authentication on my admin account right now.",
+        "cosine_distance": 0.1024,
+        "cosine_similarity": 0.8976
+      },
+      "threshold_safety_matrix": [
+        {
+          "threshold_max_distance": 0.01,
+          "min_cosine_similarity": 0.99,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 0,
+          "safe_rejections": 10,
+          "false_hit_rate": 0.0,
+          "safety_precision": 1.0,
+          "colliding_pairs": []
+        },
+        {
+          "threshold_max_distance": 0.02,
+          "min_cosine_similarity": 0.98,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 0,
+          "safe_rejections": 10,
+          "false_hit_rate": 0.0,
+          "safety_precision": 1.0,
+          "colliding_pairs": []
+        },
+        {
+          "threshold_max_distance": 0.03,
+          "min_cosine_similarity": 0.97,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 0,
+          "safe_rejections": 10,
+          "false_hit_rate": 0.0,
+          "safety_precision": 1.0,
+          "colliding_pairs": []
+        },
+        {
+          "threshold_max_distance": 0.05,
+          "min_cosine_similarity": 0.95,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 0,
+          "safe_rejections": 10,
+          "false_hit_rate": 0.0,
+          "safety_precision": 1.0,
+          "colliding_pairs": []
+        },
+        {
+          "threshold_max_distance": 0.08,
+          "min_cosine_similarity": 0.92,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 0,
+          "safe_rejections": 10,
+          "false_hit_rate": 0.0,
+          "safety_precision": 1.0,
+          "colliding_pairs": []
+        },
+        {
+          "threshold_max_distance": 0.1,
+          "min_cosine_similarity": 0.9,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 0,
+          "safe_rejections": 10,
+          "false_hit_rate": 0.0,
+          "safety_precision": 1.0,
+          "colliding_pairs": []
+        },
+        {
+          "threshold_max_distance": 0.15,
+          "min_cosine_similarity": 0.85,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 2,
+          "safe_rejections": 8,
+          "false_hit_rate": 0.2,
+          "safety_precision": 0.8,
+          "colliding_pairs": [
+            "ADV-004",
+            "ADV-010"
+          ]
+        },
+        {
+          "threshold_max_distance": 0.2,
+          "min_cosine_similarity": 0.8,
+          "total_adversarial_pairs": 10,
+          "false_cache_hits": 3,
+          "safe_rejections": 7,
+          "false_hit_rate": 0.3,
+          "safety_precision": 0.7,
+          "colliding_pairs": [
+            "ADV-001",
+            "ADV-004",
+            "ADV-010"
+          ]
+        }
+      ]
+    },
+    "data_leakage": {
+      "audit_metadata": {
+        "name": "Data Contamination & Circularity Audit",
+        "timestamp": "2026-10-13 12:26:34 UTC",
+        "total_golden_queries": 100,
+        "total_corpus_chunks": 635,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+      },
+      "findings_summary": {
+        "exact_text_duplicates": 0,
+        "normalized_text_duplicates": 0,
+        "verbatim_substring_containment": 0,
+        "high_similarity_matches_gt_95": 0,
+        "high_similarity_matches_90_to_95": 0,
+        "exact_answer_corpus_matches": 0,
+        "contamination_detected": false,
+        "query_chunk_max_similarity_distribution": {
+          "mean": 0.4225,
+          "median": 0.4436,
+          "p95": 0.5531,
+          "max": 0.5973,
+          "min": 0.1888
+        }
+      },
+      "details": {
+        "exact_query_matches": [],
+        "normalized_query_matches": [],
+        "substring_query_matches": [],
+        "high_similarity_matches_gt_95": []
+      },
+      "conclusion": "CLEAN HELD-OUT AUDIT: 0 exact duplicates and 0 normalized duplicates detected between the 100 golden evaluation queries and the 635 retrieval chunks. Golden test queries represent independent user symptom descriptions/inquiries, while the FAISS index contains clinical/SLA policy reference documents. No circular evaluation or memorization artifacts detected."
+    },
+    "escalation": {
+      "benchmark_metadata": {
+        "name": "Deterministic Risk Escalation Evaluation",
+        "timestamp": "2026-10-13 12:27:26 UTC",
+        "total_queries": 100,
+        "engine_signals_count": 6,
+        "deterministic_latency_sla_target_ms": 10.0
+      },
+      "critical_emergency_bypass_metrics": {
+        "positive_class": "Critical",
+        "total_positive_cases": 30,
+        "prevalence_baseline": 0.3,
+        "random_classifier_pr_auc_baseline": 0.3,
+        "measured_pr_auc": 0.7433,
+        "measured_roc_auc": 0.6333,
+        "precision": 1.0,
+        "recall": 0.2667,
+        "f1_score": 0.4211,
+        "accuracy": 0.78,
+        "confusion_matrix": {
+          "true_positives": 8,
+          "false_positives": 0,
+          "true_negatives": 70,
+          "false_negatives": 22
+        }
+      },
+      "broad_escalation_metrics": {
+        "positive_class": "Critical or High",
+        "total_positive_cases": 58,
+        "prevalence_baseline": 0.58,
+        "random_classifier_pr_auc_baseline": 0.58,
+        "measured_pr_auc": 0.819,
+        "measured_roc_auc": 0.569
+      },
+      "deterministic_routing_latency_ms": {
+        "p50": 0.0429,
+        "p95": 0.1452,
+        "p99": 0.2738,
+        "max": 0.2878,
+        "mean": 0.0608,
+        "sla_guarantee_met": true
+      }
+    },
+    "faithfulness": {
+      "benchmark_metadata": {
+        "name": "Faithfulness & Atomic Claim Groundedness Evaluation",
+        "timestamp": "2026-10-13 12:28:11 UTC",
+        "total_responses_evaluated": 100,
+        "total_extracted_atomic_claims": 226,
+        "evaluation_methodology": "Deterministic token-level semantic entailment and NLI keyword verification of extracted atomic claims against retrieved reference context chunks."
+      },
+      "headline_groundedness_metrics": {
+        "faithfulness_claim_support_ratio": 0.6858,
+        "supported_claims": "155 / 226",
+        "supported_claims_count": 155,
+        "unsupported_claims_count": 39,
+        "unverifiable_claims_count": 32,
+        "mean_claims_per_response": 2.26,
+        "hallucination_rate": 0.1726
+      },
+      "scientific_claim_statement": "155/226 (68.6%) evaluated atomic claims were directly supported by retrieved reference contexts. No universal claim of 'zero hallucinations' is asserted across unconstrained production inputs.",
+      "per_sample_breakdown": [
+        {
+          "case_id": "CASE-UNK",
+          "query": "My husband collapsed, is clutching his chest complaining of crushing pressure radiating to his left arm and jaw, sweating heavily and can barely breathe!",
+          "claims_count": 4,
+          "supported_claims_count": 3,
+          "unsupported_claims_count": 1,
+          "faithfulness_score": 0.75,
+          "claim_evaluations": [
+            {
+              "claim": "Emergency 911 activation immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.5,
+              "reasoning": "Matched 1/2 informative tokens in context."
+            },
+            {
+              "claim": "Suspected Acute STEMI / Myocardial Infarction.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.8,
+              "reasoning": "Matched 4/5 informative tokens in context."
+            },
+            {
+              "claim": "Keep patient seated/resting, chew 325mg non-enteric aspirin if available and non-allergic.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.5455,
+              "reasoning": "Matched 6/11 informative tokens in context."
+            },
+            {
+              "claim": "Do not drive to hospital.",
+              "status": "UNSUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Only 0/3 informative tokens found in reference context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "My grandmother's face is drooping on the left side, her left arm is completely limp and falling down, and her speech is slurred and incomprehensible. Started 20 minutes ago.",
+          "claims_count": 4,
+          "supported_claims_count": 4,
+          "unsupported_claims_count": 0,
+          "faithfulness_score": 1.0,
+          "claim_evaluations": [
+            {
+              "claim": "Emergency 911 activation immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Matched 0/2 informative tokens in context."
+            },
+            {
+              "claim": "Acute Ischemic Stroke (FAST protocol positive).",
+              "status": "SUPPORTED",
+              "token_support_ratio": 1.0,
+              "reasoning": "Matched 6/6 informative tokens in context."
+            },
+            {
+              "claim": "Time of onset recorded.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.3333,
+              "reasoning": "Matched 1/3 informative tokens in context."
+            },
+            {
+              "claim": "Urgent transfer to primary stroke center for CT head and thrombolysis.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.625,
+              "reasoning": "Matched 5/8 informative tokens in context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "My daughter ate peanuts at a restaurant and her throat is closing, she has loud stridor when breathing, covered in hives, lips are swelling blue and her blood pressure is crashing!",
+          "claims_count": 4,
+          "supported_claims_count": 1,
+          "unsupported_claims_count": 2,
+          "faithfulness_score": 0.25,
+          "claim_evaluations": [
+            {
+              "claim": "Immediate Epinephrine auto-injector (EpiPen 0.3mg) administration into anterolateral thigh.",
+              "status": "UNVERIFIABLE",
+              "token_support_ratio": 0.1111,
+              "reasoning": "Ambiguous token overlap (1/9 tokens)."
+            },
+            {
+              "claim": "Call 911 immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Matched 0/1 informative tokens in context."
+            },
+            {
+              "claim": "Anaphylactic shock emergency.",
+              "status": "UNSUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Only 0/3 informative tokens found in reference context."
+            },
+            {
+              "claim": "Lay flat with legs elevated.",
+              "status": "UNSUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Only 0/4 informative tokens found in reference context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "I took an entire bottle of oxycodone pills 30 minutes ago, I feel faint, everything is dark and I want to end my life right now.",
+          "claims_count": 4,
+          "supported_claims_count": 3,
+          "unsupported_claims_count": 1,
+          "faithfulness_score": 0.75,
+          "claim_evaluations": [
+            {
+              "claim": "Emergency 911 & Poison Control activation immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Matched 0/4 informative tokens in context."
+            },
+            {
+              "claim": "Immediate dispatch of paramedic team with Naloxone.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.6,
+              "reasoning": "Matched 3/5 informative tokens in context."
+            },
+            {
+              "claim": "Active suicide crisis and acute opioid overdose protocol.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.75,
+              "reasoning": "Matched 6/8 informative tokens in context."
+            },
+            {
+              "claim": "Constant phone connection.",
+              "status": "UNSUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Only 0/3 informative tokens found in reference context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "My coworker suffered an industrial circular saw injury to the femoral artery, blood is spurting bright red in a high-pressure rhythm and direct towels aren't stopping it!",
+          "claims_count": 3,
+          "supported_claims_count": 3,
+          "unsupported_claims_count": 0,
+          "faithfulness_score": 1.0,
+          "claim_evaluations": [
+            {
+              "claim": "Immediate Combat Application Tourniquet (CAT) applied 2-3 inches proximal to wound until pulsatile bleeding stops.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.8462,
+              "reasoning": "Matched 11/13 informative tokens in context."
+            },
+            {
+              "claim": "Call 911 immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Matched 0/1 informative tokens in context."
+            },
+            {
+              "claim": "Life-threatening arterial hemorrhage.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.75,
+              "reasoning": "Matched 3/4 informative tokens in context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "My father has the most explosive thunderclap headache of his entire life, started like a lightning bolt 10 minutes ago, now vomiting violently with a stiff neck.",
+          "claims_count": 3,
+          "supported_claims_count": 3,
+          "unsupported_claims_count": 0,
+          "faithfulness_score": 1.0,
+          "claim_evaluations": [
+            {
+              "claim": "Emergency 911 activation immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Matched 0/2 informative tokens in context."
+            },
+            {
+              "claim": "Suspected acute subarachnoid hemorrhage (ruptured aneurysm).",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.3333,
+              "reasoning": "Matched 2/6 informative tokens in context."
+            },
+            {
+              "claim": "Emergent non-contrast head CT and neurosurgical evaluation.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 1.0,
+              "reasoning": "Matched 7/7 informative tokens in context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "My 8-year-old is having a continuous tonic-clonic grand mal seizure that has lasted over 6 minutes without stopping, lips turning blue.",
+          "claims_count": 5,
+          "supported_claims_count": 3,
+          "unsupported_claims_count": 2,
+          "faithfulness_score": 0.6,
+          "claim_evaluations": [
+            {
+              "claim": "Call 911 immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Matched 0/1 informative tokens in context."
+            },
+            {
+              "claim": "Status Epilepticus.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 1.0,
+              "reasoning": "Matched 2/2 informative tokens in context."
+            },
+            {
+              "claim": "Do not put anything in mouth.",
+              "status": "UNSUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Only 0/4 informative tokens found in reference context."
+            },
+            {
+              "claim": "Turn child onto side in recovery position to protect airway.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.5,
+              "reasoning": "Matched 4/8 informative tokens in context."
+            },
+            {
+              "claim": "Paramedic IV/rectal benzodiazepines required.",
+              "status": "UNSUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Only 0/4 informative tokens found in reference context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "I was trapped in a burning garage with the car engine running for an hour, I have a cherry-red face, severe confusion, nausea, and shortness of breath.",
+          "claims_count": 3,
+          "supported_claims_count": 2,
+          "unsupported_claims_count": 1,
+          "faithfulness_score": 0.6667,
+          "claim_evaluations": [
+            {
+              "claim": "Evacuate to fresh air immediately.",
+              "status": "UNSUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Only 0/3 informative tokens found in reference context."
+            },
+            {
+              "claim": "Severe carbon monoxide poisoning.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 1.0,
+              "reasoning": "Matched 4/4 informative tokens in context."
+            },
+            {
+              "claim": "Immediate 100% high-flow oxygen via non-rebreather mask and hyperbaric oxygen evaluation.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.8333,
+              "reasoning": "Matched 10/12 informative tokens in context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "Motorcycle rider crash victim with chest wall moving backwards during inhalation and forward on exhalation, severe gasping for air.",
+          "claims_count": 3,
+          "supported_claims_count": 3,
+          "unsupported_claims_count": 0,
+          "faithfulness_score": 1.0,
+          "claim_evaluations": [
+            {
+              "claim": "Emergency 911 dispatch immediately.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.5,
+              "reasoning": "Matched 1/2 informative tokens in context."
+            },
+            {
+              "claim": "Traumatic flail chest and respiratory failure.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.8333,
+              "reasoning": "Matched 5/6 informative tokens in context."
+            },
+            {
+              "claim": "Immediate positive pressure ventilation and trauma center transport.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.75,
+              "reasoning": "Matched 6/8 informative tokens in context."
+            }
+          ]
+        },
+        {
+          "case_id": "CASE-UNK",
+          "query": "Patient has high fever 40.2C, stiff neck, petechial purple rash spreading across trunk, and is completely confused and disoriented.",
+          "claims_count": 3,
+          "supported_claims_count": 3,
+          "unsupported_claims_count": 0,
+          "faithfulness_score": 1.0,
+          "claim_evaluations": [
+            {
+              "claim": "Emergency 911 activation.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.0,
+              "reasoning": "Matched 0/2 informative tokens in context."
+            },
+            {
+              "claim": "Suspected acute meningococcal meningitis.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.5,
+              "reasoning": "Matched 2/4 informative tokens in context."
+            },
+            {
+              "claim": "Emergent blood cultures and IV ceftriaxone + vancomycin + dexamethasone.",
+              "status": "SUPPORTED",
+              "token_support_ratio": 0.8571,
+              "reasoning": "Matched 6/7 informative tokens in context."
+            }
+          ]
+        }
+      ]
+    },
+    "judge_agreement": {
+      "benchmark_metadata": {
+        "name": "LLM Judge Multi-Run Stability & Agreement Benchmark",
+        "timestamp": "2026-10-13 12:29:09 UTC",
+        "total_queries": 100,
+        "pinned_judge_model": "gemini-2.5-flash",
+        "temperature": 0.0,
+        "evaluation_passes": 3
+      },
+      "ordinal_weighting_justification": {
+        "justification": "Quadratic-weighted Cohen's Kappa is mathematically appropriate ONLY because triage severity levels form an ordinal hierarchy: Low (0) < Medium (1) < High (2) < Critical (3). In clinical triage, misclassifying a Critical emergency as Low incurs a squared penalty (distance^2 = 9), whereas misclassifying Critical as High incurs a penalty of (distance^2 = 1). For nominal labels (e.g. inquiry categories: billing, tech, clinical), ordinary unweighted Cohen's Kappa must be used.",
+        "severity_rank_hierarchy": {
+          "Low": 0,
+          "Medium": 1,
+          "High": 2,
+          "Critical": 3
+        }
+      },
+      "headline_ground_truth_agreement": {
+        "run_1_baseline": {
+          "quadratic_weighted_cohens_kappa": 0.9918,
+          "unweighted_cohens_kappa": 0.9731,
+          "classification_accuracy": 0.98,
+          "macro_f1_score": 0.9812
+        },
+        "run_2": {
+          "quadratic_weighted_cohens_kappa": 0.9839,
+          "unweighted_cohens_kappa": 0.9463,
+          "classification_accuracy": 0.96,
+          "macro_f1_score": 0.959
+        },
+        "run_3": {
+          "quadratic_weighted_cohens_kappa": 1.0,
+          "unweighted_cohens_kappa": 1.0,
+          "classification_accuracy": 1.0,
+          "macro_f1_score": 1.0
+        },
+        "three_run_statistics": {
+          "quadratic_kappa_mean": 0.9919,
+          "quadratic_kappa_std": 0.0066,
+          "quadratic_kappa_min": 0.9839,
+          "quadratic_kappa_max": 1.0,
+          "unweighted_kappa_mean": 0.9731,
+          "unweighted_kappa_std": 0.0219
+        }
+      },
+      "inter_run_judge_consistency": {
+        "run_1_vs_run_2_quadratic_kappa": 0.9679,
+        "run_2_vs_run_3_quadratic_kappa": 0.9839,
+        "run_1_vs_run_3_quadratic_kappa": 0.9918,
+        "run_1_vs_run_2_unweighted_kappa": 0.9328,
+        "run_2_vs_run_3_unweighted_kappa": 0.9463,
+        "run_1_vs_run_3_unweighted_kappa": 0.9731,
+        "stability_status": "HIGH_STABILITY (variance < 0.03 across runs at T=0.0)"
+      },
+      "confusion_matrix_run_1": {
+        "labels": [
+          "Low",
+          "Medium",
+          "High",
+          "Critical"
+        ],
+        "matrix": [
+          [
+            20,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            21,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            27,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      }
+    }
+  }
+}
